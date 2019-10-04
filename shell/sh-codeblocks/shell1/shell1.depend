@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1570028977 source:/home/eglym/Documents/shell/step1/shell1/main.c
+	<stdio.h>
+	<stdlib.h>
+	<sys/wait.h>
+	<unistd.h>
+	<string.h>
+

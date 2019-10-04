@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1570105155 source:/home/eglym/Documents/interpreter/interpreter/main.c
+	"common.h"
+	"chunk.h"
+	"debug.h"
+
+1570099357 /home/eglym/Documents/interpreter/interpreter/common.h
+	<stdbool.h>
+	<stddef.h>
+	<stdint.h>
+
+1570100788 /home/eglym/Documents/interpreter/interpreter/chunk.h
+	"common.h"
+	"value.h"
+
+1570100871 source:/home/eglym/Documents/interpreter/interpreter/chunk.c
+	<stdlib.h>
+	"chunk.h"
+	"memory.h"
+
+1570099655 /home/eglym/Documents/interpreter/interpreter/memory.h
+
+1570099601 source:/home/eglym/Documents/interpreter/interpreter/memory.c
+	<stdlib.h>
+	"common.h"
+	"memory.h"
+
+1570100134 /home/eglym/Documents/interpreter/interpreter/debug.h
+	"chunk.h"
+
+1570100630 /home/eglym/Documents/interpreter/interpreter/value.h
+	"common.h"
+
+1570100938 source:/home/eglym/Documents/interpreter/interpreter/debug.c
+	<stdio.h>
+	"debug.h"
+	"value.h"
+
+1570100646 source:/home/eglym/Documents/interpreter/interpreter/value.c
+	<stdio.h>
+	"memory.h"
+	"value.h"
+

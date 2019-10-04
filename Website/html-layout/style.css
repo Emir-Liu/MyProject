@@ -1,0 +1,23 @@
+#header{
+    background-color:black;
+    color:white;
+    text-align:center;
+}
+#navigation{
+    background-color:red;
+    width:15%;
+    float:left;
+}
+#section{
+	background-color:green;
+	width:85%;
+	float:left;
+}
+#footer{
+    background-color:yellow;
+    color:white;
+    clear:both;
+    text-align:center;
+
+}
+
