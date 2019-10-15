@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1570248689 source:/home/eglym/Documents/MyProject/chat/MyChat/MyChatServer/main.c
+	<stdio.h>
+	<sys/socket.h>
+	<string.h>
+	<sys/types.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<unistd.h>
+	<stdlib.h>
+

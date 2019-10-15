@@ -1,0 +1,44 @@
+<!DOCTYPE htmlw>
+<html>
+<head>
+	<title>SingleSpace</title>	
+
+	<!--Icons-->
+	
+	<link rel="shortcut icon" sizes="16*16 24*24 48*48 64*64" href="images/favicon.ico">
+
+<style type="text/css">
+	.site-content{
+	}
+	.nav-container{
+		height: 100%;
+		width: 100%;
+	}
+	.title{
+	}
+	nav{
+		border: 1px solid #foo;
+	}
+		nav ul li{
+			display: inline-block;
+			border: 1px solid #foo;
+		}
+</style>
+
+</head>
+
+<body>
+	<div class="site-content">
+		<nav>
+		<inpyt type="checkbox" id="nav"/>
+		<div class="nav-container" >
+			<ul>
+				<li><a hreb="/" class=title>Emir Liu</a></li>
+				<li><a hreb="/blog">Blog</a></li>
+				<li><a hreb="/resume">Resume</a></li>
+			</ul>
+		</nav>
+	</div>
+</body>
+</html>
+
