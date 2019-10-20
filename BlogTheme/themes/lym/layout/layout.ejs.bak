@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title> </title>
+	<meta charset="utf-8">
+	<%- css('css/main.css')%>
+
+</head>
+
+<body>
+	this is layout.ejs
+	</br>
+	<%- include("index.ejs")%>
+	</br>
+	<%- include("post.ejs")%>
+	<%
+		var test = "this is a test";
+	%>
+
+	<%-
+		test
+	%>
+	</br>
+
+	<% site.posts.forEach(function(post){ %>
+
+	<%-post.path%>
+	</br>
+	<%-post.slug%>
+	</br>
+	<%-post._id%>
+	</br>
+	<%-post.title%>
+	</br>
+	<%-post.date%>
+	</br>
+	<a href="/<%-post.path%> "><%-post.title%></a>
+
+	<%}); %>
+
+</body>
+
+</html>

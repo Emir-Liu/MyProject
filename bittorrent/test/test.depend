@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1571415306 source:/home/eglym/Documents/MyProject/bittorrent/test/main.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	<stdlib.h>
+
