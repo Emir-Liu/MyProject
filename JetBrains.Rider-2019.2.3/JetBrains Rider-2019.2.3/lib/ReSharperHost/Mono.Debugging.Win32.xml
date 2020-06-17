@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mono.Debugging.Win32</name>
+    </assembly>
+    <members>
+        <member name="M:Mono.Debugging.Win32.ArrayAdaptor.#ctor(Mono.Debugging.Win32.CorObjectAdaptor,Mono.Debugging.Win32.CorEvaluationContext,Mono.Debugging.Win32.ICorValue)">
+            <param name="adapter"></param>
+            <param name="ctx"></param>
+            <param name="arrayObject">Do not pass direct handle to <see cref="T:JetBrains.Debugger.CorApi.ComInterop.ICorDebugArrayValue"/> because it may be invalidated after func-eval. 
+            Pass initial reference instead, adapter will automatically extract array value</param>
+        </member>
+        <member name="M:Mono.Debugging.Win32.AsyncUtils.GetAwaitILOffset(System.Int32,JetBrains.Metadata.Reader.Impl.CustomDebugInformation.AsyncMethodSteppingInformationData,JetBrains.Debugger.CorApi.ComInterop.ICorDebugCode)">
+            <summary>
+            Find IL offset of `await` instruction in `IAsyncStateMachine.MoveNext` method corresponding particular 
+            state of state machine 
+            </summary>
+            <param name="state">current state</param>
+            <param name="steppingInfo">stepping info for method</param>
+            <param name="code">IL code of method</param>
+            <returns></returns>
+        </member>
+        <member name="P:Mono.Debugging.Win32.CoreClrDebuggerStartInfo.IsExecuteAsIs">
+            <inheritdoc />
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorStepper.GetTempStepper(JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread)">
+            <summary>
+            Get a stepper for thread with JustMyCode = false as a default
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorMetadataUtil.UnwrapType(JetBrains.Debugger.CorApi.ComInterop.ICorDebugType)">
+            <summary>
+            Unwrap real type in the case when the type is REF or PTR
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Win32.Enc.EncDeltaApplier.AddDelta(Debugger.Common.EnC.EnCDelta)">
+            <summary>
+            
+            </summary>
+            <param name="delta"></param>
+            <returns>Next delta version</returns>
+        </member>
+        <member name="M:Mono.Debugging.Win32.RazorPathResolution.IRazorFilePathResolver.ResolveFileFullPath(System.String)">
+            <summary>
+            Return absolute path or null
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorDebuggerSession.SetICorDebug(JetBrains.Debugger.CorApi.ComInterop.ICorDebug)">
+            <summary>
+            Assigns the newly-created <see cref="T:JetBrains.Debugger.CorApi.ComInterop.ICorDebug" />, without even Initialize called.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorDebuggerSession.EvalEventsUnadvise.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:Mono.Debugging.Win32.CorMethodCall.FunctionOrClass">
+            <summary>
+            Sometimes when calling the default ctor we do not have a metadata token for it and can't specify <see cref="F:Mono.Debugging.Win32.CorMethodCall.FunctionOrClass.Function" />, give the <see cref="F:Mono.Debugging.Win32.CorMethodCall.FunctionOrClass.ClassWithDefaultCtor" /> in such case.
+            </summary>
+        </member>
+        <member name="F:Mono.Debugging.Win32.CorMethodCall.FunctionOrClass.Function">
+            <summary>
+            If we know the function to call (method or ctor), it's given here.
+            </summary>
+        </member>
+        <member name="F:Mono.Debugging.Win32.CorMethodCall.FunctionOrClass.ClassWithDefaultCtor">
+            <summary>
+            Sometimes when calling the default ctor we do not have a metadata token for it and can't specify <see cref="F:Mono.Debugging.Win32.CorMethodCall.FunctionOrClass.Function" />, give the <see cref="F:Mono.Debugging.Win32.CorMethodCall.FunctionOrClass.ClassWithDefaultCtor" /> in such case.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorMethodCall.FunctionOrClass.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorMethodCall.FunctionOrClass.FromFunction(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunction)">
+            <inheritdoc />
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorMethodCall.FunctionOrClass.FromClassWithDefaultCtor(JetBrains.Debugger.CorApi.ComInterop.ICorDebugClass)">
+            <inheritdoc />
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorObjectAdaptor.CStyleCast(System.Object,System.Type)">
+            <summary>
+            Does a C-Style Cast between primitive value types.
+            Calling <see cref="T:System.Convert" /> applies rounding and differs in logic from what C# language does.
+            For example, <c>(int)19.7</c> is <c>19</c> by this func and is <c>20</c> by netfx methods.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.ICorValue">
+            <summary>
+            Holder for <see cref="T:JetBrains.Debugger.CorApi.ComInterop.ICorDebugValue"/>
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Win32.IRuntimeExecution.IsExecuteAsIs">
+            <summary>
+            Do not add runtime executable to the command line, assume it's already there.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.DebuggerStartInfoUtil.PrepareWorkingDirectory(Mono.Debugging.Client.DebuggerStartInfo)">
+            <summary>
+            Explicit, if set;
+            from executable command, if possible;
+            TEMP otherwise.
+            Never NULL/empty.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.Utils.ICorDebugProcessUtil.ContinueWithTimeStamp(JetBrains.Debugger.CorApi.ComInterop.ICorDebugProcess,Mono.Debugging.Utils.IDebuggeeTimeStamp,System.Boolean)">
+            <summary>
+            Continues process and increments debugger timestamp 
+            </summary>
+            <param name="process"></param>
+            <param name="timeStamp"></param>
+            <param name="outOfBand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Win32.Utils.ICorDebugProcessUtil.ContinueAllThreadsWithTimeStamp(JetBrains.Debugger.CorApi.ComInterop.ICorDebugProcess,Mono.Debugging.Utils.IDebuggeeTimeStamp,JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread,System.Boolean)">
+            <summary>
+            Continues all thread in process and increments debugger timestamp 
+            </summary>
+            <param name="process"></param>
+            <param name="timeStamp"></param>
+            <param name="outOfBand"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

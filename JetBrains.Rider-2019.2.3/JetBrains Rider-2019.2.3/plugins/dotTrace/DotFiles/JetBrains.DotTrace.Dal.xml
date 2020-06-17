@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.DotTrace.Dal</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.DotTrace.Dal.Performance.SectionReaders.CalltreeSectionAsStreamReader.ReadNodesReverseCore(JetBrains.Util.Storage.IInMemoryStream,System.Byte*,System.Int32,JetBrains.DotTrace.DalInterface.Performance.CallTree.CallTreeSectionOffset,JetBrains.DotTrace.DalInterface.Performance.CallTree.CallTreeSectionOffset,System.Int32,JetBrains.DotTrace.Dal.Performance.SectionReaders.CalltreeSectionAsStreamReader.LowLevelReader,JetBrains.DotTrace.DalInterface.Performance.CallTree.CallTreeHeaderFull)">
+            <summary>
+            This method fills <see cref="!:bufferEnd"/> from end to start of given buffer (array)
+            </summary>
+            <param name="stream"></param>
+            <param name="bufferEnd">
+            Pointer to the end of dest buffer. The first element will be put at bufferEnd - (readCount*structSize)
+            The last element will be put at (bufferEnd-structSize)
+             </param>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.EtwSignatureParser">
+            <summary>
+            <![CDATA[
+              ABNF grammar
+              Reference = "&";
+              Pointer = 1*"*";
+              IsInstance = "instance"
+              IsGeneric = "generic"
+              ValueType = "value"
+              Namespace = 1*(1*(ALPHA / DIGIT / UNICODE / "@") ".");
+              JaggedArrayType = 1*"[]";
+              MultiArrayType = "[" 1*"," "]";
+              GenericReference = 1*2"!" 1*DIGIT;
+              EtwSignature = MethodExtra Type 2space "(" [Parameters] ")";
+              MethodExtra = [IsInstance space] [IsGeneric space];
+              Type = PrimitiveType / NonPrimitiveType / GenericReference [JaggedArrayType / MultiArrayType] [Pointer] [Reference];
+              PrimitiveType = "void"
+              / "bool"
+              / "wchar"
+              / "decimal"
+              / "float32"
+              / "float64"
+              / "int"
+              / "unsigned int"
+              / "int8"
+              / "unsigned int8"
+              / "int16"
+              / "unsigned int16"
+              / "int32"
+              / "unsigned int32"
+              / "int64"
+              / "unsigned int64";
+              NonPrimitiveType = [ValueType space] ["class" space] TypeWithGenerics;
+              TypeWithGenerics = ([Namespace] Identifier / AnonymousType / YieldGen / LambdaGen) [GenericCount] ["<" Parameters ">"];
+              GenericCount = "`" *DIGIT
+              Identifier = 1*(ALPHA / DIGIT / UNICODE);
+              Parameters = *([Type ","]) Type;
+              AnonymousType = "<>f__AnonymousType" 1*(ALPHA / DIGIT);
+              YieldGen = "<" YieldGen / (TypeWithGenerics ["." Identifier]) ">" Identifier;
+              LambdaGen = "<>" Identifier;
+              ClassSpecification = TypeWithGenerics *("+" TypeWithGenerics) ["[" ClassParameters "]"]
+              ClassParameters = *([ClassSpecification ","]) ClassSpecification;
+            ]]>
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.AnonymousType">
+            <summary>
+             <![CDATA[
+             AnonymousType = "<>f__AnonymousType" 1*(ALPHA / DIGIT);
+             ]]>
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.ClassParameters">
+            <summary>
+            ClassParameters = *([ClassSpecification ("," / * " ")]) ClassSpecification;
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.ClassSpecification">
+            <summary>
+            ClassSpecification = TypeWithGenerics *("+" TypeWithGenerics) ["[" ClassParameters "]"]
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.EtwSignature">
+            <summary>
+            EtwSignature = MethodExtra Type 2space "(" [Parameters] ")";
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.GenericCount">
+            <summary>
+            GenericCount = "`" *DIGIT
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.GenericReference">
+            <summary>
+            GenericReference = 1*2"!" 1*DIGIT;
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.Identifier">
+            <summary>
+            Identifier = 1*(ALPHA / DIGIT / UNICODE / "@");
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.ILValidType">
+            <summary>
+            <![CDATA[
+            ILValidType = "<" Identifier ">"
+            ]]>
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.IsGeneric">
+            <summary>
+            IsGeneric = "generic"
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.IsInstance">
+            <summary>
+            IsInstance = "instance"
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.JaggedArrayType">
+            <summary>
+            JaggedArrayType = 1*"[]";
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.LambdaGen">
+            <summary>
+            <![CDATA[
+            LambdaGen = "<>" Identifier;
+            ]]>
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.MethodExtra">
+            <summary>
+            MethodExtra = [IsInstance space] [IsGeneric space];
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.MultiArrayType">
+            <summary>
+            MultiArrayType = "[" 1*"," "]";
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.Namespace">
+            <summary>
+            Namespace = 1*((Identifier / ILValidType) ".");
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.NonPrimitiveType">
+            <summary>
+            NonPrimitiveType = [ValueType space] ["class" space] TypeWithGenerics;
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.Parameters">
+            <summary>
+            Parameters = *([Type ("," / * " ")]) Type;
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.pMT">
+            <summary>
+            pMT = "pMT: " Identifier;
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.Pointer">
+            <summary>
+            Pointer = 1*"*";
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.PrimitiveType">
+            <summary>
+              PrimitiveType = "void" 
+                            / "bool" 
+                            / "wchar" 
+                            / "decimal" 
+            			          / "float32" 
+                            / "float64" 
+            			          / "int"   
+                            / "unsigned int" 
+            			          / "int8"  
+                            / "unsigned int8" 
+            			          / "int16" 
+                            / "unsigned int16" 
+            			          / "int32" 
+                            / "unsigned int32" 
+            			          / "int64" 
+                            / "unsigned int64";
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.Reference">
+            <summary>
+            <![CDATA[
+            Reference = "&"; 
+            ]]>  
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.Type">
+            <summary>
+            Type = PrimitiveType / NonPrimitiveType / GenericReference [JaggedArrayType / MultiArrayType] [1*" "] [Pointer] [Reference];
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.TypeWithGenerics">
+            <summary>
+            <![CDATA[   
+            TypeWithGenerics = (pMT / [Namespace] Identifier / AnonymousType / YieldGen / LambdaGen / ILValidType) [GenericCount] ["<" Parameters ">"];    
+            ]]>
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.ValueType">
+            <summary>
+            ValueType = "value"
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Dal.Timeline.NewMetadata.Parser.Symbols.YieldGen">
+            <summary>
+            <![CDATA[
+            YieldGen = "<" YieldGen / (TypeWithGenerics ["." Identifier]) ">" Identifier
+            ]]>
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Roslyn.Worker</name>
+    </assembly>
+    <members>
+        <member name="F:JetBrains.ReSharper.Roslyn.Worker.RoslynWorkerProgram.LoadFromHandler">
+            <summary>
+            DIRTY HACK
+            Overridden from the outside for .Net Core
+            </summary>
+        </member>
+    </members>
+</doc>

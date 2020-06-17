@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Common.Util.Metadata</name>
+    </assembly>
+    <members>
+        <member name="F:JetBrains.Common.Util.Metadata.ModuleDebugInfo.NoDebugInfo">
+            <summary>
+            Specified module was compiled without debug info
+            </summary>
+        </member>
+        <member name="F:JetBrains.Common.Util.Metadata.ModuleDebugInfo.AbsentDebugInfo">
+            <summary>
+            We don't have any information about debug info for specified module 
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.Util.Metadata.ModuleDebugInfo.Build(System.Collections.Generic.IEnumerable{JetBrains.Metadata.Utils.PE.Directories.DebugInfo})">
+            <summary>
+            Build non-empty debug infos
+            </summary>
+            <param name="debugInfos"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

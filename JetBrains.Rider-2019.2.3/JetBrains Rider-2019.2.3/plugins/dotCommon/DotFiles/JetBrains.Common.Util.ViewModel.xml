@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Common.Util.ViewModel</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.Common.Util.ViewModel.Commands.AbstractCommand">
+            <summary>
+            Revisited version of SimpleCommand and DelegateCommand.
+            Uses <see cref="T:JetBrains.Common.Util.Tasks.IStaThreadDispatcher"/> instead of <c>Dispatcher</c>. 
+            </summary>
+        </member>
+        <member name="T:JetBrains.Common.Util.ViewModel.Commands.Command2`1">
+            <summary>
+            Revisited version of SimpleCommand and DelegateCommand.
+            Uses <see cref="T:JetBrains.Common.Util.Tasks.IStaThreadDispatcher"/> instead of <c>Dispatcher</c>. 
+            </summary>
+        </member>
+        <member name="T:JetBrains.Common.Util.ViewModel.Commands.Command2">
+            <summary>
+            Revisited version of SimpleCommand and DelegateCommand.
+            Uses <see cref="T:JetBrains.Common.Util.Tasks.IStaThreadDispatcher"/> instead of <c>Dispatcher</c>. 
+            </summary>
+        </member>
+        <member name="T:JetBrains.Common.Util.ViewModel.Commands.DelegateCommand`1">
+            <summary>
+            Consider to use revisited <see cref="T:JetBrains.Common.Util.ViewModel.Commands.Command2"/> implementation.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Common.Util.ViewModel.Commands.SimpleCommand">
+            <summary>
+            Consider to use revisited <see cref="T:JetBrains.Common.Util.ViewModel.Commands.Command2"/> implementation.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.Util.ViewModel.CheckedTreeView.ICheckedTreeItemViewModel.IsChecked">
+            <summary>
+            Gets/sets the state of the associated UI toggle (ex. CheckBox).
+            The return value is calculated based on the check state of all
+            child FooViewModels.  Setting this property to true or false
+            will set all children to the same check state, and setting it 
+            to any value will cause the parent to verify its check state.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Common.Util.ViewModel.ListWrapper`1">
+            <summary>
+            Used to create a new instance of collection to force WPF refresh view state
+            if the same instance is exposed WPF ignores raising <see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged" /> event  
+            </summary>
+        </member>
+        <member name="T:JetBrains.Common.Util.ViewModel.ObservableReadOnlyCollection`1">
+            <summary>
+            Observable wrapper for read-only collection. Used in view models to prevent WPF collection binding leak.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:JetBrains.Common.Util.ViewModel.OverviewTree.IOverviewTreeNode.Size">
+            <summary>
+            Total Subtree Size
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.Util.ViewModel.OverviewTree.IOverviewTreeNode.Children">
+            <summary>
+            Null if Children a not initialized
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.Util.ViewModel.OverviewTree.IOverviewTreeNode.Coordinate">
+            <summary>
+            Left Coordinate of Node
+            </summary>
+        </member>
+        <member name="T:JetBrains.Common.Util.ViewModel.PlainTreeCollecion.PlainTreeItemCollection2">
+            <summary>
+            Implementation of <c>IPlainTreeItemCollection</c> optimized for deep trees.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Common.Util.ViewModel.PlainTreeCollecion.IPlainTreeItemCollection">
+            <summary>
+            Represents tree structure as a plain list:
+            
+            Index  Item
+            -----------------
+            0     Grandparent
+            1       Parent1
+            2         Child1
+            3         Child2
+            4       Parent2
+            5         Child3
+            6       Parent3
+            ...
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.Util.ViewModel.PlainTreeCollecion.IPlainTreeItemCollection.Reload">
+            <summary>
+            Reloads the collection, expanding nodes if necessary.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.Util.ViewModel.PlainTreeCollecion.IPlainTreeItemCollection.ReloadChildren(System.Object)">
+            <summary>
+            Forces to reload children of given item. Uses <see cref="P:JetBrains.Common.Util.ViewModel.PlainTreeCollecion.IPlainTreeItemCollection.TreeStructureProvider"/> to obtain item's expand state and children.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:JetBrains.Common.Util.ViewModel.PlainTreeCollecion.IPlainTreeItemCollection.VerifyChildren(System.Object)">
+            <summary>
+            Compares item's children provided by <see cref="P:JetBrains.Common.Util.ViewModel.PlainTreeCollecion.IPlainTreeItemCollection.TreeStructureProvider"/> with children currently presented in the list
+            </summary>
+            <param name="item"></param>
+            <returns>True if children sequences are equal</returns>
+        </member>
+        <member name="M:JetBrains.Common.Util.ViewModel.PlainTreeCollecion.IPlainTreeItemCollection.IsExpanded(System.Object)">
+            <summary>
+            Returns expand state of the item inside the collection. Returns true if item's children are presented in the list.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.Common.Util.ViewModel.PlainTreeCollecion.IPlainTreeItemCollection.Collapse(System.Object)">
+            <summary>
+            Removes all descendants of the item from the list
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:JetBrains.Common.Util.ViewModel.PlainTreeCollecion.IPlainTreeItemCollection.Expand(System.Object)">
+            <summary>
+            Inserts children of the item into the list and recursively expands children if needed. Uses <see cref="P:JetBrains.Common.Util.ViewModel.PlainTreeCollecion.IPlainTreeItemCollection.TreeStructureProvider"/> to obtain item's expand state and children.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:JetBrains.Common.Util.ViewModel.PlainTreeCollecion.IPlainTreeItemCollection.GetParent(System.Object)">
+            <summary>
+            Returns parent of the item that is presented in the list
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.Common.Util.ViewModel.PlainTreeCollecion.IPlainTreeItemCollection.GetLevel(System.Object)">
+            <summary>
+            Returns level of the item. 0 for top-level items.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="P:JetBrains.Common.Util.ViewModel.PlainTreeCollecion.IPlainTreeItemCollection.Source">
+            <summary>
+            Top-level collection of items
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.Util.ViewModel.PlainTreeCollecion.IPlainTreeItemCollection.TreeStructureProvider">
+            <summary>
+            Used to obtain children and expand state of the items
+            </summary>
+        </member>
+        <member name="T:JetBrains.Common.Util.ViewModel.Sunburst2.ISunburstColorScheme">
+            <summary>
+            Provides color for sunburst nodes.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.Util.ViewModel.Sunburst2.ISunburstColorScheme.GetColor(System.Single,System.Int32)">
+            <summary>
+            Returns sunburst sector color by given polar coordinates.
+            </summary>    
+            <param name="angle"></param>
+            <param name="level"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JetBrains.Common.Util.ViewModel.Sunburst2.ISunburstDataSource">
+            <summary>
+            Provides data to <c>SunburstDiagram</c> control.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.Util.ViewModel.Sunburst2.ISunburstDataSource.CoreNode">
+            <summary>
+            Core (central) node.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.Util.ViewModel.Sunburst2.ISunburstDataSource.GetSunburstNode(System.Object)">
+            <summary>
+            Gets view-model node wrapped to <c>ISunburstNode</c>.
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="E:JetBrains.Common.Util.ViewModel.Sunburst2.ISunburstDataSource.CoreNodeZoomedIn">
+            <summary>
+            The following events initiate sunburst animated transition (only one must be fired on <c>CoreNode</c> change):<br/>
+            * <c>CoreNodeZoomedIn</c> should be fired when new core is descendant of existing one; starts 'zoom-in' animation<br/>
+            * <c>CoreNodeZoomedOut</c> should be fired when new core is ancestor of existing one; starts 'zoom-out' animation<br/>
+            * <c>CoreNodeFiltered</c> should be fired when children of existing core has filtered; starts 'fade-out-in' animation<br/>
+            * <c>CoreNodeMoved</c> should be fired when new core is in different branch against existing one; starts 'twist-out-in' animation<br/>
+            * <c>CoreNodeChanged</c> should be fired if animation isn't needed<br/>
+            </summary>
+        </member>
+        <member name="E:JetBrains.Common.Util.ViewModel.Sunburst2.ISunburstDataSource.CoreNodeZoomedOut">
+            <summary>
+            <see cref="E:JetBrains.Common.Util.ViewModel.Sunburst2.ISunburstDataSource.CoreNodeZoomedIn"/>
+            </summary>
+        </member>
+        <member name="E:JetBrains.Common.Util.ViewModel.Sunburst2.ISunburstDataSource.CoreNodeFiltered">
+            <summary>
+            <see cref="E:JetBrains.Common.Util.ViewModel.Sunburst2.ISunburstDataSource.CoreNodeZoomedIn"/>
+            </summary>
+        </member>
+        <member name="E:JetBrains.Common.Util.ViewModel.Sunburst2.ISunburstDataSource.CoreNodeMoved">
+            <summary>
+            <see cref="E:JetBrains.Common.Util.ViewModel.Sunburst2.ISunburstDataSource.CoreNodeZoomedIn"/>
+            </summary>
+        </member>
+        <member name="E:JetBrains.Common.Util.ViewModel.Sunburst2.ISunburstDataSource.CoreNodeChanged">
+            <summary>
+            <see cref="E:JetBrains.Common.Util.ViewModel.Sunburst2.ISunburstDataSource.CoreNodeZoomedIn"/>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Common.Util.ViewModel.Sunburst2.SunburstHsbColorScheme">
+            <summary>
+            Sunburst color scheme based on HSB color space.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Common.Util.ViewModel.NotifyCollectionChangedCaster`2">
+            <summary>
+            This class is useful if you use some implementation of INotifyCollectionChanged like an <see cref="T:System.Collections.ObjectModel.ObservableCollection`1" />
+            and should expose <see cref="T:System.Collections.Generic.IEnumerable`1"/> where D inherits B. You cannot use IEnumerable.Cast" extension method because
+            it returns an object of class does not inherit <see cref="T:System.Collections.Specialized.INotifyCollectionChanged"/> and does not linked with source collection.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.Util.ViewModel.Sorting.Sorter`2.AddSortKey``1(`0,System.Func{`1,``0},System.ComponentModel.ListSortDirection)">
+            <remarks>
+            Be careful, may affect performance
+            </remarks>
+        </member>
+        <member name="T:JetBrains.Common.Util.ViewModel.ListChangingNotifier`1">
+            <summary>
+            This class is made for raising <see cref="E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged"/> event manualy. 
+            It is needed for sorting collection bound to TreeList control or some other changing of the collection.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.Util.ViewModel.WritableBitmapExtensions.SetPixel(System.Windows.Media.Imaging.WriteableBitmap,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Sets the pixel color into 32bit bitmap.
+            Bitmap must be locked before this operation
+            </summary>
+            <param name="bitmap"></param>
+            <param name="row"></param>
+            <param name="column"></param>
+            <param name="color"></param>
+        </member>
+    </members>
+</doc>

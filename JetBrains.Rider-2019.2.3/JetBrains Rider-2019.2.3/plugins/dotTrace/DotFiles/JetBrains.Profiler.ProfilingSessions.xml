@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Profiler.ProfilingSessions</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.Profiler.ProfilingSessions.Core.SelectedCoreContainer">
+            <summary>
+            Gets events from <see cref="T:JetBrains.Profiler.ProfilingSessions.Sessions.ConnectionsManager"/> and sets up the connection that is visible
+            in the operateable part of the controller. Filters events from all connections and broadcasts only
+            those related to the selected core.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Profiler.ProfilingSessions.Core.SelectedCoreContainer.AnyApiControl">
+            <summary>
+            If at least one connection is in the state "UNSUPPORTED" then we signal that
+            we are under external control (which means that the profiler is operated by API).
+            </summary>
+        </member>
+        <member name="M:JetBrains.Profiler.ProfilingSessions.Sessions.ConnectionsManager.GetCoreGuid(System.Int32)">
+            <summary>Return a process (+core) description by process Id. <para>NB: a process is not necessary alive.</para></summary>
+        </member>
+        <member name="M:JetBrains.Profiler.ProfilingSessions.Sessions.ISessionCollection.TryDeleteSession(JetBrains.Profiler.ProfilingSessions.Sessions.SessionData)">
+            <summary>
+            Delete specified session (it doesn't update Sessions list)
+            Can be called from any thread
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.Profiler.ProfilingSessions.Sessions.SessionCollectionEx.TryDeleteSessionAndUpdateSessionList(JetBrains.Profiler.ProfilingSessions.Sessions.ISessionCollection,JetBrains.Profiler.ProfilingSessions.Sessions.SessionData)">
+            <summary>
+            Deletes session and updates Session list (UI)
+            It has to be called only from main thread
+            </summary>
+            <param name="sessionCollection"></param>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JetBrains.Profiler.ProfilingSessions.Sessions.ProfileInstanceOptions">
+            <summary>
+            Thread safe
+            </summary>
+        </member>
+        <member name="T:JetBrains.Profiler.ProfilingSessions.Sessions.ApplicationKind">
+            <summary>
+            List oll types of profiling modes available for configuration from AppBrowser and
+            viewable from dT
+            </summary>
+        </member>
+        <member name="M:JetBrains.Profiler.ProfilingSessions.Sessions.ArtefactExtensions.GetApplicationName(System.String,JetBrains.Profiler.ProfilingSessions.Sessions.SessionData,System.String)">
+            <summary>
+            Set of heuristics for constructing representable process name when we deal with special launchers, testing environments, etc.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Profiler.ProfilingSessions.Sessions.ArtefactExtensions.ExtractLaunchedApplicationFromArguments(System.String,System.String)">
+            <summary>
+            Take rest of the string beyond "dotnet.exe" and try to interpret that as the valid filename.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Profiler.ProfilingSessions.Sessions.IArtefact.TryDelete">
+            <summary>
+            Deletes artifact (without updating ParentSession)
+            It's thread-safe, so it could be used in batch processing
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.Profiler.ProfilingSessions.Sessions.ArtifactEx.TryDeleteAndUpdateParentSession(JetBrains.Profiler.ProfilingSessions.Sessions.IArtefact)">
+            <summary>
+            Deletes artifact and updates parent ParentSession (UI)
+            It has to be called only on main thread
+            </summary>
+            <param name="artefact"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.Profiler.ProfilingSessions.Sessions.ISessionData.ContainsModuleFrom(System.Collections.Generic.IReadOnlySet{System.String})">
+            <summary>
+            Check if snapshots of this session contain at least one module name of moduleNames set.
+            Module name is often name of the file without extension 
+            </summary>
+            <param name="moduleNames"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.Profiler.ProfilingSessions.Sessions.SessionData.CreateParser">
+            <summary>
+            Do not save parser in fields and closures as it will lead to holding whole XML in memory and performance issues.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

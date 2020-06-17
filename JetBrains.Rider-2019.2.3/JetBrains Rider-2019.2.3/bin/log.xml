@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <!-- Distributed to end users! -->
+
+    <appender name="dialog" class="com.intellij.diagnostic.DialogAppender">
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+
+    <appender name="console_warn" class="org.apache.log4j.ConsoleAppender">
+        <param name="target" value="System.err" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss.SSS} | %-5p | %-30c{1} | %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="WARN" />
+        </filter>
+    </appender>
+
+    <appender name="console_info" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss.SSS} | %-5p | %-30c{1} | %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+        </filter>
+    </appender>
+
+    <appender name="console_all" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss.SSS} | %-5p | %-30c{1} | %m%n" />
+        </layout>
+    </appender>
+
+
+    <appender name="file_debug" class="org.apache.log4j.RollingFileAppender">
+        <param name="MaxFileSize" value="50Mb" />
+        <param name="MaxBackupIndex" value="6" />
+        <param name="file" value="$LOG_DIR$/frontend.log" />
+        <param name="append" value="false" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss.SSS} | %-5p | %-30c{1} | %m%n" />
+        </layout>
+    </appender>
+
+    <appender name="file_structured" class="org.apache.log4j.RollingFileAppender">
+        <param name="MaxFileSize" value="50Mb" />
+        <param name="MaxBackupIndex" value="6" />
+        <param name="file" value="$LOG_DIR$/frontend-structured.log" />
+        <param name="append" value="false" />
+        <param name="encoding" value="UTF-8" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss.SSS} | %-5p | %-30c{1} | %m%n" />
+        </layout>
+        <filter class="com.jetbrains.rdclient.diagnostics.StructuredLogFilter" />
+    </appender>
+
+    <appender name="file_debug_append" class="org.apache.log4j.RollingFileAppender">
+        <param name="MaxFileSize" value="50Mb" />
+        <param name="MaxBackupIndex" value="6" />
+        <param name="file" value="$LOG_DIR$/idea.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d | %-5p | %-30c{1} | %m%n" />
+        </layout>
+    </appender>
+
+    <appender name="file_protocol" class="org.apache.log4j.RollingFileAppender">
+        <param name="MaxFileSize" value="50Mb" />
+        <param name="MaxBackupIndex" value="6" />
+        <param name="file" value="$LOG_DIR$/frontend-protocol.log" />
+        <param name="append" value="false" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="\n%d{HH:mm:ss.SSS} | %c{1} | %m \n" />
+        </layout>
+    </appender>
+
+
+    <appender name="dbgview" class="com.jetbrains.rider.OutputDebugStringAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="| %-5p | %-30c{1} | %m%n" />
+        </layout>
+    </appender>
+
+    <category name="protocol" additivity="false">
+        <!-- Change value to 'TRACE' to enable protocol logging -->
+        <priority value="VERBOSE" />
+
+        <appender-ref ref="file_protocol" />
+        <!--<appender-ref ref="dbgview"/>-->
+    </category>
+
+    <category name="#com.jetbrains.rider">
+        <priority value="VERBOSE"/>
+    </category>
+
+    <root>
+        <priority value="INFO" />
+
+        <appender-ref ref="dialog" />
+
+        <appender-ref ref="file_debug" />
+        <appender-ref ref="file_structured" />
+        <appender-ref ref="file_debug_append" />
+        <!--appender-ref ref="dbgview"/-->
+    </root>
+</log4j:configuration>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.DotTrace.Ide.Rider.Activator</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.DotTrace.Ide.RiderActivator.BuildScript.DotTraceInRiderProduct">
+            <summary>
+            Adds a fake product which drives adding the referenced packages as a plugin for Rider.
+            </summary>
+        </member>
+    </members>
+</doc>

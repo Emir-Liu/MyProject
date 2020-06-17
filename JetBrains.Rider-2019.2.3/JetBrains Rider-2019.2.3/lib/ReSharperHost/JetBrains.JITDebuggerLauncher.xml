@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.JITDebuggerLauncher</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.JITDebuggerLauncher.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml
+            </summary>
+        </member>
+        <member name="F:JetBrains.JITDebuggerLauncher.MainWindow.myDebugInfoAddress">
+            <summary>
+            Address of JIT_DEBUG_INFO structure (in hex) allocated in target process's address space 
+            </summary>
+        </member>
+        <member name="F:JetBrains.JITDebuggerLauncher.MainWindow.myEventHandle">
+            <summary>
+            Event Handle to signal to continue target process
+            </summary>
+        </member>
+        <member name="F:JetBrains.JITDebuggerLauncher.MainWindow.myPid">
+            <summary>
+            Process ID of a target process
+            </summary>
+        </member>
+        <member name="T:JITDebuggerLauncher.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:JITDebuggerLauncher.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:JITDebuggerLauncher.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

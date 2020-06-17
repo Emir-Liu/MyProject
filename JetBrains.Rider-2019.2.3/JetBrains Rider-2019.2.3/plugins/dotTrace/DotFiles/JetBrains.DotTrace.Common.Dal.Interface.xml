@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.DotTrace.Common.Dal.Interface</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.DotTrace.Common.DalInterface.Cache.DotTraceCacheItemTypes">
+            <summary>
+            On each cache update take the (max value + 1) for new version
+            </summary>
+        </member>
+        <member name="M:JetBrains.DotTrace.Common.DalInterface.CallTree.Dfs.IDfsNodeBatchProcessor`2.ProcessDfsNodesBatch(JetBrains.Common.CallTreeStorage.Dfs.DfsNode{`0,`1}[],JetBrains.Common.CallTreeStorage.Dfs.NodePayload[],JetBrains.Common.SubsystemsManagement.Model.SubsystemData.SubsystemIndex[],System.Int32,System.Int32,`0)">
+            <summary>
+            Nodes in array must be traversed post-order.
+            </summary>
+            <param name="nodes"></param>
+            <param name="payloads"></param>
+            <param name="subsystems"></param>
+            <param name="start"></param>
+            <param name="count"></param>
+            <param name="rootNodeOffset"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.DotTrace.Common.DalInterface.CallTree.Dfs.Other.SkipBlocksOfSystemMethods`1.SkipBackward(`0)">
+            <summary>
+            If given offset is inside block with user methods - it is returned, otherwise (nearest left block with user methods)'s right offset is returned
+            </summary>
+            <param name="offset"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.DotTrace.Common.DalInterface.CallTree.Dfs.IBatchHeadersReader`2.ReadHeadersOffsetsDescending(`1,`0,System.Int32,`0[])">
+            <summary>
+            Must put elements at the end of the buffer if readCount &lt; count
+            </summary>
+            <param name="key"></param>
+            <param name="from">Biggest offset, including</param>
+            <param name="count"></param>
+            <param name="offsets"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.DotTrace.Common.DalInterface.CallTree.Dfs.IBatchReader`2.ReadBackwardOffsetsAscending(`0,System.Int32,`1[])">
+            <summary>
+            Must put elements at the end of the buffer if readCount &lt; count
+            </summary>
+            <param name="to">Biggest offset, including</param>
+            <param name="count"></param>
+            <param name="nodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.DotTrace.Common.DalInterface.CallTree.Dfs.IBatchReader`2.ReadForwardOffsetsAscending(`0,System.Int32,`1[])">
+            <summary>
+            Must put elements in the beggining of the buffer if readCount &lt; count
+            </summary>
+            <param name="from">Smallest offset, including</param>
+            <param name="count"></param>
+            <param name="nodes"></param>
+            <returns></returns>
+        </member>
+        <member name="F:JetBrains.DotTrace.Common.DalInterface.CallTree.Dfs.SubtractResult.IsValid">
+            <summary>
+            IsValid flag must be checked before using Diff value. It is introduce to support subtraction of dotTrace Performance call tree offsets from different call tree groups. Such offsets cannot be subtracted, so user function must fallback to reading data via batch readers to skip inner nodes.
+            </summary>
+        </member>
+    </members>
+</doc>

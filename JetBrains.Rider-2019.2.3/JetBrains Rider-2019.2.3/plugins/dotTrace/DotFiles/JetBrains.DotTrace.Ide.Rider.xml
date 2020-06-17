@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.DotTrace.Ide.Rider</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.DotTrace.Ide.Rider.ProfilingConfigurations.Root">
+            <summary>
+            Before checking in any changes to this tree, run tests from
+            JetBrains.dotTrace.ProfilingConfigurations.Tests
+            This will allow to validate tree printed to plain text. 
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Ide.Rider.ShellComponents.IRiderDataRuleProviderPerSnapshot">
+            NOTE(Korovin): This interface is necessary to prevent getting RiderDataRuleProvider instance while doing c.GetComponents
+        </member>
+        <member name="M:JetBrains.DotTrace.Ide.Rider.SolutionComponents.Local.Controller.RiderDotTraceStartProfiling.IsNetCoreApp(System.String,JetBrains.Rider.Model.ProjectProperties)">
+            <summary>
+            This duplicates frontend logic in DotNetRuntime.getSuitableRuntime method now.
+            //TODO(Korovin): We need to discuss API changes to put this information into frontend profiling extensions.
+            </summary>
+            <param name="exePath"></param>
+            <param name="projectProperties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.DotTrace.Ide.Rider.SolutionComponents.Local.ProfilingConfigurations.RiderProfileConfigurations.RdSwap``1(JetBrains.DataFlow.ListEvents{``0},System.Int32,System.Int32)">
+            <summary>
+            You can't have two copies of same protocol entity in the list at the same time
+            </summary>
+            <param name="list"></param>
+            <param name="oldIndex"></param>
+            <param name="newIndex"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+    </members>
+</doc>

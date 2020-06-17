@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Common.Remotable</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.Common.Remotable.IAgentService.CheckVersions(JetBrains.Common.Remotable.VersionData4,JetBrains.Common.Remotable.VersionData4)">
+            <summary>
+              DO NOT CHANGE THE SIGNATURE OF THIS METHOD!!!
+              You must call this method first to detect, that the interface and .NET Framework are compatible with client!
+            </summary>
+            <param name="requireAgentVersion">Expected agent version</param>
+            <param name="requireFrameworkVersion">Expected service .NET Framework version</param>
+        </member>
+    </members>
+</doc>

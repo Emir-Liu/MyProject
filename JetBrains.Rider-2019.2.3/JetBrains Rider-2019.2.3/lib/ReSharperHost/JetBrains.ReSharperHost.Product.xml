@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharperHost.Product</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ReSharperHost.Product.Installer.RiderPack.OwnershipSet">
+            <summary>
+            Who owns the nupkg (list of products), equatable for making a map.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharperHost.Product.Installer.RiderPack.OwnershipSet.#ctor(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Host.Install.RiderBundledProductArtifact})">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.ReSharperHost.Product.Installer.RiderPack.OwnershipSet.Equals(JetBrains.ReSharperHost.Product.Installer.RiderPack.OwnershipSet)">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.ReSharperHost.Product.Installer.RiderPack.OwnershipSet.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.ReSharperHost.Product.Installer.RiderPack.OwnershipSet.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.ReSharperHost.Product.Installer.RiderPack.OwnershipSet.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.ReSharperHost.Product.Installer.RiderPack.OwnershipSet.System#IComparable{JetBrains#ReSharperHost#Product#Installer#RiderPack#OwnershipSet}#CompareTo(JetBrains.ReSharperHost.Product.Installer.RiderPack.OwnershipSet)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

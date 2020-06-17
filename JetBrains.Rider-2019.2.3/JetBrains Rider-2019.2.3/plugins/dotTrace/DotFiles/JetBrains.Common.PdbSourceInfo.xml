@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Common.PdbSourceInfo</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.SourceView.PdbSourceInfo.InvalidRange">
+            <summary>
+            Special-purpose class which describes illegal source code range.
+            Responds with "InvalidOperationException" for all meaningful methods except
+            for "IsValid" and "FilePath" since (!) even illegal offsets can point to the
+            valid files (this occures often with generated source files in WPF and
+            silverlight).
+            </summary>
+        </member>
+        <member name="T:JetBrains.SourceView.PdbSourceInfo.SourceCodeRangeFull">
+            <summary>
+            General-purpose source code range, with no memory optimization
+            for storing values for lines and columns.
+            </summary>
+        </member>
+    </members>
+</doc>

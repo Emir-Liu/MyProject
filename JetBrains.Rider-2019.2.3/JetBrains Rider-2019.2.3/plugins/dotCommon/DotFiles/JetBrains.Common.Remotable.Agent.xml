@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Common.Remotable.Agent</name>
+    </assembly>
+    <members>
+        <member name="F:JetBrains.Common.Remotable.Agent.BaseAgentService.ourAgentVersion">
+            <summary>
+              Have to be updated after appending new methods, please don't forget to update ServiceUtil.ourAgentVersion if need
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.Remotable.Agent.Impl.EnvironmentUtil.CacheDir">
+            <summary>
+              Directory with access only from current user!
+            </summary>
+        </member>
+    </members>
+</doc>

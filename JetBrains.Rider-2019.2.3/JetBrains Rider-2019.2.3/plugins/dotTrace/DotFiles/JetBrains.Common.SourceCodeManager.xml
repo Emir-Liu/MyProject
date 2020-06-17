@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Common.SourceCodeManager</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.SourceView.SourceCodeManager.ReadyToDownloadSourcePage.UpdatePageStatus(JetBrains.SourceView.SourceModel.FolderMapping.GetSourceResult)">
+            <summary>
+            Change tab icon
+            </summary>
+            <param name="workResult"></param>
+        </member>
+        <member name="M:JetBrains.SourceView.SourceCodeManager.ReadyToDownloadSourcePage.UpdatePageStatus(JetBrains.SourceView.SourceModel.SourceViewManager.DownloadTroubleState)">
+            <summary>
+            Change tab icon
+            </summary>
+            <param name="downloadState"></param>
+        </member>
+        <member name="M:JetBrains.SourceView.SourceCodeManager.SourceTabController.#ctor(JetBrains.Lifetimes.Lifetime,JetBrains.SourceView.SourceCodeManager.ISourceTabView,JetBrains.DataFlow.IProperty{System.Boolean},JetBrains.DataFlow.IProperty{System.Boolean},JetBrains.SourceView.SourceCodeManager.ISourcePageBuilder,JetBrains.SourceView.SourceModel.SourceViewManager.ISourcePageController,System.Action)">
+            <summary>
+            
+            </summary>
+            <param name="lifetime"></param>
+            <param name="view"></param>
+            <param name="downloadAvailable"></param>
+            <param name="decompileAvailable"></param>
+            <param name="sourcePageBuilder"></param>
+            <param name="sourcePageController"></param>
+            <param name="refreshSourceInfoAction">This action may be called from non-ui thread</param>
+        </member>
+    </members>
+</doc>

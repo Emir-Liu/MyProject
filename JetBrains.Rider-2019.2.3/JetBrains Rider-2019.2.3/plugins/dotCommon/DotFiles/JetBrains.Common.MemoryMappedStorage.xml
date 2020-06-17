@@ -1,0 +1,379 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Common.MemoryMappedStorage</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.Common.MemoryMappedStorageV10.Cache.Impl.CacheStorage`1.CreateSequentialOnIntermediateLifetime(JetBrains.Lifetimes.Lifetime)">
+            <summary>
+              Intermediate lifetime is required to preserve the order of disposition.
+              In this class serves to lock current storage files until cache storage manager do the cleanup
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorageV10.Impl.SectionOverflowArithmetics.GetIndexAndOffset(System.Int64)">
+            <summary>
+            Performance critical
+            </summary>
+            <param name="offset"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorageV10.IStructuredSectionMemory`1.SetReadyTill(System.Int32)">
+            <summary>
+            Sets ready size of the section up to the index of the element (including this element)
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorageV10.IStructuredSectionMemory`1.ExpandToIndex(System.Int32)">
+            <summary>
+            Index included.
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="P:JetBrains.Common.MemoryMappedStorageV10.IReadonlySectionMemory.Size">
+            <summary>
+            Size of section memory. Counted in elements
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.MemoryMappedStorageV10.IReadonlySectionMemory.ReadySize">
+            <summary>
+            Readable size of section memory. Counted in elements
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.MemoryMappedStorageV10.IReadonlySectionMemory.ElementSize">
+            <summary>
+            Size of single element
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.MemoryMappedStorageV10.IReadonlySectionMemory.IsFixedSized">
+            <summary>
+            Flag that determines whether section may grow further or not
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorageV10.IReadonlySectionMemory.TakePage(System.UInt32,System.UInt32@,System.UInt32@)">
+            <summary>
+            Maps the whole page that matches the offset
+            </summary>
+            <param name="offset">Requested offset</param>
+            <param name="takenOffset">Offset of the beginning of the page</param>
+            <param name="takenSize">Page size</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorageV10.ISectionMemory.Allocate(System.UInt32,System.UInt32@)">
+            <summary>
+            Allocates memory block of exact size <see cref="!:size"/> at the current end of the section
+            If free space at the current page is less than <see cref="!:size"/>, block will be allocated at the beginning of the next page
+            If <see cref="!:size"/> is greater than page size, exception will be thrown
+            </summary>
+            <param name="size">Size of the requested memory block</param>
+            <param name="allocatedOffset">Actual offset of allocated block</param>
+            <returns>Pointer to mapped memory</returns>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorageV10.ISectionMemory.AllocateMax(System.UInt32,System.UInt32@,System.UInt32@)">
+            <summary>
+            Allocates memory block of maximum size <see cref="!:size"/> at the current end of the section
+            </summary>
+            <param name="size">Maximum size of requested memory block</param>
+            <param name="allocatedSize">Size of actually allocated block. Can be less than <see cref="!:size"/> if end of page was reached</param>
+            <param name="allocatedOffset">Start offset of actually allocated memory block</param>
+            <returns>Pointer to mapped memory</returns>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorageV10.ISectionMemory.TakeOrAllocateMax(System.UInt32,System.UInt32,System.UInt32@,System.UInt32@)">
+            <summary>
+            Allocates or, if already allocated, maps memory block of maximum size <see cref="!:size"/> beginning from <see cref="!:offset"/>.
+            If <see cref="!:offset"/> is greater than current section size, it will be expanded and gap will be filled with zeroes.
+            </summary>
+            <param name="offset">Start offset of the requested memory block</param>
+            <param name="size">Maximum size of the requested memory block</param>
+            <param name="allocatedOffset">Start offset of actually mapped memory block. Can be greater than <see cref="!:offset"/> because of alignment.</param>
+            <param name="allocatedSize">Size of actually mapped memory block. Can be less than <see cref="!:size"/> if requested block crosses page boundary.</param>
+            <returns>Pointer to mapped memory</returns>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorageV10.ISectionMemory.SetReadySize(System.UInt32)">
+            <summary>
+            Sets <see cref="P:JetBrains.Common.MemoryMappedStorageV10.IReadonlySectionMemory.ReadySize"/>
+            </summary>
+            <param name="value">New value</param>
+            <returns>True if new value was greater than previous one</returns>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorageV10.ISectionMemory.FixSize">
+            <summary>
+            Finalizes section so that no further allocation operations are permitted.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.IMemoryMappedView.Flush(System.Boolean)">
+            <summary>
+            Flushes this mapped region to disk
+            </summary>
+            <param name="async">If true waits until view is flushed to disk</param>
+        </member>
+        <member name="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedSectionData.ReadyPosition">
+            <summary>
+            Position in elemetns of the first element after last commited data.
+            Data before this position can be read
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedSectionData.MapView(JetBrains.Lifetimes.Lifetime,System.Int64,System.Int64)">
+            <summary>
+            Maps region into memory for reading
+            </summary>
+            <param name="lifetime"></param>
+            <param name="position">Starting position in elements that should be inside mapped region</param>
+            <param name="maxSize">Maximum size in elements of mapped region but no lower than page size</param>
+            <returns>Mapped region for reading</returns>
+        </member>
+        <member name="P:JetBrains.Common.MemoryMappedStorage.IMemoryMappedSectionData.FreePosition">
+            <summary>
+            Position in elements of the first element after last allocated space for writing.
+            Value is changed when <see cref="M:JetBrains.Common.MemoryMappedStorage.IMemoryMappedSectionData.TrySetFreePosition(System.Int64@,System.Int32)"/> called 
+            Data before this offset and after <see cref="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedSectionData.ReadyPosition"/> can be written
+            Always greather or equal to <see cref="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedSectionData.ReadyPosition"/> value
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.IMemoryMappedSectionData.TrySetFreePosition(System.Int64@,System.Int32)">
+            <summary>
+            Tries to update free offset
+            Can fail spuriously, even if free offset equlas to expected
+            </summary>
+            <param name="expectedFreePosition">Position expected to be found in <see cref="P:JetBrains.Common.MemoryMappedStorage.IMemoryMappedSectionData.FreePosition"/></param>
+            <param name="delta">The value of free offset is requested to be increased for</param>
+            <returns>true if successfull otherwise false</returns>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.IMemoryMappedSectionData.SetReadyPosition(System.Int64)">
+            <summary>
+            Commits segments data before readyPosition
+            Changes <see cref="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedSectionData.ReadyPosition"/> for enable reading data   
+            </summary>
+            <param name="readyPosition">
+            Position in elements of the first element after last commited data, <see cref="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedSectionData.ReadyPosition"/>
+            Must be greather or equal then current <see cref="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedSectionData.ReadyPosition"/> value
+            Must be lower or equal then current <see cref="P:JetBrains.Common.MemoryMappedStorage.IMemoryMappedSectionData.FreePosition"/> value 
+            </param>
+            <returns>Previous <see cref="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedSectionData.ReadyPosition"/> value</returns>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.IMemoryMappedSectionData.MapView(JetBrains.Lifetimes.Lifetime,System.Int64,System.Int64)">
+            <summary>
+            Map region into memory for reading and writing
+            </summary>
+            <param name="lifetime"></param>
+            <param name="position">Starting position in elements that should be inside mapped region</param>
+            <param name="maxSize">Maximum size in elements of mapped region but no lower than page size</param>
+            <returns>Mapped region for reading and writing</returns>
+        </member>
+        <member name="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedHeader.DataPtr">
+            <summary>
+            Pointer to the header data, not null
+            It´s a native pointer to a memory mapped header
+            Writing on this pointer when memory mapped storage is opened in reaonly mode cause access violation 
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedHeader.Size">
+            <summary>
+            Header size in bytes
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.IMemoryMappedSection.CreateHeader(JetBrains.Lifetimes.Lifetime,System.Int32)">
+            <summary>
+            Creates sections header or fails if header already exists 
+            </summary>
+            <param name="lifetime"></param>
+            <param name="headerSize">header size in bytes</param>
+            <returns>Created header</returns>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.IMemoryMappedSection.LoadHeader(JetBrains.Lifetimes.Lifetime)">
+            <summary>
+            Loads section header for reading and writing
+            </summary>
+            <returns>Loaded header or null if section doesn't contain header</returns>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.IMemoryMappedSection.CreateSectionData(JetBrains.Lifetimes.Lifetime,System.Int16,System.Byte,System.Int32)">
+            <summary>
+            Creates section data description or fails if description already exists 
+            </summary>
+            <param name="lifetime"></param>
+            <param name="elementSize">Size of data element in bytes <see cref="!:IReadonlyMemoryMappedSectionData.ElementSize"/></param>
+            <param name="segmentAlignmentBit">Alignment of every data segment of the section; in bit shifts, <see cref="!:IReadonlyMemoryMappedSectionData.SegmentAlignmentBit"/></param>
+            <param name="preferredRegionPages">Preferred number of pages in the region, 0 if fixed size, <see cref="!:IReadonlyMemoryMappedSectionData.PreferredRegionPages"/></param>
+            <returns>Created section data description</returns>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.IMemoryMappedSection.LoadSectionData(JetBrains.Lifetimes.Lifetime)">
+            <summary>
+            Loads section data description for reading and writing section data.
+            </summary>
+            <returns>Loaded section data description or null if section doesn't contain data</returns>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedSection.LoadHeader(JetBrains.Lifetimes.Lifetime)">
+            <summary>
+            Loads section header for reading
+            </summary>
+            <returns>Loaded header or null if section doesn't contain header</returns>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedSection.LoadSectionData(JetBrains.Lifetimes.Lifetime)">
+            <summary>
+            Loads section data description for reading section data.
+            </summary>
+            <returns>Loaded section data description or null if section doesn't contain data</returns>
+        </member>
+        <member name="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedSectionDataConfig.ElementSize">
+            <summary>
+            Element size in bytes, grether than zero
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedSectionDataConfig.SegmentAlignmentBit">
+            <summary>
+            Alignment of every data segment of the section; in bit shifts 
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedSectionDataConfig.PreferredRegionPages">
+            <summary>
+            Preferred number of pages in the region
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedView.MappedPointer">
+            <summary>
+            Native pointer to the native memory address of the mapped memory region.
+            Writing on this pointer when memory mapped storage is opened in reaonly mode cause access violation 
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedView.Position">
+            <summary>
+            StartPosition in elements of mapped region.
+            First element in the view has a <see cref="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedView.Position"/> position in section data 
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedView.Size">
+            <summary>
+            Size in elements of the mapped region
+            </summary>
+        </member>
+        <member name="T:JetBrains.Common.MemoryMappedStorage.IReadonlySectionsContainer">
+            <summary>
+            Sections collection.
+            Doesn't inherit IEnumerable bacause returns enumerator with custom behaviour 
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.IReadonlySectionsContainer.LoadSections(JetBrains.Lifetimes.Lifetime)">
+            <summary>
+            Loads sections.
+            </summary>
+            <returns>Sections enumerator</returns>
+        </member>
+        <member name="T:JetBrains.Common.MemoryMappedStorage.IReadonlySectionsEnumerator">
+            <summary>
+              Sections list enumerator
+              It is not inherited from IEnumerator because:
+              can return elements after the last element if appeared
+              returns elements that must be disposed
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.MemoryMappedStorage.IReadonlySectionsEnumerator.Current">
+            <summary>
+            Valid only when <see cref="M:JetBrains.Common.MemoryMappedStorage.IReadonlySectionsEnumerator.MoveNext"/> returns true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.IReadonlySectionsEnumerator.MoveNext">
+            <summary>
+            Enumerate next section.
+            Can be used to poll new sections appearance. Returns false if no more section available now and 
+            can be called after returning false and can returns new section if appeared in this case
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.IReadonlySectionsEnumeratorCurrent.CreateSection(JetBrains.Lifetimes.Lifetime)">
+            <summary>
+              Create interface for the current section. Can be called only once!!!
+            </summary>
+        </member>
+        <member name="T:JetBrains.Common.MemoryMappedStorage.ISectionsEnumerator">
+            <inheritdoc />
+            <summary>
+            Sections list enumerator
+            It is not inherited from IEnumerator because:
+              can return elements after was positioned after the last element if that appeared
+              returns elements that have to be disposed 
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.MemoryMappedStorage.ISectionsEnumerator.Current">
+            <summary>
+            Valid only when <see cref="M:JetBrains.Common.MemoryMappedStorage.IReadonlySectionsEnumerator.MoveNext"/> returns true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.ISectionsContainer.CreateSection(JetBrains.Lifetimes.Lifetime,System.Int32,System.Int32)">
+            <summary>
+            Creates new section and appends it to the end of the sections list
+            </summary>
+            <param name="lifetime"></param>
+            <param name="type">section type</param>
+            <param name="version">section version</param>
+            <returns>created section</returns>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.ISectionsContainer.LoadSections(JetBrains.Lifetimes.Lifetime)">
+            <summary>
+            Loads sections.
+            </summary>
+            <returns>Sections enumerator</returns>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.ISectionsEnumeratorCurrent.CreateSection(JetBrains.Lifetimes.Lifetime)">
+            <summary>
+              Create interface for the current section. Can be called only once!!!
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.MemoryMappedStorageFactory.Create(JetBrains.Lifetimes.Lifetime,JetBrains.Util.FileSystemPath,System.Int64)">
+            <summary>
+            Creates and initializes empty memory mapped storage
+            </summary>
+            <param name="lifetime"></param>
+            <param name="storagePath">Path to the file where the storage located </param>
+            <param name="startPosition">Storage begin position in bytes </param>
+            <returns>storage</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.MemoryMappedStorageFactory.Create(JetBrains.Lifetimes.Lifetime,Microsoft.Win32.SafeHandles.SafeFileHandle,System.Int64)">
+            <summary>
+            Creates and initializes empty memory mapped storage
+            </summary>
+            <param name="lifetime"></param>
+            <param name="fileHandle">Handle to the file where the storage located</param>
+            <param name="startPosition">Storage begin position in bytes </param>
+            <returns>storage</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.MemoryMappedStorageFactory.OpenRead(JetBrains.Lifetimes.Lifetime,JetBrains.Util.FileSystemPath,System.Int64)">
+            <summary>
+            Opens existing storage only for reading
+            </summary>
+            <param name="lifetime"></param>
+            <param name="storagePath">Path to the file where the storage located </param>
+            <param name="startPosition">Storage begin position in bytes </param>
+            <returns>readonly storage</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.MemoryMappedStorageFactory.OpenRead(JetBrains.Lifetimes.Lifetime,Microsoft.Win32.SafeHandles.SafeFileHandle,System.Int64)">
+            <summary>
+            Opens existing storage only for reading
+            </summary>
+            <param name="lifetime"></param>
+            <param name="fileHandle">Handle to the file where the storage located</param>
+            <param name="startPosition">Storage begin position in bytes </param>
+            <returns>readonly storage</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.MemoryMappedStorageFactory.OpenReadWrite(JetBrains.Lifetimes.Lifetime,JetBrains.Util.FileSystemPath,System.Int64)">
+            <summary>
+            Opens existing storage for reading and writing
+            </summary>
+            <param name="lifetime"></param>
+            <param name="storagePath">Path to the file where the storage located </param>
+            <param name="startPosition">Storage begin position in bytes</param>
+            <returns>storage</returns>
+        </member>
+        <member name="M:JetBrains.Common.MemoryMappedStorage.MemoryMappedStorageFactory.OpenReadWrite(JetBrains.Lifetimes.Lifetime,Microsoft.Win32.SafeHandles.SafeFileHandle,System.Int64)">
+            <summary>
+            Opens existing storage for reading and writing
+            </summary>
+            <param name="lifetime"></param>
+            <param name="fileHandle">Handle to the file where the storage located </param>
+            <param name="startPosition">Storage begin position in bytes</param>
+            <returns>storage</returns>
+        </member>
+    </members>
+</doc>

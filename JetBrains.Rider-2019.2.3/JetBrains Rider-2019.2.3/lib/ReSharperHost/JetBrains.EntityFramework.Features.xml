@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.EntityFramework.Features</name>
+    </assembly>
+    <members>
+        <member name="P:JetBrains.EntityFramework.Features.Commands.AddMigrationCommand.RootNamespace">
+            <summary>
+            Root namespace of the migrations project. Will be used for migrations that are written.
+            </summary>
+        </member>
+        <member name="P:JetBrains.EntityFramework.Features.Commands.DatabaseCommand.MigrationsAssemblyName">
+            <summary>
+            Filename of the assembly containing migrations.
+            </summary>
+        </member>
+        <member name="P:JetBrains.EntityFramework.Features.Commands.DatabaseCommand.ContextAssemblyName">
+            <summary>
+            Filename of the assembly containing database context.
+            </summary>
+        </member>
+        <member name="P:JetBrains.EntityFramework.Features.Commands.DatabaseCommand.WorkingDirectory">
+            <summary>
+            Directory containing compiled assemblies with required files.
+            </summary>
+        </member>
+        <member name="P:JetBrains.EntityFramework.Features.Commands.DatabaseCommand.ConfigurationFile">
+            <summary>
+            e.g. App.config file.
+            </summary>
+        </member>
+        <member name="P:JetBrains.EntityFramework.Features.Commands.DatabaseCommand.DataDirectory">
+            <summary>
+            e.g. App_data for Web projects. 
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.DotTrace.Features</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.DotTrace.Features.CallTree.CallTreeBuilder.CallTreeService`2.CheckIfUserChildrenHasDescendantsWithSpecifiedFuid(JetBrains.Common.Util.Metadata.FunctionUIDm,JetBrains.DotTrace.DataStructures.Metadata.ICallTreeReaderWithIndexes{`0},JetBrains.DotTrace.DataStructures.Metadata.AccessData{`0})">
+            <summary>
+            Don't take into account visibilty. Cf. <seealso cref="M:JetBrains.DotTrace.Features.CallTree.CallTreeBuilder.CallTreeService`2.CheckIfUserChildrenHasVisibleDescendantsWithSpecifiedFuid(JetBrains.Common.Util.Metadata.FunctionUIDm,JetBrains.DotTrace.DataStructures.Metadata.ICallTreeReaderWithIndexes{`0},JetBrains.DotTrace.DataStructures.Metadata.AccessData{`0})"/>
+            </summary>
+        </member>
+        <member name="M:JetBrains.DotTrace.Features.CallTree.CallTreeBuilder.CallTreeService`2.CheckIfUserChildrenHasVisibleDescendantsWithSpecifiedFuid(JetBrains.Common.Util.Metadata.FunctionUIDm,JetBrains.DotTrace.DataStructures.Metadata.ICallTreeReaderWithIndexes{`0},JetBrains.DotTrace.DataStructures.Metadata.AccessData{`0})">
+            <summary>
+            Take into account visibilty. Cf. <seealso cref="M:JetBrains.DotTrace.Features.CallTree.CallTreeBuilder.CallTreeService`2.CheckIfUserChildrenHasDescendantsWithSpecifiedFuid(JetBrains.Common.Util.Metadata.FunctionUIDm,JetBrains.DotTrace.DataStructures.Metadata.ICallTreeReaderWithIndexes{`0},JetBrains.DotTrace.DataStructures.Metadata.AccessData{`0})"/>
+            </summary>
+        </member>
+        <member name="M:JetBrains.DotTrace.Features.CallTree.CallTreePathHelpers.Normalize(JetBrains.DotTrace.DataStructures.CallTree.CallTreePath)">
+            <summary>
+            This method is used to propagate PayloadMode restrictions in call tree path down to logical root.
+            If some method in call tree path has PayloadMode OwnPlusSystem, this mode can be shifted to the logical root.
+            This allows to keep simple nodes in the middle of call tree path, and display warning label "Some children are excluded" considering only logical root node
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JetBrains.DotTrace.Features.CallTree.Dfs.IDfsAlgorithmsProviderContainer`1">
+            <summary>
+            The only purpose of this interface to make dependency injection work with generic type with 2 parameters. Do not use it except for constructor parameter
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Features.CallTree.Other.CallTreeRequestProcessor`1">
+            <summary>
+            Wrapper type user as a type alias with reduced number of type paramters
+            </summary>
+            <typeparam name="TPayload"></typeparam>
+        </member>
+        <member name="F:JetBrains.DotTrace.Features.CallTree.Settings.MethodListPresentationSettings.AutoShowSystemFunctions">
+            <summary>
+            Flag indicating that if ShowSystemFunctions is false, but there is only one user functoin in top functions list, system functions should be displayed anyway
+            </summary>
+        </member>
+        <member name="M:JetBrains.DotTrace.Features.NamespaceTree.NamespaceTreeNodePresentationHelper.BuildItemsPresentation(JetBrains.Common.Util.SignatureTree.IAdvancedMethodInfoProvider,JetBrains.Common.Util.SignatureTree.INamespaceTreeNode[],JetBrains.Common.Util.SignatureTree.INamespaceTreeNode[],JetBrains.DataFlow.Property{System.Boolean},JetBrains.Text.IdentifierMatcher)">
+            <summary>
+            
+            </summary>
+            <param name="infoProvider"></param>
+            <param name="historyItems"></param>
+            <param name="treeItems"></param>
+            <param name="isCanceledAction"></param>
+            <param name="matcher">If null is passed items will not be containing highlighted rich text parts (used for Rider)</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.DotTrace.Features.Processing.Timeline.Events.ManifestBased.Providers.ProfilerSessionDataProvider.EventProfilerSessionDataListener.Handle(JetBrains.Timeline.EventLog.Converter.Events.EventData{JetBrains.Timeline.EventLog.Converter.Events.ManifestBased.ProfilerSessionDataProvider.EventDataMainThread})">
+            <summary>
+            Event handlers
+            </summary>
+            <param name="eventData"></param>
+        </member>
+        <member name="P:JetBrains.DotTrace.Features.Processing.Timeline.Events.ManifestBased.Providers.ProfilerSessionDataProvider.EventProfilerSessionDataListener.MainThread">
+            <summary>
+            Properties
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Features.Processing.Timeline.Layers.CloneSameDetailsLayer`1">
+            <summary>
+            This layer is necessary to split same IEventDetails object instance in two different events. 
+            It can be crucial for rewriting details pipelines, when we don't want to fix many times one IEventDetails instance
+            in different events, discarding previous changes.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:JetBrains.DotTrace.Features.Processing.Timeline.Layers.EventSourceAwaiter`1">
+            <summary>
+            Suspends events stream from source layer until particular tick
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:JetBrains.DotTrace.Features.SnapshotComponents.Local.Common.Metadada.MethodPrinter.AppendSignature(JetBrains.Common.Util.Union.Union{System.String,JetBrains.Common.Util.FormattedText.FormattedTextBuilder},System.String)">
+            <summary>
+            Keep memory traffic at minimum. Hot path function.
+            </summary>
+            <param name="fullName"></param>
+            <param name="metadataCacheSignature"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JetBrains.DotTrace.Features.SnapshotComponents.Local.Timeline.Viewports.TimelineSharedViewportRangesComponent">
+            <summary>
+            This class is used to share Visible and Total ranges between viewports in VS.
+            First one is used to summary and second for threads toolwindows.
+            </summary>
+        </member>
+        <member name="M:JetBrains.DotTrace.Features.SnapshotSelector.Selectors.DalAdapters.ComparisonFuidsMatcherCtor.ConstructShortSignature(JetBrains.DotTrace.DataStructures.Other.CallTreeNavigationInfo)">
+            <summary>
+            Construct a shorten version of the function signature, using only the short name of the assembly, without
+            its version and public token.
+            </summary>
+            <param name="navInfo"></param>
+            <returns>Signature representation</returns>
+        </member>
+        <member name="M:JetBrains.DotTrace.Features.SnapshotSelector.Selectors.DalAdapters.ComparisonFuidsMatcherCtor.ConstructFullAsmSignature(JetBrains.DotTrace.DataStructures.Other.CallTreeNavigationInfo)">
+            <summary>
+            Construct a complete version of the function signature, using the full name of the assembly with
+            its version and public token.
+            </summary>
+            <param name="navInfo"></param>
+            <returns>Signature representation</returns>
+        </member>
+        <member name="P:JetBrains.DotTrace.Features.Subsystems.ISubsystemSettingsProvider.CurrentProfileAndUpdates">
+            <summary>
+            Provider fires when active profile or some user subsystem settings were changed
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Features.SystemMethods.IFunctionSystemness">
+            <summary>
+            FunctionUIDs are stored without shift. Call <see cref="M:JetBrains.Common.Util.Metadata.FunctionUID.IgnoreShift"/> before accessing systemness storage by key
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.Features.Timeline.Filtration.InstantiatedFilters.PayloadItemsListener`1">
+            <summary>
+            Class used as alias to shorten template syntax for EnumerationListener
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:JetBrains.DotTrace.Features.Timeline.Filtration.Processing.ITimeFilter.NextAcceptanceTick">
+            <summary>
+            Next tick defines the longest interval from current tick, where all of the following conditions are true:
+            1. Filter acceptance is not changed (AcceptsCurrentRange is constant) 
+            2. Listener activity is not changsd (ListensToCurrentRange is constant)
+            3. If filter has own payload, then CurrentRangePayloadDensity is constant
+            </summary>
+        </member>
+        <member name="M:JetBrains.DotTrace.Features.Timeline.Filtration.Processing.ITimeFilter.Accept(System.UInt64,System.Double)">
+            <summary>
+            Convention for callee: (tick &lt;= NextTick). 
+            Conventions for implementator (before call ===> after call): 
+            (tick &lt; NextTick) ===> NextTick doesn't change. 
+            (tick == NextTick) ===> (NextTick > tick)
+            2. Tick can't be greater than NextTick
+            </summary>
+            <param name="tick"></param>
+            <param name="payloadDensity"></param>
+        </member>
+        <member name="M:JetBrains.DotTrace.Features.Timeline.Filtration.Processing.ITimeFilter.Skip(System.UInt64)">
+            <summary>
+            Conventions for implementator: 
+            (tick &lt; NextTick) ===> NextTick doesn't change. 
+            (tick == NextTick) ===> (NextTick > tick)
+            </summary>
+            <param name="tick"></param>
+        </member>
+        <member name="P:JetBrains.DotTrace.Features.TopMethods.ITopMethodsModel.MethodsListModel">
+            <summary>
+            This model gets filled only is ITopMethodsModel.IsActive is set to true.
+            IsActive often binds to visibility of Top Methods control
+            </summary>
+        </member>
+        <member name="M:JetBrains.DotTrace.Features.Util.ProgressAndTitleModelEx.CreateProgressModel(JetBrains.Common.Util.DataPipes.IDataPipeNode,System.Nullable{System.TimeSpan})">
+            <summary>
+            
+            </summary>
+            <param name="provider"></param>
+            <param name="deferUpdateTime">If null is passed - default defer update time is set, which is 1 second</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

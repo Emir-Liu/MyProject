@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Common.Timeline.Framework</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.Common.Timeline.Framework.Charts.ViewModel.ChartTimeSplitter.Average(System.Double[],System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            calculate average
+            </summary>
+            <param name="inputArray"></param>
+            <param name="startIndex"></param>
+            <param name="size"></param>
+            <param name="cycle"> shows if array is cycled</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.Common.Timeline.Framework.Charts.ViewModel.ChartTimeSplitter.MakeEdgeHist(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            cluster found edges
+            </summary>
+            <param name="inputList">list of unclustered edges</param>
+            <returns>value of step to cluster edges</returns>
+        </member>
+        <member name="M:JetBrains.Common.Timeline.Framework.Charts.ViewModel.ChartTimeSplitter.GetSplitters(System.Collections.Generic.IEnumerable{System.Double},System.Int32)">
+            <summary>
+            return edges
+            </summary>
+            <param name="inputList"></param>
+            <param name="inputSize"></param>
+            <returns></returns>
+        </member>
+        <member name="F:JetBrains.Common.Timeline.Framework.Charts.ViewModel.PixelChartViewDataCalculator.IntegrationWindowScreenSize">
+            <summary>
+            This parameter is used for smoothing chart blocks.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Common.Timeline.Framework.Charts.ViewModel.PixelChartViewDataCalculator.PreserveLengthSize">
+            <summary>
+            This parameter is used to preserve screen length for small chart elements (blocks or events) during zooming.
+            Without this adjustment, screen length of small elements may alternate between neighbour values during zooming (for example, just from 2 pixels to 3 and back), 
+            that is unpleasant visual effect
+            </summary>
+        </member>
+        <member name="T:JetBrains.Common.Timeline.Framework.MouseTracker">
+            <summary>
+            Tracks current mouse position
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.RealtimeChart.DataModel.RealtimeSnapshotController.RemoveSnapshotKey(System.Object)">
+            <summary>
+            Remove id from internal structure
+            </summary>
+            <param name="id"></param>
+            <returns>snapshot index in list</returns>
+        </member>
+    </members>
+</doc>

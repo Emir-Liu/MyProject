@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.dotCover.Workspace</name>
+    </assembly>
+    <members>
+        <member name="P:JetBrains.dotCover.Workspace.Contract.CoverageTreeQuickSearch.QuickSearchResult.MatchingNodes">
+            <summary>
+            Ids for nodes which match quick search filter
+            </summary>
+        </member>
+        <member name="P:JetBrains.dotCover.Workspace.Contract.CoverageTreeQuickSearch.QuickSearchResult.ParentIds">
+            <summary>
+            Ids for nodes which contain quick search matching children
+            </summary>
+        </member>
+        <member name="T:JetBrains.dotCover.Workspace.Impl.CoverageTree.Model.Interface.IRawMetadataBasedCoverageTreeTraverser">
+            <summary>
+            Raw (without additional processing of type members) metadata-based coverage tree traverser.
+            Construct transient coverage tree on demand, each time from the scratch.
+            </summary>
+        </member>
+        <member name="T:JetBrains.dotCover.Workspace.Impl.Reporting.Html.FileExistanceAnalyzer">
+            <summary>
+            Checking for file existance takes about 10ms.
+            In ReSharper snapshot we have info about 15000 files.
+            This means that total time consumption for this operation is about 2 minutes.
+            
+            This class is introduced to minimize number of checks where possible (e.g. if source files are unavailable)
+            </summary>
+        </member>
+    </members>
+</doc>

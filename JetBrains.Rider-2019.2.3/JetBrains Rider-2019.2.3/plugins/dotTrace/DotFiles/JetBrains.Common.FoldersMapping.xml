@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Common.FoldersMapping</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.SourceView.FoldersMapping.FolderMappingManager">
+            <summary>
+            Summary description for FolderMappingManager.
+            </summary>
+        </member>
+    </members>
+</doc>

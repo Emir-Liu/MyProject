@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Common.SourceModel</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.SourceView.SourceModel.FolderMapping.FolderMappingUnit">
+            <summary>
+            Summary description for FolderMappingUnit.
+            </summary>
+        </member>
+        <member name="T:JetBrains.SourceView.SourceModel.SourceViewManager.IDecompilePage">
+            <summary>
+            Related to decompiler Page
+            </summary>
+        </member>
+        <member name="T:JetBrains.SourceView.SourceModel.SourceViewManager.IHasSourceFilePage">
+            <summary>
+            Page has file name
+            </summary>
+        </member>
+        <member name="P:JetBrains.SourceView.SourceModel.SourceViewManager.ISourceTabController.CurrentFileName">
+            <summary>
+            File name with currently displayed source
+            or null if no source code to display
+            </summary>
+        </member>
+    </members>
+</doc>

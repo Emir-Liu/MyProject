@@ -1,9 +1,11 @@
 using System;
 
-public class HelloWorld
-{
-	static public void Main()
-	{
-		Console.WriteLine("Hello Mono World");
-	}
+namespace HelloWorldApplication {
+   class HelloWorld {
+      static void Main(string[] args) {
+         /* my first program in C# */
+         Console.WriteLine("Hello World");
+         Console.ReadKey();
+      }
+   }
 }

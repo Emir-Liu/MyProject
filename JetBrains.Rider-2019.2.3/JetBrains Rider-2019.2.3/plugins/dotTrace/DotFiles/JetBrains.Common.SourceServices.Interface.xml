@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Common.SourceServices.Interface</name>
+    </assembly>
+    <members>
+        <member name="P:JetBrains.SourceView.SourceServices.Interface.ISourceCodeFile.OriginalFileName">
+            <summary>
+            Base file name (specified in pdb for example)
+            </summary>
+        </member>
+        <member name="P:JetBrains.SourceView.SourceServices.Interface.ISourceCodeFile.ReadyToDisplaySource">
+            <summary>
+            True if source code ready to display
+            </summary>
+        </member>
+        <member name="P:JetBrains.SourceView.SourceServices.Interface.ISourceCodeFile.FileExist">
+            <summary>
+            True if LocalFileName exist
+            </summary>
+        </member>
+        <member name="P:JetBrains.SourceView.SourceServices.Interface.ISourceCodeFile.LocalFileName">
+            <summary>
+            Ready to read source file name (real file name founded by folder mapping or in download cache)
+            Unavalaible if FileExist = false
+            </summary>
+        </member>
+        <member name="P:JetBrains.SourceView.SourceServices.Interface.ISourceCodeFile.SourceCode">
+            <summary>
+            Plain source code
+            Unavalaible if ReadyToDisplaySource = false
+            </summary>
+        </member>
+        <member name="P:JetBrains.SourceView.SourceServices.Interface.ISourceCodeFile.FileFromExternal">
+            <summary>
+            True if file founded in download cache
+            Unavalaible if ReadyToDisplaySource = false
+            </summary>
+        </member>
+        <member name="P:JetBrains.SourceView.SourceServices.Interface.ISourceCodeFile.FileRanges">
+            <summary>
+            Unavalaible if ReadyToDisplaySource = false
+            </summary>
+        </member>
+    </members>
+</doc>

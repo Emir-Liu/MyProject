@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Common.UnitTesting.ClientController</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.Common.UnitTesting.ClientController.Tasks.TaskContainer">
+            <summary>
+            Problem: we want to measure code only in test- and testfixture-tasks (excluding auxiliary remote tasks), but currently nested grouping is not supported by the profiler.
+            Solution: send notifications about root 'meaningful' tasks to start/stop profiler. Thus we need a counter for the number of started 'meaningful' tasks.
+            Problem: in some cases unit test runner doesn't inform us about the fact that the task has been finished.
+            Solution: create stack of the started tasks with possibility to remove several tasks at once if we've got event about finishing only for parent task, but not for its children.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.UnitTesting.ClientController.Tasks.TaskContainer.AddTask(JetBrains.Common.UnitTesting.ClientController.Tasks.ITask)">
+            <returns>true if task is the first meaningful task in stack</returns>
+        </member>
+        <member name="M:JetBrains.Common.UnitTesting.ClientController.Tasks.TaskContainer.RemoveTask(JetBrains.Common.UnitTesting.ClientController.Tasks.ITask)">
+            <returns>true if there are no more meaningful tasks in container</returns>
+        </member>
+    </members>
+</doc>

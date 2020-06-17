@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1575608854 source:/home/eglym/Documents/MyProject/take6/take6_1.cpp
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

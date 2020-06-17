@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Common.Timeline.Framework.Interface</name>
+    </assembly>
+    <members>
+        <member name="F:JetBrains.Common.Timeline.Framework.Interface.Charts.MultiSeriesPixelChartViewData.Values">
+            <summary>
+            Array dimensions: [ScreenWidth, SeriesNum]
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.Util.ViewModel.Transforms.IViewportZoomer.ZoomToRange(JetBrains.Common.Util.Transforms.ModelRangeDouble)">
+            <returns>true if visible range set exactly to passed range, false otherwise</returns>
+        </member>
+    </members>
+</doc>

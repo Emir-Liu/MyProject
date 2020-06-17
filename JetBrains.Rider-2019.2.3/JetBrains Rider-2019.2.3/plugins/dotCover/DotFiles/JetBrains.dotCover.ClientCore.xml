@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.dotCover.ClientCore</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.dotCover.ClientCore.ProfilerLauncher.Model.Interface.ICoverageConfiguration.SetCoreLogMask(System.Nullable{JetBrains.Profiler.Windows.Options.CoreLogMask})">
+            <exception cref="T:System.Exception">in case of failure</exception>
+        </member>
+    </members>
+</doc>

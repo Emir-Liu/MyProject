@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.DotTrace.Common.Dal</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.DotTrace.Common.Dal.CallTree.Dfs.DfsNodeBottomUpPayloadCalculator`2.ProcessDfsNodesBatch(JetBrains.Common.CallTreeStorage.Dfs.DfsNode{`0,`1}[],JetBrains.Common.CallTreeStorage.Dfs.NodePayload[],JetBrains.Common.SubsystemsManagement.Model.SubsystemData.SubsystemIndex[],System.Int32,System.Int32,`0)">
+            <summary>
+              Nodes in array must be traversed post-order.
+            </summary>
+            <param name="nodes"></param>
+            <param name="payloads"></param>
+            <param name="null"></param>
+            <param name="start"></param>
+            <param name="count"></param>
+            <param name="rootNodeOffset"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.DotTrace.Common.Dal.CallTree.Payloads.TotalPayloadCalculator`2.ProcessDfsNodesBatch(JetBrains.Common.CallTreeStorage.Dfs.DfsNode{`0,`1}[],JetBrains.Common.CallTreeStorage.Dfs.NodePayload[],JetBrains.Common.SubsystemsManagement.Model.SubsystemData.SubsystemIndex[],System.Int32,System.Int32,`0)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

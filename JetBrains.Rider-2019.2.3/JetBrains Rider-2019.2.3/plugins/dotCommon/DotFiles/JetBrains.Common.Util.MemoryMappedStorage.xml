@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Common.Util.MemoryMappedStorage</name>
+    </assembly>
+    <members>
+        <member name="F:JetBrains.Common.Util.MemoryMappedStorage.Impl.StreamContentReader.mySectionData">
+            <summary>
+            Section data reference
+            </summary>
+        </member>
+        <member name="F:JetBrains.Common.Util.MemoryMappedStorage.Impl.StreamContentReader.myCurrentView">
+            <summary>
+            Currently mapped view
+            If no view is mapped references <see cref="T:JetBrains.Common.Util.MemoryMappedStorage.Impl.EmptyMemoryMappedView"/>
+            </summary>
+        </member>
+        <member name="F:JetBrains.Common.Util.MemoryMappedStorage.Impl.StreamContentReader.myViewMaxSize">
+            <summary>
+            Mapping page size, <see cref="M:JetBrains.Common.MemoryMappedStorage.IMemoryMappedSectionData.MapView(JetBrains.Lifetimes.Lifetime,System.Int64,System.Int64)"/>  
+            </summary>
+        </member>
+        <member name="F:JetBrains.Common.Util.MemoryMappedStorage.Impl.StreamContentReader.myCachedReadyPosition">
+            <summary>
+            Last read <see cref="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedSectionData.ReadyPosition"/>
+            Value cached to don't make native call on every read operation  
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.Util.MemoryMappedStorage.Impl.StreamContentReader.CurrentViewBytesReady">
+            <summary>
+            Count of bytes that can be read from <see cref="P:JetBrains.Common.Util.MemoryMappedStorage.Impl.StreamContentReader.CurrentPosition"/> from the currently mapped view
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.Util.MemoryMappedStorage.Impl.StreamContentReader.CurrentPositionViewOffset">
+            <summary>
+            Offset in bytes of the <see cref="P:JetBrains.Common.Util.MemoryMappedStorage.Impl.StreamContentReader.CurrentPosition"/> in the currently mapped view
+            </summary>
+        </member>
+        <member name="P:JetBrains.Common.Util.MemoryMappedStorage.Impl.StreamContentReader.CurrentPositionPtr">
+            <summary>
+            Pointer to the data on <see cref="P:JetBrains.Common.Util.MemoryMappedStorage.Impl.StreamContentReader.CurrentPosition"/> in the currently mapped view
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.Util.MemoryMappedStorage.Impl.StreamContentReader.RenewCachedReadyPosition">
+            <summary>
+            Renews cached ReadyPosition
+            </summary>
+        </member>
+        <member name="M:JetBrains.Common.Util.MemoryMappedStorage.Impl.StreamContentReader.CheckDataReady(System.Int32)">
+            <summary>
+            Verifies that required bytes count is available to read
+            </summary>
+            <param name="bytesCount"> bytes count ot read </param>
+            <exception cref="T:System.ApplicationException"></exception>
+        </member>
+        <member name="M:JetBrains.Common.Util.MemoryMappedStorage.Impl.StreamContentReader.CreateEmptyViewOnPosition(System.Int64)">
+            <summary>
+            Creates empty view on specified position
+            No any data will be mapped
+            </summary>
+            <param name="position"></param>
+        </member>
+        <member name="M:JetBrains.Common.Util.MemoryMappedStorage.Impl.StreamContentReader.ShiftViewIfNeeded">
+            <summary>
+            Moves current view right to the current poisition if the current poistion is at the end of the current view
+            </summary>
+        </member>
+        <member name="F:JetBrains.Common.Util.MemoryMappedStorage.IndexableStreamingSection`1.myCachedReadyPosition">
+            <summary>
+            Last read <see cref="P:JetBrains.Common.MemoryMappedStorage.IReadonlyMemoryMappedSectionData.ReadyPosition"/>
+            Value cached to don't make native call on every read operation  
+            </summary>
+        </member>
+    </members>
+</doc>

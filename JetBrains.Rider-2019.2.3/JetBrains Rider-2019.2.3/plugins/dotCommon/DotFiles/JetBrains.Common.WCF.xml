@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Common.WCF</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.Common.WCF.ErrorHandlingWrapperFactory">
+            <summary>
+            Handles communication errors
+            </summary>
+        </member>
+        <member name="T:JetBrains.Common.WCF.ExceptionExtensions">
+            <summary>
+            The goal is to unify error handling for local and remote code
+            </summary>
+        </member>
+    </members>
+</doc>

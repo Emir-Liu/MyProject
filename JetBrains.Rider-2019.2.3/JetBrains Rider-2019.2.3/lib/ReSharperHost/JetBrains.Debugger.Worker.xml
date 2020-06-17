@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Debugger.Worker</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.Debugger.Worker.ConsoleUtils.DisableCtrlCHandling">
+            <summary>
+            Makes current process ignoring Ctrl-C (or similar) event and passing it to process which inherits the console.
+            Windows only.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.Worker.ConsoleUtils.DisableMonoPtyConsoleDriver">
+            <summary>
+            Forces dumb console driver initializing to prevent any interaction with terminal (see RIDER-19048).
+            </summary>
+        </member>
+        <member name="P:JetBrains.Debugger.Worker.DebuggerOptions.LiveDebuggerSessionOptions.DisableDebugHeap">
+            <summary>
+            Sets _NO_DEBUG_HEAP env variable to 1 to disable checked allocations. Increases start of debuggee on ICorDebug on Windows.
+            More info at https://ofekshilon.com/2014/09/20/accelerating-debug-runs-part-1-_no_debug_heap-2
+            Default value is 'true'.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.Worker.Util.TaskEx.WaitThrowIfTimedOut``1(System.Threading.Tasks.Task{``0},System.String,System.TimeSpan)">
+            <summary>
+            Calls <paramref name="task"/>.<see cref="!:Task&lt;TResult&gt;.Wait(TimeSpan)"/> with <paramref name="timeout"/> and throws <see cref="T:System.TimeoutException"/>
+            if the <paramref name="task"/> was timed out. Otherwise returns itself
+            </summary>
+        </member>
+    </members>
+</doc>

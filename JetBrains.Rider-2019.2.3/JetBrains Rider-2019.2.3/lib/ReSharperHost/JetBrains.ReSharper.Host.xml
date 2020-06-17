@@ -1,0 +1,1749 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Host</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.ReSharper.Host.Features.Actions.ActionUpdateTimeStatistics.CreateComparer">
+            <summary>
+            Creates comparer based on current statistics.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.BackgroundTasks.RiderBackgroundTaskBuilder.WithHeader(JetBrains.DataFlow.IProperty{System.String})">
+            <summary>
+            PermanentHeader will be ignored
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.BackgroundTasks.RiderBackgroundTaskBuilder.WithHeader(System.String)">
+            <summary>
+            Header will be ignored
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.BackgroundTasks.RiderBackgroundTaskBuilder.WithDescription(JetBrains.DataFlow.IProperty{System.String})">
+            <summary>
+            PermanentDescription, DescriptionFromProgress will be ignored
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.BackgroundTasks.RiderBackgroundTaskBuilder.WithDescription(System.String)">
+            <summary>
+            Description, DescriptionFromProgress will be ignored
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.BackgroundTasks.RiderBackgroundTaskBuilder.WithDescriptionFromProgress">
+            <summary>
+            Description, PermanentDescription will be ignored
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.BackgroundTasks.RiderBackgroundTaskBuilder.WithProgress(JetBrains.DataFlow.IProperty{System.Double})">
+            <summary>
+            IsIndeterminate will be ignored.
+            The current position of the progress, in the [0..1] range, inclusive.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.BackgroundTasks.RiderBackgroundTaskBuilder.AsIndeterminate">
+            <summary>
+            Progress will be ignored
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.BackgroundTasks.RiderBackgroundTaskBuilder.AsNonCancelable">
+            <summary>
+            CancelAction will be ignored
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightApi">
+             <summary>
+            	<para>
+            		<para>InsightApi Themed Icon generated identifiers:</para>
+            		<para> <see cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightApi"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para> <see cref="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightApi.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:PifamajThemedIconsThemedIcons+InsightApi}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(PifamajThemedIconsThemedIcons.InsightApi))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = PifamajThemedIconsThemedIcons.InsightApi.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;PifamajThemedIconsThemedIcons.InsightApi&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightApi.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightApi">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightApi.Load_Default">
+            <summary>Loads the image for Themed Icon InsightApi theme aspect Default.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightApi.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon InsightApi.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightExtension">
+             <summary>
+            	<para>
+            		<para>InsightExtension Themed Icon generated identifiers:</para>
+            		<para> <see cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightExtension"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para> <see cref="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightExtension.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:PifamajThemedIconsThemedIcons+InsightExtension}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(PifamajThemedIconsThemedIcons.InsightExtension))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = PifamajThemedIconsThemedIcons.InsightExtension.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;PifamajThemedIconsThemedIcons.InsightExtension&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightExtension.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightExtension">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightExtension.Load_Default">
+            <summary>Loads the image for Themed Icon InsightExtension theme aspect Default.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightExtension.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon InsightExtension.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightImplementation">
+             <summary>
+            	<para>
+            		<para>InsightImplementation Themed Icon generated identifiers:</para>
+            		<para> <see cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightImplementation"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para> <see cref="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightImplementation.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:PifamajThemedIconsThemedIcons+InsightImplementation}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(PifamajThemedIconsThemedIcons.InsightImplementation))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = PifamajThemedIconsThemedIcons.InsightImplementation.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;PifamajThemedIconsThemedIcons.InsightImplementation&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightImplementation.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightImplementation">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightImplementation.Load_Default">
+            <summary>Loads the image for Themed Icon InsightImplementation theme aspect Default.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightImplementation.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon InsightImplementation.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightInferredType">
+             <summary>
+            	<para>
+            		<para>InsightInferredType Themed Icon generated identifiers:</para>
+            		<para> <see cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightInferredType"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para> <see cref="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightInferredType.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:PifamajThemedIconsThemedIcons+InsightInferredType}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(PifamajThemedIconsThemedIcons.InsightInferredType))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = PifamajThemedIconsThemedIcons.InsightInferredType.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;PifamajThemedIconsThemedIcons.InsightInferredType&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightInferredType.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightInferredType">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightInferredType.Load_Default">
+            <summary>Loads the image for Themed Icon InsightInferredType theme aspect Default.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightInferredType.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon InsightInferredType.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightInstances">
+             <summary>
+            	<para>
+            		<para>InsightInstances Themed Icon generated identifiers:</para>
+            		<para> <see cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightInstances"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para> <see cref="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightInstances.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:PifamajThemedIconsThemedIcons+InsightInstances}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(PifamajThemedIconsThemedIcons.InsightInstances))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = PifamajThemedIconsThemedIcons.InsightInstances.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;PifamajThemedIconsThemedIcons.InsightInstances&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightInstances.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightInstances">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightInstances.Load_Default">
+            <summary>Loads the image for Themed Icon InsightInstances theme aspect Default.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightInstances.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon InsightInstances.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightIssue">
+             <summary>
+            	<para>
+            		<para>InsightIssue Themed Icon generated identifiers:</para>
+            		<para> <see cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightIssue"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para> <see cref="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightIssue.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:PifamajThemedIconsThemedIcons+InsightIssue}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(PifamajThemedIconsThemedIcons.InsightIssue))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = PifamajThemedIconsThemedIcons.InsightIssue.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;PifamajThemedIconsThemedIcons.InsightIssue&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightIssue.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightIssue">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightIssue.Load_Default">
+            <summary>Loads the image for Themed Icon InsightIssue theme aspect Default.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightIssue.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon InsightIssue.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightNavigate">
+             <summary>
+            	<para>
+            		<para>InsightNavigate Themed Icon generated identifiers:</para>
+            		<para> <see cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightNavigate"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para> <see cref="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightNavigate.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:PifamajThemedIconsThemedIcons+InsightNavigate}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(PifamajThemedIconsThemedIcons.InsightNavigate))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = PifamajThemedIconsThemedIcons.InsightNavigate.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;PifamajThemedIconsThemedIcons.InsightNavigate&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightNavigate.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightNavigate">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightNavigate.Load_Default">
+            <summary>Loads the image for Themed Icon InsightNavigate theme aspect Default.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightNavigate.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon InsightNavigate.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightReference">
+             <summary>
+            	<para>
+            		<para>InsightReference Themed Icon generated identifiers:</para>
+            		<para> <see cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightReference"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para> <see cref="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightReference.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:PifamajThemedIconsThemedIcons+InsightReference}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(PifamajThemedIconsThemedIcons.InsightReference))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = PifamajThemedIconsThemedIcons.InsightReference.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;PifamajThemedIconsThemedIcons.InsightReference&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightReference.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightReference">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightReference.Load_Default">
+            <summary>Loads the image for Themed Icon InsightReference theme aspect Default.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightReference.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon InsightReference.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightSize">
+             <summary>
+            	<para>
+            		<para>InsightSize Themed Icon generated identifiers:</para>
+            		<para> <see cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightSize"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para> <see cref="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightSize.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:PifamajThemedIconsThemedIcons+InsightSize}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(PifamajThemedIconsThemedIcons.InsightSize))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = PifamajThemedIconsThemedIcons.InsightSize.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;PifamajThemedIconsThemedIcons.InsightSize&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightSize.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightSize">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightSize.Load_Default">
+            <summary>Loads the image for Themed Icon InsightSize theme aspect Default.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightSize.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon InsightSize.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightUser">
+             <summary>
+            	<para>
+            		<para>InsightUser Themed Icon generated identifiers:</para>
+            		<para> <see cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightUser"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para> <see cref="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightUser.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:PifamajThemedIconsThemedIcons+InsightUser}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(PifamajThemedIconsThemedIcons.InsightUser))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = PifamajThemedIconsThemedIcons.InsightUser.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;PifamajThemedIconsThemedIcons.InsightUser&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightUser.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightUser">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightUser.Load_Default">
+            <summary>Loads the image for Themed Icon InsightUser theme aspect Default.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightUser.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon InsightUser.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightWait">
+             <summary>
+            	<para>
+            		<para>InsightWait Themed Icon generated identifiers:</para>
+            		<para> <see cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightWait"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para> <see cref="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightWait.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:PifamajThemedIconsThemedIcons+InsightWait}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(PifamajThemedIconsThemedIcons.InsightWait))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = PifamajThemedIconsThemedIcons.InsightWait.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;PifamajThemedIconsThemedIcons.InsightWait&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightWait.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightWait">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightWait.Load_Default">
+            <summary>Loads the image for Themed Icon InsightWait theme aspect Default.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.CodeInsights.CodeInsightsThemedIcons.InsightWait.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon InsightWait.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.CodeCleanup.RiderCodeCleanupModule">
+            <summary>
+            Represents FAKE code cleanup module that only defines the <see cref="F:JetBrains.ReSharper.Host.Features.CodeCleanup.RiderCodeCleanupModule.IdeaCodeCleanupOptionsDescriptor"/> to store IDEA-based cleanup settings in code cleanup profiles.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Completion.IRiderAsyncCompletionLookupItem">
+            <summary>
+            Don't use it!
+            This is temporary solution to allow async lookup items for F# plugin.
+            The interface marks non-aspect lookup items as async.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Completion.SummaryInfo.RiderRichTextBlockFormatter">
+            <summary>
+            Copy-pasted RichTextBlockFormatter that's just supposed to prevent text overflow by string length.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Completion.SummaryInfo.RiderRichTextBlockFormatter.Format(JetBrains.UI.RichText.RichTextBlock,System.Int32,System.Int32)">
+            <summary>
+            Reflows the set of <see cref="T:JetBrains.UI.RichText.RichText"/> strings so that they don't overflow the specified size.
+            The existing line breaks are kept, new ones are added as needed.
+            </summary>
+            <param name="block">The source lines of text.</param>
+            <param name="maxLineLength">The maximum line length.</param>
+            <param name="maxLineNumber">The maximum line number.</param>
+            <returns>The formatted rich text with new line breaks.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Completion.SummaryInfo.RiderRichTextBlockFormatter.Format(JetBrains.UI.RichText.RichText,System.Int32,System.Int32)">
+            <summary>
+            Reflows the single line of <see cref="T:JetBrains.UI.RichText.RichText"/> so that it doesn't overflow the specified size.
+            The line breaks are added as needed.
+            </summary>
+            <param name="text">The source line of text.</param>
+            <param name="maxLineLength">The maximum line length.</param>
+            <param name="maxLineNumber">The maximum line number.</param>
+            <returns>The formatted rich text with new line breaks.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Daemon.HighlighterGeneration.FileData.RiderColorSchemeGenerationUtil.GetEffectTypeOrdinalInSettings(JetBrains.Rider.Model.HighlighterRegistration.IdeaEffectType)">
+            <summary>
+            Despite aligning of com.intellij.openapi.editor.markup.EffectType it has different ordinal numbers
+            when it comes to color schemes. This method fixes that
+            </summary>
+            <param name="type">IDEA replica of EffectType</param>
+            <returns>Number which corresponds to serialized enum value in color schemes</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.Daemon.Registration.IRiderHighlighterDescriptionStorage.HighlighterGroups">
+            <summary>
+            All highlighter groups registered with <see cref="T:JetBrains.TextControl.DocumentMarkup.RegisterHighlighterGroupAttribute"/> sorted according priority
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Daemon.Registration.IRiderHighlighterDescriptionStorage.GetDescriptions(JetBrains.TextControl.DocumentMarkup.HighlighterGroup)">
+            <summary>
+            Gets all highlighter descriptions corresponding a specific highlighter group
+            </summary>
+            <param name="group"> a highlighter group registered with <see cref="T:JetBrains.TextControl.DocumentMarkup.RegisterHighlighterGroupAttribute"/></param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Daemon.Registration.IRiderHighlighterDescriptionStorage.GetDescription(System.String)">
+            <summary>
+            Gets highlighter description by its attributeId
+            </summary>
+            <param name="attributeId"> a unique identifier <see cref="P:JetBrains.TextControl.DocumentMarkup.RegisterHighlighterAttribute.Id"/></param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Daemon.Registration.IRiderHighlighterRegistry.GetLayer(JetBrains.TextControl.DocumentMarkup.IHighlighter)">
+            <summary>
+            Returns corrected highlighter layer for IDEA environment
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Daemon.Registration.RiderDefaultHighlighterPropertiesProvider.IsVerifiable(JetBrains.ReSharper.Host.Features.Daemon.Registration.RiderHighlighterDescription)">
+            <summary>
+            Determines should a highlighter be invalidated if it's applied upon document changes which are inside highlighter's range.
+            This helps to reuse existing highlighters and reduce blinking for identifiers which most likely will be received again.
+            Rider postpones deletion of these highlighters to the end of the daemon analysis.
+            </summary>
+            <param name="description"></param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Daemon.Registration.RiderDefaultHighlighterPropertiesProvider.IsGreedy(JetBrains.ReSharper.Host.Features.Daemon.Registration.RiderHighlighterDescription)">
+            <summary>
+             Temp! Playing around making nearly all highlighters greedy by default
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.Daemon.Registration.RiderHighlighterDescription.AttributeId">
+            <summary>
+            Original AttributeId from RegisterHighlighterAttribute
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.Daemon.Registration.RiderHighlighterDescription.FallbackDescription">
+            <summary>
+            Next element in the fallback hierarchy. Used to inherit attributes or as a full replacement for registered highlighter 
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.Daemon.Registration.RiderHighlighterDescription.SettingsGroup">
+            <summary>
+            Highlighter group highlighter is associated with
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.Daemon.Registration.RiderHighlighterDescription.PresentableName">
+            <summary>
+            String shown in Rider settings UI
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.Daemon.Registration.RiderHighlighterDescription.HighlighterID">
+            <summary>
+            Valid identifier created from AttributeId
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.Daemon.Registration.RiderHighlighterDescription.ExternalName">
+            <summary>
+            String used to store attributes in IDEA color schemes and as externalName in TextAttributesKey
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.Daemon.Registration.RiderHighlighterDescription.LightDarkSchemeAttributes">
+            <summary>
+            IDEA-based model representation of the way highlighter should be shown in the editor 
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.Daemon.Registration.RiderHighlighterLayerCorrecter.SYNTAX">
+            <summary>
+            Copy of com.intellij.openapi.editor.markup.HighlighterLayer
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Daemon.Registration.IRiderHighlighterPropertiesProvider">
+            <summary>
+            Interface for defining custom highlighter properties in Rider.
+            Implementing class should be ShellComponent
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Daemon.Registration.Util.ToIdeaTextAttributes(JetBrains.TextControl.DocumentMarkup.HighlighterAttributes,JetBrains.ReSharper.Host.Features.Daemon.Registration.LightDarkSchemeAttributes)">
+            <summary>
+            Converts ReSharper's HighlighterAttributes to best matching IDEA's ones.
+            There's no one-to-one correspondence and a lot of edge cases to make it done right.
+            Edit carefully.
+            </summary>
+            <param name="highlighterAttributes">attributes from ReSharper world</param>
+            <param name="errorStripe">Transformed attributes of a errorStripe</param>
+            <returns>IDEA's carbon copy of HighlighterTextAttributes in two variants (for Light and Dark Theme)</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Daemon.Registration.Util.InferSchemeAttributes(JetBrains.ReSharper.Host.Features.Daemon.Registration.RiderHighlighterDescription,System.Boolean)">
+            <summary>
+            Returns null if attributes should be inherited from baseAttribute
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Daemon.Registration.Util.GetSeverity(System.String)">
+            <summary>
+            Maybe TEMP, however
+            I've noticed that higher severities like hint, suggestion, warning and error
+            are always presented by only one corresponding highlighterAttributeId (HINT_ATTRIBUTE, SUGGESTION_ATTRIBUTE, etc.)
+            e.g. if you change severity of an inspection it simply changes a highlighterAttributeId to one which corresponds
+            to a new severity.
+            Dead Code is a bit an exception here but we can handle that case (see BuildIndexMap())
+            So this method allows you check AttributeId against special ones on accurately predict the severity.
+            Since it's rather hard to get severity from highlighter we use this
+            </summary>
+            <param name="attributeId">unique id from Highlighter.AttributesId</param>
+            <returns>RiderProtocol copy of ReSharper's Severity class corresponding to a attribute</returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Daemon.RiderHighlighterKind">
+            <summary>
+            All these types require different handling in Rider, that's why we separate them
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.Daemon.RiderHighlighterKind.USUAL">
+            <summary>
+            Just an effect applied to the text in the editor
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.Daemon.RiderHighlighterKind.GUTTER_MARK">
+            <summary>
+            Clickable icon on the gutter margin
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.Daemon.RiderHighlighterKind.FOLDING">
+            <summary>
+            Collapsable regions in the editor
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.Daemon.RiderHighlighterKind.LINE_MARKER">
+            <summary>
+            Custom effect drawn on gutter margin 
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Daemon.RiderHighlighterModelProducer.FilterAndShiftIfSandbox(JetBrains.TextControl.DocumentMarkup.IHighlighter)">
+            <returns>null means it is invalid highlighter and should not be added to the model</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Debugger.RiderTypeDebugInfoProvider.GetTopLevelTypeToken(JetBrains.Metadata.Access.MetadataToken,JetBrains.Metadata.Reader.API.IMetadataAssembly)">
+            <param name="token">metadata token of type (top-level or nested) or method</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Documents.ISandboxDocumentLanguageSupport2.SetupSandboxFile(JetBrains.ReSharper.Psi.Files.SandboxFiles.SandboxPsiSourceFile,JetBrains.Rider.Model.SandboxInfo,JetBrains.Lifetimes.Lifetime)">
+            <summary>
+            Do anything extra AFTER the sandbox file has been created
+            </summary>
+            <param name="sandboxFile">the sandbox file that has been just created</param>
+            <param name="sandboxInfo">corresponding sandbox info</param>
+            <param name="lifetime">sandbox lifetime</param>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.Documents.RiderFileSystemDocumentHandler.Moniker">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Documents.DocumentHostExtensions.BindDocument(JetBrains.ReSharper.Host.Features.Documents.DocumentHost,JetBrains.ProjectModel.IProjectFile,JetBrains.Lifetimes.Lifetime)">
+            <summary>
+            Binds the document with the frontend via the protocol.
+            If the document was not opened in editor - it won't be opened
+            If the documeht was opened in editor - it will remain opened and the editor will reflect doc changes
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Documents.DocumentHostExtensions.BindDocument(JetBrains.ReSharper.Host.Features.Documents.DocumentHost,JetBrains.Util.FileSystemPath,JetBrains.Lifetimes.Lifetime)">
+            <summary>
+            Binds the document with the frontend via the protocol.
+            If the document was not opened in editor - it won't be opened
+            If the documeht was opened in editor - it will remain opened and the editor will reflect doc changes
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Explanatory.resources.RiderCodeInspectionWikiResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.Explanatory.resources.RiderCodeInspectionWikiResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.Explanatory.resources.RiderCodeInspectionWikiResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.Explanatory.resources.RiderCodeInspectionWikiResources.CodeInspectionWiki">
+             <summary>
+               Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+            &lt;CodeInspectionWiki&gt;
+              &lt;Item Id=&quot;ForControlVariableIsNeverModified&quot; Url=&quot;http://confluence.jetbrains.net/display/ReSharper/&apos;for&apos;+loop+control+variable+is+never+modified&quot;/&gt;
+              &lt;Item Id=&quot;ValueParameterNotUsed&quot; Url=&quot;http://confluence.jetbrains.net/display/ReSharper/%27value%27+parameter+is+not+used&quot;/&gt;
+              &lt;Item Id=&quot;AccessToStaticMemberViaDerivedType&quot; Url=&quot;http://confluence.jetbrains.net/display/ReSharper/Access+to+a+static+member+of+a+type+via+a+derived+type&quot;/&gt;
+              &lt;Item [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.InjectedPsi.RiderInjectedFileManager.Supported(JetBrains.ReSharper.Psi.Impl.Shared.InjectedPsi.IInjectorProviderInLiterals)">
+            Opt-out for web-related injections, and for languages we have IJ support for.
+            Basically the only leftovers for C# are PathReference and ClrRegExpLanguage, but without breaking extensibility
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.LiveTemplates.Macros.AppConfigStartupSectionMacroImpl.GetRuntimeVersionString(System.Version)">
+            <remarks>
+            https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.LiveTemplates.Macros.AppConfigStartupSectionMacroImpl.GetSku(JetBrains.Util.Dotnet.TargetFrameworkIds.TargetFrameworkId)">
+            <remarks>
+            https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/startup/supportedruntime-element#sku-id-values
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.NavigationHandling.Features.RiderRecentFilesTrackerDisabler">
+            <summary>
+            Rider doesn't need ReSharper recent files tracker because it already has one in IDEA
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.NavigationHandling.RiderFqnNavigator">
+            <summary>
+            "Binds" rider model to common platform component with implementation
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.NuGet.Cache.RiderNuGetMsBuildProjectDataBuilder.DumpPackageSpec(JetBrains.Util.FileSystemPath,NuGet.ProjectModel.PackageSpec)">
+            <summary>
+            Dump PackageSpec to project.packagespec.json
+            </summary>
+            <returns>True if content of 'project.packagespec.json' was updated; false otherwise</returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.NuGet.CredentialProvider.Internal.PluginFactory">
+            <summary>
+            A plugin factory.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.NuGet.CredentialProvider.Internal.PluginFactory.#ctor(System.TimeSpan)">
+            <summary>
+            Instantiates a new <see cref="T:JetBrains.ReSharper.Host.Features.NuGet.CredentialProvider.Internal.PluginFactory" /> class.
+            </summary>
+            <param name="pluginIdleTimeout">The plugin idle timeout.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown if <paramref name="pluginIdleTimeout" />
+            is less than <see cref="F:System.Threading.Timeout.InfiniteTimeSpan" />.</exception>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.NuGet.CredentialProvider.Internal.PluginFactory.Dispose">
+            <summary>
+            Disposes of this instance.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.NuGet.CredentialProvider.Internal.PluginFactory.GetOrCreateAsync(System.String,System.Collections.Generic.IEnumerable{System.String},NuGet.Protocol.Plugins.IRequestHandlers,NuGet.Protocol.Plugins.ConnectionOptions,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously gets an existing plugin instance or creates a new instance and connects to it.
+            </summary>
+            <param name="filePath">The file path of the plugin.</param>
+            <param name="arguments">Command-line arguments to be supplied to the plugin.</param>
+            <param name="requestHandlers">Request handlers.</param>
+            <param name="options">Connection options.</param>
+            <param name="sessionCancellationToken">A cancellation token for the plugin's lifetime.</param>
+            <returns>A task that represents the asynchronous operation.
+            The task result (<see cref="P:System.Threading.Tasks.Task`1.Result" />) returns a <see cref="T:NuGet.Protocol.Plugins.Plugin" />
+            instance.</returns>
+            <exception cref="T:System.ArgumentException">Thrown if <paramref name="filePath" />
+            is either <c>null</c> or empty.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="arguments" />
+            is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="requestHandlers" />
+            is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="options" />
+            is <c>null</c>.</exception>
+            <exception cref="T:System.OperationCanceledException">Thrown if <paramref name="sessionCancellationToken" />
+            is cancelled.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown if this object is disposed.</exception>
+            <exception cref="T:NuGet.Protocol.Plugins.ProtocolException">Thrown if a plugin protocol error occurs.</exception>
+            <exception cref="T:NuGet.Protocol.Plugins.PluginException">Thrown for a plugin failure during creation.</exception>
+            <remarks>This is intended to be called by NuGet client tools.</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.NuGet.CredentialProvider.Internal.PluginFactory.CreateFromCurrentProcessAsync(NuGet.Protocol.Plugins.IRequestHandlers,NuGet.Protocol.Plugins.ConnectionOptions,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously creates a plugin instance and connects to it.
+            </summary>
+            <param name="requestHandlers">Request handlers.</param>
+            <param name="options">Connection options.</param>
+            <param name="sessionCancellationToken">A cancellation token for the plugin's lifetime.</param>
+            <returns>A task that represents the asynchronous operation.
+            The task result (<see cref="P:System.Threading.Tasks.Task`1.Result" />) returns a <see cref="T:NuGet.Protocol.Plugins.Plugin" />
+            instance.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="requestHandlers" />
+            is either <c>null</c> or empty.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="options" />
+            is either <c>null</c> or empty.</exception>
+            <exception cref="T:System.OperationCanceledException">Thrown if <paramref name="sessionCancellationToken" />
+            is cancelled.</exception>
+            <remarks>This is intended to be called by a plugin.</remarks>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.NuGet.CredentialProvider.RiderNuGetCredentialService.ourProviderSemaphore">
+            <summary>
+            This semaphore ensures only one provider active per process, in order
+            to prevent multiple concurrent interactive login dialogues.
+            Unnamed semaphores are local to the current process.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Platforms.MonoPlatformsProvider">
+            <summary>
+            This provider works on non-Windows system
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Platforms.MonoPortablePlatformsProvider">
+            <summary>
+            This provider works on non-Windows system
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.ProjectModel.Diagnostic.FrameworkAnalyzers.FullFrameworkAnalyzer.CheckTargetFrameworkProfile(JetBrains.Util.Dotnet.TargetFrameworkIds.TargetFrameworkId)">
+            <summary>
+            Special case for Client profile, see RIDER-27431
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.ProjectModel.FileNesting.FileNestingHost.Rules">
+            <summary>
+            Child -> Parent suffix rule tree
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.ProjectModel.FileSystem.RiderUnresolvedAssemblyReferenceMonitor.GetMismatchingHintPath(JetBrains.ProjectModel.IProjectToAssemblyReference)">
+            <summary>
+            Check if actual reference location mismatch expected hint path
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.ProjectModel.ProjectTemplates.DotNetExtensions.DotNetTemplateGroup">
+            <summary>
+            Template group represents several project template groups with specified names
+            Used for union several different templates and then suggest user to choose one of them by group name
+            The main mechanism to reduce platform-category list
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.ProjectModel.ProjectTemplates.DotNetExtensions.DotNetTemplateItem">
+            <summary>
+            Any dotnet project template item to present to user
+            Any such item can be constructed based on previous items in the tree
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.ProjectModel.ProjectTemplates.DotNetExtensions.DotNetTemplateParameter">
+            <summary>
+            Any dotnet project template parameter to present to user and pass to dotnet template
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.ProjectModel.ProjectTemplates.DotNetTemplates.DotNetTemplatesMatcher.CreateTemplateTree(System.Collections.Generic.List{JetBrains.ReSharper.Host.Features.ProjectModel.ProjectTemplates.DotNetTemplates.DotNetProjectTemplateExpander})">
+            <summary>
+            Creates a tree of project templates from expanders
+            Tree nodes - project template items: parameters and groups
+            Leaf tree nodes - project templates
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.ProjectModel.ProjectTemplates.DotNetTemplates.IDotNetTemplateSource">
+            <summary>
+            Provides location(s) where dotnet template engine 
+              should look for project templates
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.ProjectModel.RunnableProjectsHost.RunnableProjectProviders.LaunchSettingsRunnableProjectProvider">
+            <summary>
+            Class library may be "runnable" if it contains launchSettings.json.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.ProjectModel.RunnableProjectsHost.RunnableProjectProviders.ProjectRunnableEx.CalculateWorkingDirectory(JetBrains.ProjectModel.IProject,JetBrains.Util.Dotnet.TargetFrameworkIds.TargetFrameworkId,JetBrains.Util.FileSystemPath)">
+            <summary>Determines working directory for TFM and project output path.</summary>
+            <returns><c>null</c> if this TFM is not executable, best estimate for working directory otherwise.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.ProjectModel.RunnableProjectsHost.RunnableProjectProviders.ConsoleRunnableProjectProvider.GetRunnableProjectFromProjectDebugConfiguration(JetBrains.ProjectModel.IProject,System.String,System.String)">
+            <summary>
+            Provide runnable project based on project Debug Configuration properties
+            Do not launch browser:
+              <StartAction>NoStartPage</StartAction>
+            Start URL:
+              <StartAction>URL</StartAction>
+              <StartExternalURL>http://ya.ru</StartExternalURL>
+            Start external program:
+              <StartAction>Program</StartAction>
+              <StartProgram>C:\Windows\test.exe</StartProgram>
+              <StartArguments>Test.txt</StartArguments>
+              <StartWorkingDirectory>C:\Users\test\Desktop\</StartWorkingDirectory>
+              In core project: <RunWorkingDirectory Condition="'$(RunWorkingDirectory)' == ''">$(StartWorkingDirectory)</RunWorkingDirectory>
+            Start specific page:
+              <StartAction>SpecificPage</StartAction>
+              <StartPageUrl>Views/Home/Index.cshtml</StartPageUrl>
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.ProjectModel.RunnableProjectsHost.RunnableProjectFactory.CreateRunnableProjects(JetBrains.ProjectModel.IProject)">
+            <summary>Returns all the runnable projects of the most prioritized priority generated for project.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.ProjectModel.SharedProjects.SharedProjectExtensions.GetProjectItemInSharedProjects(JetBrains.ProjectModel.IProjectItem)">
+            <summary>
+            Returns a corresponding project items from referenced shared projects.
+            </summary>
+            <param name="projectItem">Any project item</param>
+            <returns>List of project items sharing the same location including the argument in referenced shared projects.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.ProjectModel.SharedProjects.SharedProjectExtensions.GetSharedProjectFilesInReferencedProjects(JetBrains.ProjectModel.IProjectFile)">
+            <summary>
+            Returns a corresponding project items from referenced projects.
+            </summary>
+            <param name="projectFile">Project item from a shared project</param>
+            <returns>List of project items sharing the same location from referenced projects.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.ProjectModel.SharedProjects.SharedProjectExtensions.GetSharedProjectFoldersInReferencedProjects(JetBrains.ProjectModel.IProjectFolder)">
+            <summary>
+            Returns a corresponding project items from referenced projects.
+            </summary>
+            <param name="projectFolder">Project item from a shared project</param>
+            <returns>List of project items sharing the same location from referenced projects.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.ProjectModel.SharedProjects.SharedProjectExtensions.GetSharedProjectItemsInReferencedProjects(JetBrains.ProjectModel.IProjectItem)">
+            <summary>
+            Returns a corresponding project items from referenced projects.
+            </summary>
+            <param name="projectItem">Project item from a shared project</param>
+            <returns>List of project items sharing the same location from referenced projects.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.ProjectModel.SharedProjects.SharedProjectExtensions.GetOrCreateParentSharedFoldersInReferencedProjects(JetBrains.ProjectModel.IProjectFolder)">
+            <summary>
+            Gets or creates a corresponding project folder from each referenced project.
+            </summary>
+            <param name="projectFolder">Project folder from a shared project</param>
+            <returns>List of project folders sharing the same location from referenced projects.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.ProjectModel.View.EditProperties.Projects.IEditProjectPropertiesPreserver.Save">
+            <summary>
+            Save settings somewhere, result means should we reload project or not
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.ProjectModel.View.EditProperties.Projects.MsBuild.IMsBuildPreserver">
+            <summary>
+            Component to manage custom preserve logic for msbuild projects
+            Can be used to cache data during 'edit properties' session
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.ProjectModel.View.EditProperties.Projects.MsBuild.Providers.ConfigurationTabProvider.AddDefineConstantItems(JetBrains.Rider.Model.RdEditPropertySection,System.Collections.Generic.Dictionary{System.String,JetBrains.Platform.MsBuildHost.Models.RdCalculateProperty})">
+            <summary>
+            Special case for .net core define constants, see RIDER-27681
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.ProjectModel.View.EditProperties.Projects.MsBuild.Providers.ConfigurationTabProvider.GetSpecialOutputPathValue(System.Collections.Generic.Dictionary{System.String,JetBrains.Platform.MsBuildHost.Models.RdCalculateProperty})">
+            <summary>
+            Special case for .net core output path, see RIDER-20716
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.ProjectModel.View.Ordering.OrderingContextProvider.CreateOrderingContext(System.Collections.Generic.IReadOnlyCollection{System.Object},System.Collections.Generic.IReadOnlyCollection{System.Object},JetBrains.ProjectModel.ProjectsHost.RelativeToType)">
+            <summary>
+            Create an context to order project items in the project
+            </summary>
+            <param name="modifiedItems">Modified item (collection of different objects for the same project item), can be empty</param>
+            <param name="relativeToItems">Reference item (collection of different objects for the same project item), not empty</param>
+            <param name="relativeToType">Type of relation</param>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.ProjectModel.Xamarin.AndroidApiInfo">
+            <summary>
+            Describes an Android API version
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.ProjectModel.Xamarin.AndroidSdkInfo">
+            <summary>
+            Describes an Android SDK installed on the machine
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.ProjectModel.Xamarin.AndroidSdkProvider">
+            <summary>
+            Provides information about all Android SDKs installed on the machine
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.ProjectModel.RiderSolutionManager.OpenSolutionLifetime.Value">
+            <summary>
+            Lifetime for an opening solution process
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.RunMarkers.IRunMarkerProvider">
+            <summary>
+            Should be marked with <see cref="T:JetBrains.ReSharper.Psi.LanguageAttribute"/>
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.RunMarkers.IRunMarkerProvider.Priority">
+            <summary>
+            Standard priorities can be found in <see cref="T:JetBrains.ReSharper.Host.Features.RunMarkers.RunMarkerProviderPriority"/>
+            Providers are sorted by descending order of their priorities
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Services.RiderMainWindowPopupWindowContext">
+            <summary>
+            All contexts that're created via DataRules is marked as originated from data context.
+            Others that're created via methods invocations are main window centered, because a client intends to create a customized context.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Services.RiderMainWindowPopupWindowContext.GetSourceCore">
+            <inheritdoc />
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Services.RiderJetPopupMenus">
+            <summary>
+              It's silent version of JetPopupMenus, which constructs proxy menus for interacting by protocol.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Settings.IdeaSettingsInterop.MountPoints.IdeaSettingsMountPoint">
+            <summary>
+            These settings are stored on IJ side. We just override r# temporarily, because we use idea options
+            and can't determine a correct layer to save.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Settings.IdeaSettingsInterop.RiderHiddenOptions">
+            Component for disabling changes for some settings in Rider.
+            This can be used for example if a setting stands for enabling functionality which also provided by VS so it's up to user to choose.
+            Turning such a setting off in Rider would leave a feature disabled with no alternative provided.
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.SolutionBuilder.SolutionBuilderHost.SolutionBuilderHostInternalDumper.#ctor(JetBrains.Rider.Model.BuildModel,JetBrains.ReSharper.Features.SolBuilderDuo.Services.Internal.SolutionBuilderDump,JetBrains.ReSharper.Features.SolBuilderDuo.Services.Internal.SolutionBuilderStoryDumper)">
+            <inheritdoc />
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.SyntaxHighlighting.CSharp.CSharpSoftKeywordHighlightingProcessor">
+            <summary>
+            Highlights C# contextual keywords, doc comments
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.TextControls.HostTextControlCoordinateConversion.Screen_To_Viewport(System.Drawing.Point)">
+            <summary>
+            Helper conversion for deriving screen conversions from canvas ones.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.TextControls.HostTextControlCoordinateConversion.Viewport_To_Screen(System.Windows.Point)">
+            <summary>
+            Helper conversion for deriving screen conversions from canvas ones.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.TextControls.RiderEditorManager.TryFindTextControlForFile(JetBrains.ProjectModel.IProjectModelElement)">
+            <summary>
+            Looks if there's a text control for the given file currently open.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.TextControls.TextControlHost.BindEditor(JetBrains.Rider.Model.TextControlId,JetBrains.ProjectModel.IProjectFile)">
+            <summary>
+            Binding with model is just the starting point of handling textControl. 
+            Hence the new backend textControl will be created and registered automatically afterwards
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.TextControls.TextControlHost.CreateDefaultTextControlId(JetBrains.ProjectModel.IProjectItem,JetBrains.Rider.Model.TextControlLocation)">
+            <summary>
+            creates a text control id for the specified project file opened in default tab
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.TextControls.TextControlHost.CreateNewTextControlId(JetBrains.ProjectModel.IProjectItem,JetBrains.Rider.Model.TextControlLocation)">
+            <summary>
+            creates a text control id for the specified file that will open it in a new tab
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.TextControls.TextControlHost.CreateDefaultTextControlId(JetBrains.Util.FileSystemPath,JetBrains.Rider.Model.TextControlLocation)">
+            <summary>
+            creates a text control id for the specified fsp opened in default tab
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.TextControls.HostTextControlWindow.JetBrains#TextControl#ITextControlWindow#MouseAndModifierKeys">
+            <inheritdoc />
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.TextControls.TrackAnyHostTextControlCaretAndSelection">
+            <summary>
+            Connects to the hosting IDE and tracks document modifications related to out project files.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.Toolset.Detecting.BuildToolProjectInfo.ProjectFilePath">
+            <summary>
+            Project file location
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.Toolset.Detecting.BuildToolProjectInfo.TargetsFullFramework">
+            <summary>
+            Means project target full framework
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.Toolset.Detecting.BuildToolProjectInfo.ApiV15">
+            <summary>
+            Uses API from v15
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.Toolset.Detecting.BuildToolProjectInfo.SDK">
+            <summary>
+            SDK
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Host.Features.Toolset.Detecting.BuildToolProjectInfo.SystemImports">
+            <summary>
+            All imported system targets and properties
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Toolset.RiderApplicationRuntime">
+            <summary>
+            This component should be use only when solution instance not available.
+            If you have <see cref="T:JetBrains.ProjectModel.ISolution"/> you should use <see cref="T:JetBrains.ReSharper.Host.Features.Toolset.RiderSolutionToolset"/>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Toolset.RiderSolutionToolset">
+            <summary>
+            This component contains toolset which use for LoadSolution.
+            BuildTool, Mono, .NET CLI it connected components for that reason it should change simultaneously.
+            If you want to receive a change notification, subscribe on <see cref="P:JetBrains.ReSharper.Host.Features.Toolset.RiderSolutionToolset.Changed"/> signal.
+            If you want to ask to refresh toolset from setting, fire <see cref="P:JetBrains.ReSharper.Host.Features.Toolset.RiderSolutionToolset.Refresh"/> signal.
+            If you need Mono or .NET CLI settings when <see cref="T:JetBrains.ProjectModel.ISolution"/> not available use <see cref="T:JetBrains.ReSharper.Host.Features.Toolset.RiderApplicationRuntime"/>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.UnitTesting.Actions.RiderUnitTestRemoveElementsFromSessionAction">
+            <summary>
+            Currently, this action is a partial copy-paste of UnitTestSessionRemoveSelectedNodes.
+            We can't reuse UnitTestSessionRemoveSelectedNodes directly because the Undo/Redo tracking is using
+            Microsoft.VisualStudio.OLE.Interop which is unavailable in Rider.
+            The current Rider implementation just doesn't implement the Undo/Redo feature.
+            In the future, we want to do the following:
+            1. Migrate to UnitTestSessionRemoveSelectedNodes our own Undo/Redo tracking
+            2. Move UnitTestSessionRemoveSelectedNodes to the "UnitTesting.Explorer" project
+            3. Delete RiderUnitTestRemoveElementsFromSessionAction and reuse UnitTestSessionRemoveSelectedNodes in Rider
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.QuickDoc.RiderHtmlRenderer.PsiElementProtocol">
+            <summary>
+            Idea QuickDoc protocol
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Themes.RiderPsiSymbolIconThemeSettingsLoader">
+            <summary>
+            Loads and publishes as the theme aspect the psi symbol icon theme settings.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Themes.RiderThemedIconSettingsLoader">
+            <summary>
+            Select default icon theme
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Util.Tree.RiderAbstractTreeHost`4.ShouldUpdateWithParents(`2)">
+            <summary>
+            Tells tree to update all parents of the element even if the element was not changed during update
+            Can be used to refresh tree in case when the node affects parent's presentations
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Util.Tree.RiderTreeNode`3.GetValues">
+            <summary>
+            Returns all values associated to the node, allocates a container for enumerable
+            Use '<see cref="P:JetBrains.ReSharper.Host.Features.Util.Tree.RiderTreeNode`3.ValuesCount"/>' and '<see cref="M:JetBrains.ReSharper.Host.Features.Util.Tree.RiderTreeNode`3.GetValueAt(System.Int32)"/>' to access values without boxing
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Util.Tree.RiderTreeNode`3.GetValue``1">
+            <summary>
+            Returns value of specified type if any
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Xamarin.ProjectProperties.ApplePropertiesSigningPanel">
+            <summary>
+            Encapsulates logic about codesign key and codesign provision profile properties for Xamarin iOS/Mac projects
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinAndroid">
+             <summary>
+            	<para>
+            		<para>XamarinAndroid Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinAndroid"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinAndroid.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                     ......................  
+                     ......................  
+                     ......................  
+                     ..                  ..  
+                     ..                  ..  
+                     ..                  ..  
+                     ..                  ..  
+                                         ..  
+                                         ..  
+                                 `.........  
+                                             
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ZaqokasThemedIconsThemedIcons+XamarinAndroid}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ZaqokasThemedIconsThemedIcons.XamarinAndroid))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ZaqokasThemedIconsThemedIcons.XamarinAndroid.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ZaqokasThemedIconsThemedIcons.XamarinAndroid&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinAndroid.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinAndroid">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinAndroid.Load_Idea">
+            <summary>Loads the image for Themed Icon XamarinAndroid theme aspect Idea.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinAndroid.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon XamarinAndroid.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinApple">
+             <summary>
+            	<para>
+            		<para>XamarinApple Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinApple"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinApple.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ZaqokasThemedIconsThemedIcons+XamarinApple}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ZaqokasThemedIconsThemedIcons.XamarinApple))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ZaqokasThemedIconsThemedIcons.XamarinApple.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ZaqokasThemedIconsThemedIcons.XamarinApple&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinApple.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinApple">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinApple.Load_Idea">
+            <summary>Loads the image for Themed Icon XamarinApple theme aspect Idea.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinApple.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon XamarinApple.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinApplePhone">
+             <summary>
+            	<para>
+            		<para>XamarinApplePhone Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinApplePhone"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinApplePhone.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ZaqokasThemedIconsThemedIcons+XamarinApplePhone}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ZaqokasThemedIconsThemedIcons.XamarinApplePhone))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ZaqokasThemedIconsThemedIcons.XamarinApplePhone.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ZaqokasThemedIconsThemedIcons.XamarinApplePhone&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinApplePhone.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinApplePhone">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinApplePhone.Load_Idea">
+            <summary>Loads the image for Themed Icon XamarinApplePhone theme aspect Idea.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Features.Xamarin.XamarinThemedIcons.XamarinApplePhone.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon XamarinApplePhone.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Xamarin.XCode.Sync.XCodeUpdateContentFileJob">
+            <summary>
+            Copies a changed content file from Xcode project into dotnet one
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Xamarin.XCode.Sync.XCodeGenerateStoryboardTypesJob">
+            <summary>
+            Generates user types from storyboard designer
+            Has the lowest priority, so we generate only missing (defined only in the storyboard) types
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Features.Xamarin.XCode.Sync.XCodeGenerateTypeJob">
+            <summary>
+            Generates type from objc presentation
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Host.Features.Xamarin.XCode.Sync.XCodeProjectSync.myContentPaths">
+            <summary>
+            Map from Xcode content file path into dotnet project path
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Install.RiderBundledProductArtifact">
+            <summary>
+            Defines additional products which should be included with Rider distribution as bundled plugins. Based on the products related packages are collected and added outside the main bulk of the packages but into separate bundled plugins.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Install.RiderBundledProductArtifact.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Install.RiderBundledProductArtifact.CompareTo(JetBrains.ReSharper.Host.Install.RiderBundledProductArtifact)">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Install.RiderBundledProductArtifact.CompareTo(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Install.RiderBundledProductArtifact.Equals(JetBrains.ReSharper.Host.Install.RiderBundledProductArtifact)">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Install.RiderBundledProductArtifact.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Install.RiderBundledProductArtifact.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.ReSharper.Host.Install.RiderBundledProductArtifact.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:JetBrains.ReSharper.Host.Product.RiderZonesVerifier">
+            <summary>
+            Checks that zones for Rider normal work is loaded and if not, write exception  
+            </summary>
+        </member>
+        <member name="T:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons">
+             <summary>
+            	<para>
+            		<para>Autogenerated identifier classes and identifier objects to Themed Icons registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see>.</para>
+            		<para>Identifier classes should be used in attributes, XAML, or generic parameters. Where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected, use the identifier object in the <c>Id</c> field of the identifier class.</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>This code was compile-time generated to support Themed Icons in the JetBrains application.</para>
+            	<para>It has two primary goals: load the icons of this assembly to be registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> so that they were WPF-accessible and theme-sensitive; and emit early-bound accessors for referencing icons in codebehind in a compile-time-validated manner.</para>
+            	<h1>XAML</h1>
+            	<para>For performance reasons, the icons are not individually exposed with application resources. There is a custom markup extension to bind an image source in markup.</para>
+            	<para>To use an icon from XAML, set an <see cref="T:System.Windows.Media.ImageSource"></see> property to the <see cref="T:System.CodeDom.CodeTypeReference"></see> markup extension, which takes an icon identifier class (nested in <see cref="T:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons"></see> class) as a parameter.</para>
+            	<para>Example:</para>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:DodofuxThemedIconsThemedIcons+Trinity}" /&gt;</code>
+            	<h1>Attributes</h1>
+            	<para>Sometimes you have to reference an icon from a type attriute when you're defining objects in code. Typical examples are Options pages and Tool Windows.</para>
+            	<para>To avoid the use of string IDs which are not validated very well, we've emitted identifier classes to be used with <c>typeof()</c> expression, one per each icon. Use the attribute overload which takes a <see cref="T:System.Type"></see> for an image, and choose your icon class from nested classes in the <see cref="T:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons"></see> class.</para>
+            	<para>Example:</para>
+            	<code>[Item(Name="Sample", Icon=typeof(DodofuxThemedIconsThemedIcons.Trinity))]</code>
+            	<h1>CodeBehind</h1>
+            	<para>In codebehind, we have two distinct tasks: (a) specify some icon in the APIs and (b) render icon images onscreen.</para>
+            	<para>On the APIs stage you should only manipulate icon identifier objects (of type <see cref="T:JetBrains.UI.Icons.IconId"></see>, statically defined in <see cref="T:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons"></see> in <c>Id</c> fields). Icon identifier classes (nested in <see cref="T:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons"></see>) should be turned into icon identifier objects as early as possible. Rendering is about getting an <see cref="T:System.Windows.Media.ImageSource"></see> to assign to WPF, or <see cref="T:System.Drawing.Bitmap"></see> to use with GDI+ / Windows Forms.</para>
+            	<para>You should turn an identifier object into a rendered image as late as possible. The identifier is static and lightweight and does not depend on the current theme, while the image is themed and has to be loaded or generated/rasterized. You need an <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> instance to get the image out of an icon identifier object. Once you got the image, you should take care to change it with theme changes — either by using a live image property, or by listening to the theme change event. See <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> and its extensions for the related facilities.</para>
+            	<para>Example:</para>
+            	<code>// Getting IconId identifier object to use with APIs
+            IconId iconid = DodofuxThemedIconsThemedIcons.Trinity.Id;</code>
+            	<code>// Getting IconId out of an Icon Identifier Class type
+            IconId iconid = new JetBrains.Application.Icons.CompiledIconsCs.CompiledIconCsId(typeof(DodofuxThemedIconsThemedIcons.Trinity));</code>
+            	<code>// Getting image for screen rendering by IconId
+            themediconmanager.Icons[icnoid]</code>
+            	<code>// Getting image for screen rendering by Icon Identifier Class
+            themediconmanager.GetIcon&lt;DodofuxThemedIconsThemedIcons.Trinity&gt;()</code>
+            	<h1>Icons Origin</h1>
+            	<para>This code was generated by a pre-compile build task from a set of input files which are XAML files adhering to a certain convention, as convenient for exporting them from the Illustrator workspace, plus separate PNG files with raster icons. In the projects, these files are designated with <c>ThemedIconsXamlV3</c> and <c>ThemedIconPng</c> build actions and do not themselves get into the output assembly. All of such files are processed, vector images for different themes of the same icon are split and combined into the single list of icons in this assembly. This list is then written into the genearted XAML file (compiled into BAML within assembly), and serves as the source for this generated code.</para>
+            </remarks>
+        </member>
+        <member name="T:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.DebugThis">
+             <summary>
+            	<para>
+            		<para>DebugThis Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.DebugThis"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.DebugThis.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                      "{a1_    '(a5^         
+                    "{Z^`;e1__(y+-"Y5^       
+                   '1aL`  `;ey*`  `+a1'      
+                     ^ay;   ``   "ea\        
+               \\\\\cy1_          .*ai\\\\\  
+               aa"""":`             '""""aa  
+               aa````````````````````````aa  
+               aaaaa^````\SSSSSS\````.aaaaa  
+               aaLLL_````,;;;;;;,````-LLLaa  
+               aa````````````````````````aa  
+               aaIII~````caaaaaac````'IIIaa  
+               aa|||;----~++++++~----_|||aa  
+               aa........................aa  
+               aarrrrr+_..........'=rrrrraa  
+               """"""^vS?;:_____^\Yx!""""""  
+                       '^?{YYYYY|+_          
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:PohequkThemedIconsThemedIcons+DebugThis}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(PohequkThemedIconsThemedIcons.DebugThis))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = PohequkThemedIconsThemedIcons.DebugThis.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;PohequkThemedIconsThemedIcons.DebugThis&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.DebugThis.Id">
+            <inheritdoc cref="T:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.DebugThis">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.DebugThis.Load_Color">
+            <summary>Loads the image for Themed Icon DebugThis theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.DebugThis.Load_Gray">
+            <summary>Loads the image for Themed Icon DebugThis theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.DebugThis.Load_GrayDark">
+            <summary>Loads the image for Themed Icon DebugThis theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.DebugThis.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon DebugThis.</summary>
+        </member>
+        <member name="T:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunActions">
+             <summary>
+            	<para>
+            		<para>RunActions Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunActions"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunActions.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                     ;;;:.                   
+                     ++`_^+~'                
+                     **   `_^*=_`            
+                     LL      `_^\+:-         
+                     rr``````````_^L\~'      
+                     TT`````````````_^L?=    
+                     ))-------------'~*)*    
+                     ss''''''''''_=r|+:`     
+                     ll'''''''"+(s+_         
+                     ff____^Llv;'            
+                     YY,;TI|='               
+                     222T^`                  
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:PohequkThemedIconsThemedIcons+RunActions}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(PohequkThemedIconsThemedIcons.RunActions))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = PohequkThemedIconsThemedIcons.RunActions.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;PohequkThemedIconsThemedIcons.RunActions&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunActions.Id">
+            <inheritdoc cref="T:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunActions">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunActions.Load_Color">
+            <summary>Loads the image for Themed Icon RunActions theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunActions.Load_Gray">
+            <summary>Loads the image for Themed Icon RunActions theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunActions.Load_GrayDark">
+            <summary>Loads the image for Themed Icon RunActions theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunActions.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon RunActions.</summary>
+        </member>
+        <member name="T:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunThis">
+             <summary>
+            	<para>
+            		<para>RunThis Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunThis"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunThis.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                   ;;;,'                     
+                   ++`_^+^_`                 
+                   **    '~+;:-              
+                   \\       '"+*^'           
+                   LL          .:;L=_`       
+                   ??`````````````-_;r*".    
+                   TT`````````````````_=L?=  
+                   JJ-----------------'^*J*  
+                   ||'''''''''''''':;?)!_`   
+                   FF''''''''''_^*sT='       
+                   CC_______,;?Cr~-          
+                   [[____^\it/:`             
+                   55,;TYF!_                 
+                   2227=.                    
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:PohequkThemedIconsThemedIcons+RunThis}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(PohequkThemedIconsThemedIcons.RunThis))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = PohequkThemedIconsThemedIcons.RunThis.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;PohequkThemedIconsThemedIcons.RunThis&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunThis.Id">
+            <inheritdoc cref="T:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunThis">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunThis.Load_Color">
+            <summary>Loads the image for Themed Icon RunThis theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunThis.Load_Gray">
+            <summary>Loads the image for Themed Icon RunThis theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunThis.Load_GrayDark">
+            <summary>Loads the image for Themed Icon RunThis theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.UI.ThemedIcons.RunMarkersThemedIcons.RunThis.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon RunThis.</summary>
+        </member>
+    </members>
+</doc>

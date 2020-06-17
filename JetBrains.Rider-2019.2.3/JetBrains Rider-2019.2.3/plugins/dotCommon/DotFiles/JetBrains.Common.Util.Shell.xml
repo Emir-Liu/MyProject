@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Common.Util.Shell</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.Common.Util.Shell.Remoting.Zones.ILocalSideZone">
+            <summary>
+            For components which must be loaded only on local side (not out of process)
+            </summary>
+        </member>
+        <member name="T:JetBrains.Common.Util.Shell.Remoting.Zones.IRemoteSideZone">
+            <summary>
+            For components which must be loaded only on remote side (out of process)
+            </summary>
+        </member>
+    </members>
+</doc>

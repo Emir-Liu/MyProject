@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.RiderTutorials</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.RiderTutorials.BuildScript.PackageRiderTutorials">
+            <summary>
+            Causes the tutorial content files be embedded with the Nuget package of this subplatform and delivered upon installation.
+            </summary>
+        </member>
+        <member name="F:JetBrains.RiderTutorials.BuildScript.PackageRiderTutorials.ourPackagedContentFileName">
+            <summary>
+            Gets into installdir of the package under this name.
+            </summary>
+        </member>
+        <member name="T:JetBrains.RiderTutorials.Checker.Tutorial1Checks">
+            <summary>
+            Custom Step Checks. Must contain 'public bool' methods that return true if the check passes. 
+            Each method MUST be marked with RunCheckAttribute. This attribute defines HOW a check will be TRIGGERED: 
+            OnEvent.AfterAction if it should be triggered by the action specified in the step (NOT WORKING CURRENTLY); 
+            OnEvent.PsiChange if it should be triggered by any Psi tree change; 
+            OnEvent.CaretMove if it should be triggered by any caret position change.
+            </summary>
+        </member>
+        <member name="M:JetBrains.RiderTutorials.Checker.Tutorial1Checks.CheckTutorial1Step3">
+            <summary>
+            Example of a PSI check
+            </summary>
+            <returns>Returns true if BadlyNamedClass is found</returns>
+        </member>
+        <member name="M:JetBrains.RiderTutorials.Checker.TypicalChecks.StringExists(JetBrains.ProjectModel.ISolution,System.String,System.String,System.String)">
+            <summary>
+            Converts the entire CSharp IFile to string and checks whether it contains $text$        
+            </summary>     
+        </member>
+        <member name="M:JetBrains.RiderTutorials.Checker.TypicalChecks.StringExistsInXmlFile(JetBrains.ProjectModel.ISolution,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Converts the entire XML IFile to string and checks whether it contains $text$        
+            </summary>     
+        </member>
+        <member name="M:JetBrains.RiderTutorials.Checker.TypicalChecks.TypeDeclarationExists(JetBrains.ProjectModel.ISolution,System.String,System.String,System.String)">
+            <summary>
+            Finds type declaration in scope specified in the current step
+            </summary>
+            <returns>Returns true if $typeName$ is found</returns>
+        </member>
+        <member name="M:JetBrains.RiderTutorials.Checker.TypicalChecks.MethodDeclarationExists(JetBrains.ProjectModel.ISolution,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Finds method declaration in scope specified in the current step
+            </summary>
+            <returns>Returns true if $typeName$ is found</returns>
+        </member>
+        <member name="M:JetBrains.RiderTutorials.Checker.TypicalChecks.GetMethodNode(JetBrains.ProjectModel.ISolution,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Get ITreeNode by method's FQN
+            </summary>
+            <param name="solution">Solution</param>
+            <param name="projectName">Project name</param>
+            <param name="fileName">File name</param>
+            <param name="typeName">Type short name</param>
+            <param name="methodName">Method short name</param>
+            <param name="methodOccurrence">Method occurence (for overloads)</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.RiderTutorials.Checker.TypicalChecks.TreeNodeWithTextExists(JetBrains.ProjectModel.ISolution,System.String,System.String,System.String,System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+            Finds text of a tree node in scope specified in the current step
+            </summary>        
+            <returns>Returns true if specific $occurrence$ of $text$ is found</returns>        
+        </member>
+        <member name="F:JetBrains.RiderTutorials.Checker.MainChecker.myStepActionChecker">
+            <summary>
+            Use to identify whether a user applied an action specified in the step
+            </summary>
+        </member>
+        <member name="F:JetBrains.RiderTutorials.Checker.MainChecker.myFrontendActionChecker">
+            <summary>
+            Use to identify whether a user applied an action on a frontend specified in the step
+            </summary>
+        </member>
+        <member name="F:JetBrains.RiderTutorials.Checker.MainChecker.myStepPsiChecker">
+            <summary>
+            Use to perform checks that use PSI tree
+            </summary>
+        </member>
+        <member name="F:JetBrains.RiderTutorials.Checker.MainChecker.myStepNavigationChecker">
+            <summary>
+            Use to identify whether a user navigated to the right part of code
+            </summary>
+        </member>
+        <member name="T:JetBrains.RiderTutorials.Checker.StepActionChecker">
+            <summary>
+            Used to check whether a user performed an action required by the step.
+            Action is specified as an argument in XML
+            </summary>
+        </member>
+        <member name="T:JetBrains.RiderTutorials.Checker.StepFrontendActionChecker">
+            <summary>
+            Used to check whether a user performed an action required by the step
+            This relates only to actions performed on frontend
+            Action is specified as an argument in XML with the frontEnd. prefix
+            </summary>
+        </member>
+        <member name="F:JetBrains.RiderTutorials.Checker.StepNavigationChecker.Check">
+            <summary>
+            This method must check whether a user navigated to the right node. It corresponds
+            to a method of the MainChecker class and is run on every caret move.
+            </summary>
+        </member>
+        <member name="F:JetBrains.RiderTutorials.Checker.StepPsiChecker.Check">
+            <summary>
+            This method checks whether a user have done all the actions 
+            required by the step by checking the Psi tree. It corresponds
+            to a method of the MainChecker class and is run on every Psi change.
+            </summary>
+        </member>
+        <member name="M:JetBrains.RiderTutorials.CodeNavigator.CustomNavigation.NavigateToNewLineInClass(System.String,System.String,System.String,System.Int32,System.Int32,JetBrains.TextControl.CaretVisualPlacement)">
+            <summary>
+            Creates a new line(s) in the specified class and navigates to this new line. 
+            </summary>    
+        </member>
+        <member name="M:JetBrains.RiderTutorials.CodeNavigator.CustomNavigation.NavigateToNewLineAfterNode(JetBrains.ReSharper.Psi.Tree.ITreeNode,System.Int32,System.Int32,JetBrains.TextControl.CaretVisualPlacement)">
+            <summary>
+            Creates a new line(s) after the specified ITreeNode and navigates to this new line. 
+            </summary>    
+        </member>
+        <member name="M:JetBrains.RiderTutorials.CodeNavigator.CustomNavigation.NavigateByName(System.String,System.String,System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Boolean,JetBrains.TextControl.CaretVisualPlacement)">
+            <summary>
+            Navigates to the specified class, [method], [after any text inside the class or method] and
+            adds the offset to the caret
+            </summary>        
+            <param name="offsetFromStart">If true, caret will be moved to TextRange.StartOffset, otherwise, to TextRange.EndOffset</param>
+        </member>
+        <member name="M:JetBrains.RiderTutorials.CodeNavigator.CustomNavigation.NavigateToNode(JetBrains.ReSharper.Psi.Tree.ITreeNode,System.Int32,System.Boolean,JetBrains.TextControl.CaretVisualPlacement)">
+            <summary>    
+            Navigates to the specified ITreeNode and adds the offset to the caret             
+            </summary>    
+            <param name="offsetFromStart">If true, caret will be moved to TextRange.StartOffset, otherwise, to TextRange.EndOffset</param>    
+        </member>
+        <member name="M:JetBrains.RiderTutorials.CodeNavigator.CustomNavigation.NavigateToFileStart(JetBrains.ReSharper.Psi.Tree.ITreeNode,JetBrains.TextControl.CaretVisualPlacement)">
+            <summary>
+            Workaround for NavigateToNewLineAfterNode in Rider (must be executed before it)
+            </summary>
+        </member>
+        <member name="M:JetBrains.RiderTutorials.CodeNavigator.CustomNavigation.GetOffsets(JetBrains.ReSharper.Psi.Tree.ITreeNode,System.Int32@,System.Int32@)">
+            <summary>
+            Gets start and end offsets of the specified ITreeNode
+            </summary>
+        </member>
+        <member name="M:JetBrains.RiderTutorials.CodeNavigator.CustomNavigation.SelectCode(System.String,System.String,System.Int32,System.Int32,JetBrains.TextControl.CaretVisualPlacement)">
+            <summary>
+            Selects all code in the editor between two offsets 
+            </summary>
+        </member>
+        <member name="M:JetBrains.RiderTutorials.CodeNavigator.CustomNavigation.SelectCode(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32,JetBrains.TextControl.CaretVisualPlacement)">
+            <summary>
+            Selects all code in the editor inside the specified namespace, class, or method 
+            </summary>
+        </member>
+        <member name="T:JetBrains.RiderTutorials.CodeNavigator.Tutorial1Navigation">
+            <summary>
+            Custom navigation class MUST implement ICustomNavigation and have ISolution, IEditorManager, 
+            DocumentManager in constructor. 
+            </summary>
+        </member>
+        <member name="T:JetBrains.RiderTutorials.Model.Tutorial">
+            <summary>
+            Stores initial info about tutorial: id, paths to content and solution (base and working copy),
+            description, procedures required to be run after tutorial solution is loaded.
+            Does not contain any steps data.
+            </summary>
+        </member>
+        <member name="M:JetBrains.RiderTutorials.Model.Tutorial.#ctor(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id">Tutorial id</param>
+            <param name="contentInitPath">Path to the initial content dir. It will be copied to <paramref name="contentWorkPath"/> once the tutorial is selected</param>
+            <param name="contentWorkPath">Path to the working copy dir. It is deleted and created from init content each time the tutorial is selected.</param>
+            <param name="contentFolder">Name of dir that stores content: xml with tutorial text and images. This dir is always inside <paramref name="contentWorkPath"/> and <paramref name="contentInitPath"/></param>
+            <param name="contentFile">Name of xml content file</param>
+            <param name="solutionFolder">Name of dir that stores sample solution used in the tutorial</param>
+            <param name="solutionFile">Name of sample solution file</param>
+            <param name="title">Tutorial title</param>
+            <param name="description">Tutorial description</param>
+        </member>
+        <member name="T:JetBrains.RiderTutorials.Model.TutorialStep">
+            <summary>
+            Stores data on a tutorial step: step text and completion checks
+            </summary>
+        </member>
+        <member name="P:JetBrains.RiderTutorials.Model.TutorialStep.GoToNextStep">
+            <summary>
+            If GoToNextStep is specified as Manual or not specified, 
+            a user can proceed to the Next Step (hit Tab) ONLY by clicking the Next button or pressing Tab. 
+            </summary>
+        </member>
+        <member name="P:JetBrains.RiderTutorials.Model.TutorialStep.IsActionDone">
+            <summary>
+            Shows whether a user performed the action required by the step 
+            </summary>
+        </member>
+        <member name="P:JetBrains.RiderTutorials.Model.TutorialStep.IsCheckDone">
+            <summary>
+            Shows whether the check required by the step passes or not
+            </summary>
+        </member>
+        <member name="M:JetBrains.RiderTutorials.Model.TutorialStep.ForceStepDone">
+            <summary>
+            Go to next step avoiding all checks
+            </summary>
+        </member>
+        <member name="F:JetBrains.RiderTutorials.Runner.TutorialRunner.TempData">
+            <summary>
+            Used to pass data inside a step, e.g. to make the diff 'before/after user changes'
+            when there is no other way to detect changes, e.g. after code reformatting
+            </summary>
+        </member>
+    </members>
+</doc>

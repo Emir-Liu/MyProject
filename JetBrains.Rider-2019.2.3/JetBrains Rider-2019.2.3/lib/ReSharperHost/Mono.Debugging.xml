@@ -1,0 +1,2004 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mono.Debugging</name>
+    </assembly>
+    <members>
+        <member name="M:Mono.Debugging.Client.Breakpoints.IBreakpointsManager.AddBreakpoint(JetBrains.Lifetimes.Lifetime,Debugger.Common.PathResolution.IUserDebugPath,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Action{Mono.Debugging.Client.Breakpoint},System.Action{Mono.Debugging.Client.Breakpoint,Mono.Debugging.Client.BreakEventStatus,System.String})">
+            <summary>
+            </summary>
+            <param name="lifetime"></param>
+            <param name="fileName"></param>
+            <param name="line">Value must be greater than zero</param>
+            <param name="column">Value must be greater than zero</param>
+            <param name="isSolutionFile"></param>
+            <param name="isMultiMethodBreakpoint"></param>
+            <param name="beforeInsert"></param>
+            <param name="statusChangedHandler"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Client.Breakpoints.IBreakpointsManager.AddRunToCursorBreakpoint(JetBrains.Lifetimes.Lifetime,Debugger.Common.PathResolution.IUserDebugPath,System.Int32,System.Int32)">
+            <summary>
+            </summary>
+            <param name="fileName"></param>
+            <param name="line">Value must be greater than zero</param>
+            <param name="column">Value must be greater than zero</param>
+            <param name="beforeInsert"></param>
+            <param name="statusChangedHandler"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Mono.Debugging.Client.CallStacks.ICallStack.Frames">
+            <summary>
+            Frames are cached, but the cache may be reset between runtime invokes
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerOptions.IDebuggerSessionOptions.IgnoreMissingSourceFileLocations">
+            <summary>
+            Show whether we should stop on locations without source files or just skip it
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerOptions.IDebuggerSessionOptions.DisableDebugHeap">
+            <summary>
+            Sets _NO_DEBUG_HEAP env variable to 1 to disable checked allocations. Increases start of debuggee on ICorDebug on Windows.
+            More info at https://ofekshilon.com/2014/09/20/accelerating-debug-runs-part-1-_no_debug_heap-2
+            Default value is 'true'.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerOptions.StackFrameFormat.ExternalCode">
+            <summary>
+            Default is null. Which means do same as "ProjectAssembliesOnly" setting.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.Steppers.Stepper`3.HandleStepComplete(`0,`1)">
+            <summary>
+            Handles end of step operation
+            </summary>
+            <returns>true if debugger was continued, or false if debugger should raise stop event</returns>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggingHelper`3.GetTypeObject(`0,System.String,System.String)">
+            <param name="ctx"></param>
+            <param name="assemblyName">Must be string.Empty for corlib types, null is not allowed</param>
+            <param name="typeFqn">FQN</param>
+            <returns></returns>
+        </member>
+        <member name="E:Mono.Debugging.Client.IDebuggerSession.TargetEvent">
+            <summary>
+            Reports a debugger event
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.IDebuggerSession.TargetStarted">
+            <summary>
+            Raised when the debugger resumes execution after being stopped
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.IDebuggerSession.TargetReady">
+            <summary>
+            Raised when the underlying debugging engine has been initialized and it is ready to start execution.
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.IDebuggerSession.TargetStopped">
+            <summary>
+            Raised when the debugging session is paused
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.IDebuggerSession.TargetInterrupted">
+            <summary>
+            Raised when the execution is interrupted by an external event
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.IDebuggerSession.TargetHitBreakpoint">
+            <summary>
+            Raised when a breakpoint is hit
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.IDebuggerSession.TargetSignaled">
+            <summary>
+            Raised when the execution is interrupted due to receiving a signal
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.IDebuggerSession.TargetExited">
+            <summary>
+            Raised when the debugged process exits
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.IDebuggerSession.TargetExceptionThrown">
+            <summary>
+            Raised when an exception for which there is a catchpoint is thrown
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.IDebuggerSession.TargetUnhandledException">
+            <summary>
+            Raised when an exception is unhandled
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.IDebuggerSession.TargetThreadStarted">
+            <summary>
+            Raised when a thread is started in the debugged process
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.IDebuggerSession.TargetThreadStopped">
+            <summary>
+            Raised when a thread is stopped in the debugged process
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.IDebuggerSession.BusyStateChanged">
+            <summary>
+            Raised when the 'busy state' of the debugger changes.
+            The debugger may switch to busy state if it is in the middle
+            of an expression evaluation which can't be aborted.
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.IDebuggerSession.TargetNotificationSent">
+            <summary>
+            Custom event handler; raised when debugger send notifications
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.ExceptionHandler">
+            <summary>
+            Gets or sets an exception handler to be invoked when an exception is raised by the debugger engine.
+            </summary>
+            <remarks>
+            Notice that this handler will be used to report exceptions in the debugger, not exceptions raised
+            in the debugged process.
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.ConnectionDialogCreator">
+            <summary>
+            Gets or sets the connection dialog creator callback.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.ConnectionDialogCreatorExtended">
+            <summary>
+            Gets or sets the connection dialog creator callback.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.BreakpointTraceHandler">
+            <summary>
+            Gets or sets the breakpoint trace handler.
+            </summary>
+            <remarks>
+            This handler is invoked when the value of a tracepoint has to be printed
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.CustomBreakEventHitHandler">
+            <summary>
+            Gets or sets the an expression evaluator provider
+            </summary>
+            <remarks>
+            This handler is invoked when the debugger needs to get an evaluator for a specific type of file
+            </remarks>
+            <summary>
+            Gets or sets the custom break event hit handler.
+            </summary>
+            <remarks>
+            This handler is invoked when a custom breakpoint is hit to determine if the debug session should
+            continue or stop.
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.AttachedToProcess">
+            <summary>
+            Gets a value indicating whether this <see cref="!:Mono.Debugging.Client.DebuggerSession"/> has been attached to a process using the Attach method.
+            </summary>
+            <value>
+            <c>true</c> if attached to process; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.ActiveThread">
+            <summary>
+            Gets the active thread.
+            </summary>
+            <remarks>
+            This property can only be used when the debugger is paused
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.SetActiveThread(System.Int64)">
+            <summary>
+            Sets active thread by its id
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.Options">
+            <summary>
+            Gets the debugger options object
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.EvaluationOptions">
+            <summary>
+            Gets or sets the evaluation options.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.IsConnected">
+            <summary>
+            Gets a value indicating whether the debuggee is currently connected
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.IsRunning">
+            <summary>
+            Gets a value indicating whether the debuggee is currently running (not paused by the debugger)
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.HasExited">
+            <summary>
+            Gets a value indicating whether the debuggee has exited.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.OutputWriter">
+            <summary>
+            Gets or sets the output writer callback.
+            </summary>
+            <remarks>
+            This callback is invoked to print debuggee output
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.LogWriter">
+            <summary>
+            Gets or sets the log writer.
+            </summary>
+            <remarks>
+            This callback is invoked to print debugger log messages
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.DebugWriter">
+            <summary>
+            Gets or sets the debug writer.
+            </summary>
+            <remarks>
+            This callback is invoked to print debugge messages
+            called via System.Diagnostics.Debugger.Log
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.CanCancelAsyncEvaluations">
+            <summary>
+            Gets a value indicating whether there are background evaluations being done by the debugger
+            which can be cancelled.
+            </summary>
+            <remarks>
+            This method can only be used when the debuggee is stopped by the debugger
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.CanSetNextStatement">
+            <summary>
+            Checks whether or not the debugger supports setting the next statement to use when the debugger is resumed.
+            </summary>
+            <remarks>
+            This method is generally used to determine whether or not UI menu items should be shown.
+            </remarks>
+            <value><c>true</c> if the debugger supports setting the next statement to use when the debugger is resumed; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.CanFetchHeapInfo">
+            <summary>
+            Checks whether or not the debugger supports viewing managed heap values
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.CanMakeObjectIds">
+            <summary>
+            Checks whether or not the debugger supports Make Object Id
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.IDebuggerSession.OperationsController">
+            <summary>
+            Special object which allows to control evaluation process. Usually ObjectAdapter
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.Run(Mono.Debugging.Client.DebuggerStartInfo,Mono.Debugging.Client.DebuggerOptions.IDebuggerSessionOptions)">
+            <summary>
+            Starts a debugging session
+            </summary>
+            <param name='startInfo'>
+            Startup information
+            </param>
+            <param name='options'>
+            Session options
+            </param>
+            <exception cref='T:System.ArgumentNullException'>
+            Is thrown when an argument passed to a method is invalid because it is <see langword="null" /> .
+            </exception>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.AttachToProcess(Mono.Debugging.Client.ProcessInfo,Mono.Debugging.Client.DebuggerOptions.IDebuggerSessionOptions)">
+            <summary>
+            Starts a debugging session by attaching the debugger to a running process
+            </summary>
+            <param name='proc'>
+            Process information
+            </param>
+            <param name='options'>
+            Debugging options
+            </param>
+            <exception cref='T:System.ArgumentNullException'>
+            Is thrown when an argument passed to a method is invalid because it is <see langword="null" /> .
+            </exception>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.Detach">
+            <summary>
+            Detaches this debugging session from the debugged process
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.NextLine">
+            <summary>
+            Executes one line of code
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.StepLine">
+            <summary>
+            Executes one line of code, stepping into method invocations
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.SmartStepLine(Mono.Debugging.Client.SmartStepIntoInfo)">
+            <summary>
+            Step into specific method
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.NextInstruction">
+            <summary>
+            Executes one low level instruction
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.StepInstruction">
+            <summary>
+            Executes one low level instruction, stepping into method invocations
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.Finish">
+            <summary>
+            Resumes the execution of the debugger and stops when the current method is exited
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.SetNextStatement(Debugger.Common.PathResolution.IUserDebugPath,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Sets the next statement on the active thread.
+            </summary>
+            <param name="fileName">File name.</param>
+            <param name="line">Line.</param>
+            <param name="column">Column.</param>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.SetNextStatement(System.Int32,System.Boolean)">
+            <summary>
+            Sets the next statement on the active thread.
+            </summary>
+            <param name="ilOffset">The IL offset.</param>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.Continue">
+            <summary>
+            Resumes the execution of the debugger
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.Stop">
+            <summary>
+            Pauses the execution of the debugger
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.Exit">
+            <summary>
+            Stops the execution of the debugger by killing the debugged process
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.GetProcessInfo">
+            <summary>
+            Gets process info for debuggee
+            </summary>
+            <remarks>
+            This method can only be used when the debuggee is stopped by the debugger
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.CancelAsyncEvaluations">
+            <summary>
+            Stops the execution of background evaluations being done by the debugger
+            </summary>
+            <remarks>
+            This method can only be used when the debuggee is stopped by the debugger
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.IDebuggerSession.CheckExistingDebugInfoMatchesFile(Mono.Debugging.Client.CallStacks.IStackFrame)">
+            <summary>
+            Check that debug info checksums are equal to current file checksums
+            Return false only if debug info exists and values are not equal.
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.IDebuggerSession.ModuleLoaded">
+            <summary>
+            Raised when a module is loaded in target process
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.IDebuggerSession.ModuleUnloaded">
+            <summary>
+            Raised when a module is unloaded in target process
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.DebuggerSession`3.TargetEvent">
+            <summary>
+            Reports a debugger event
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.DebuggerSession`3.TargetStarted">
+            <summary>
+            Raised when the debugger resumes execution after being stopped
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.DebuggerSession`3.TargetReady">
+            <summary>
+            Raised when the underlying debugging engine has been initialized and it is ready to start execution.
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.DebuggerSession`3.TargetStopped">
+            <summary>
+            Raised when the debugging session is paused
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.DebuggerSession`3.TargetInterrupted">
+            <summary>
+            Raised when the execution is interrupted by an external event
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.DebuggerSession`3.TargetHitBreakpoint">
+            <summary>
+            Raised when a breakpoint is hit
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.DebuggerSession`3.TargetSignaled">
+            <summary>
+            Raised when the execution is interrupted due to receiving a signal
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.DebuggerSession`3.TargetExited">
+            <summary>
+            Raised when the debugged process exits
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.DebuggerSession`3.TargetExceptionThrown">
+            <summary>
+            Raised when an exception for which there is a catchpoint is thrown
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.DebuggerSession`3.TargetUnhandledException">
+            <summary>
+            Raised when an exception is unhandled
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.DebuggerSession`3.TargetThreadStarted">
+            <summary>
+            Raised when a thread is started in the debugged process
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.DebuggerSession`3.TargetThreadStopped">
+            <summary>
+            Raised when a thread is stopped in the debugged process
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.DebuggerSession`3.ModuleLoaded">
+            <summary>
+            Raised when a module is loaded in target process
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.DebuggerSession`3.ModuleUnloaded">
+            <summary>
+            Raised when a module is unloaded in target process
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.DebuggerSession`3.BusyStateChanged">
+            <summary>
+            Raised when the 'busy state' of the debugger changes.
+            The debugger may switch to busy state if it is in the middle
+            of an expression evaluation which can't be aborted.
+            </summary>
+        </member>
+        <member name="E:Mono.Debugging.Client.DebuggerSession`3.TargetNotificationSent">
+            <summary>
+            Custom event handler; raised when debugger send notifications
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.Dispose">
+            <summary>
+            Releases all resource used by the <see cref="!:Mono.Debugging.Client.DebuggerSession"/> object.
+            </summary>
+            <remarks>
+            Call <see cref="M:Mono.Debugging.Client.DebuggerSession`3.Dispose"/> when you are finished using the <see cref="!:Mono.Debugging.Client.DebuggerSession"/>.
+            The <see cref="M:Mono.Debugging.Client.DebuggerSession`3.Dispose"/> method leaves the <see cref="!:Mono.Debugging.Client.DebuggerSession"/> in an unusable
+            state. After calling <see cref="M:Mono.Debugging.Client.DebuggerSession`3.Dispose"/>, you must release all references to the
+            <see cref="!:Mono.Debugging.Client.DebuggerSession"/> so the garbage collector can reclaim the memory that the
+            <see cref="!:Mono.Debugging.Client.DebuggerSession"/> was occupying.
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.ExceptionHandler">
+            <summary>
+            Gets or sets an exception handler to be invoked when an exception is raised by the debugger engine.
+            </summary>
+            <remarks>
+            Notice that this handler will be used to report exceptions in the debugger, not exceptions raised
+            in the debugged process.
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.ConnectionDialogCreator">
+            <summary>
+            Gets or sets the connection dialog creator callback.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.ConnectionDialogCreatorExtended">
+            <summary>
+            Gets or sets the connection dialog creator callback.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.BreakpointTraceHandler">
+            <summary>
+            Gets or sets the breakpoint trace handler.
+            </summary>
+            <remarks>
+            This handler is invoked when the value of a tracepoint has to be printed
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.CustomBreakEventHitHandler">
+            <summary>
+            Gets or sets the custom break event hit handler.
+            </summary>
+            <remarks>
+            This handler is invoked when a custom breakpoint is hit to determine if the debug session should
+            continue or stop.
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.Run(Mono.Debugging.Client.DebuggerStartInfo,Mono.Debugging.Client.DebuggerOptions.IDebuggerSessionOptions)">
+            <summary>
+            Starts a debugging session
+            </summary>
+            <param name='startInfo'>
+            Startup information
+            </param>
+            <param name='options'>
+            Session options
+            </param>
+            <exception cref='T:System.ArgumentNullException'>
+            Is thrown when an argument passed to a method is invalid because it is <see langword="null" /> .
+            </exception>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.AttachToProcess(Mono.Debugging.Client.ProcessInfo,Mono.Debugging.Client.DebuggerOptions.IDebuggerSessionOptions)">
+            <summary>
+            Starts a debugging session by attaching the debugger to a running process
+            </summary>
+            <param name='proc'>
+            Process information
+            </param>
+            <param name='options'>
+            Debugging options
+            </param>
+            <exception cref='T:System.ArgumentNullException'>
+            Is thrown when an argument passed to a method is invalid because it is <see langword="null" /> .
+            </exception>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.Detach">
+            <summary>
+            Detaches this debugging session from the debugged process
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.AttachedToProcess">
+            <summary>
+            Gets a value indicating whether this <see cref="!:Mono.Debugging.Client.DebuggerSession"/> has been attached to a process using the Attach method.
+            </summary>
+            <value>
+            <c>true</c> if attached to process; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.ActiveThread">
+            <summary>
+            Gets or sets the active thread.
+            </summary>
+            <remarks>
+            This property can only be used when the debugger is paused
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.NextLine">
+            <summary>
+            Executes one line of code
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.StepLine">
+            <summary>
+            Executes one line of code, stepping into method invocations
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.NextInstruction">
+            <summary>
+            Executes one low level instruction
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.StepInstruction">
+            <summary>
+            Executes one low level instruction, stepping into method invocations
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.Finish">
+            <summary>
+            Resumes the execution of the debugger and stops when the current method is exited
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.SetNextStatement(Debugger.Common.PathResolution.IUserDebugPath,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Sets the next statement on the active thread.
+            </summary>
+            <param name="fileName">File name.</param>
+            <param name="line">Line.</param>
+            <param name="column">Column.</param>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.SetNextStatement(System.Int32,System.Boolean)">
+            <summary>
+            Sets the next statement on the active thread.
+            </summary>
+            <param name="ilOffset">The IL offset.</param>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.Options">
+            <summary>
+            Gets the debugger options object
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.EvaluationOptions">
+            <summary>
+            Gets or sets the evaluation options.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.Continue">
+            <summary>
+            Resumes the execution of the debugger
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.Stop">
+            <summary>
+            Pauses the execution of the debugger
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.Exit">
+            <summary>
+            Stops the execution of the debugger by killing the debugged process
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.IsConnected">
+            <summary>
+            Gets a value indicating whether the debuggee is currently connected
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.IsRunning">
+            <summary>
+            Gets a value indicating whether the debuggee is currently running (not paused by the debugger)
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.HasExited">
+            <summary>
+            Gets a value indicating whether the debuggee has exited.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.OutputWriter">
+            <summary>
+            Gets or sets the output writer callback.
+            </summary>
+            <remarks>
+            This callback is invoked to print debuggee output
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.LogWriter">
+            <summary>
+            Gets or sets the log writer.
+            </summary>
+            <remarks>
+            This callback is invoked to print debugger log messages
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.DebugWriter">
+            <summary>
+            Gets or sets the debug writer.
+            </summary>
+            <remarks>
+            This callback is invoked to print debugge messages
+            called via System.Diagnostics.Debugger.Log
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.CancelAsyncEvaluations">
+            <summary>
+            Stops the execution of background evaluations being done by the debugger
+            </summary>
+            <remarks>
+            This method can only be used when the debuggee is stopped by the debugger
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.CanCancelAsyncEvaluations">
+            <summary>
+            Gets a value indicating whether there are background evaluations being done by the debugger
+            which can be cancelled.
+            </summary>
+            <remarks>
+            This method can only be used when the debuggee is stopped by the debugger
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.OnCancelAsyncEvaluations">
+            <summary>
+            Override to stop the execution of background evaluations being done by the debugger
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.BeforeContinue">
+            <summary>
+            Called before continue
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.OnAttachToProcess(Mono.Debugging.Client.ProcessInfo)">
+            <summary>
+            Called to attach the debugger to a running process
+            </summary>
+            <param name='processId'>
+            Process identifier.
+            </param>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.HandleException(System.Exception)">
+            <summary>
+            Reports an unhandled exception in the debugger
+            </summary>
+            <returns>
+            True if the debugger engine handles the exception. False otherwise.
+            </returns>
+            <param name='ex'>
+            The exception
+            </param>
+            <remarks>
+            This method can be used by subclasses to report errors in the debugger that must be reported
+            to the user.
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.OnRun(Mono.Debugging.Client.DebuggerStartInfo)">
+            <summary>
+            Called to start the execution of the debugger
+            </summary>
+            <param name='startInfo'>
+            Startup information
+            </param>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.OnAttachToProcess(System.Int64)">
+            <summary>
+            Called to attach the debugger to a running process
+            </summary>
+            <param name='processId'>
+            Process identifier.
+            </param>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.OnDetach">
+            <summary>
+            Called to detach the debugging session from the running process
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.OnStop">
+            <summary>
+            Called when the debug session has to be paused
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.OnExit">
+            <summary>
+            Called when the target process has to be exited
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.OnStepLine">
+            <summary>
+            Called to step one source code line
+            </summary>
+            <remarks>
+            This method can only be called when the debuggee is stopped by the debugger
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.OnNextLine">
+            <summary>
+            Called to step one source line, but step over method calls
+            </summary>
+            <remarks>
+            This method can only be called when the debuggee is stopped by the debugger
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.OnStepInstruction">
+            <summary>
+            Called to step one instruction
+            </summary>
+            <remarks>
+            This method can only be called when the debuggee is stopped by the debugger
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.OnNextInstruction">
+            <summary>
+            Called to step one instruction, but step over method calls
+            </summary>
+            <remarks>
+            This method can only be called when the debuggee is stopped by the debugger
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.OnFinish">
+            <summary>
+            Called to continue execution until leaving the current method
+            </summary>
+            <remarks>
+            This method can only be called when the debuggee is stopped by the debugger
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.OnContinue">
+            <summary>
+            Called to resume execution
+            </summary>
+            <remarks>
+            This method can only be called when the debuggee is stopped by the debugger
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.CanSetNextStatement">
+            <summary>
+            Checks whether or not the debugger supports setting the next statement to use when the debugger is resumed.
+            </summary>
+            <remarks>
+            This method is generally used to determine whether or not UI menu items should be shown.
+            </remarks>
+            <value><c>true</c> if the debugger supports setting the next statement to use when the debugger is resumed; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Mono.Debugging.Client.DebuggerSession`3.CanMakeObjectIds">
+            <summary>
+            Checks whether or not the debugger supports Make Object Id
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.OnSetNextStatement(System.Int64,Debugger.Common.PathResolution.IVirtualPathSymbolManager,System.Int32,System.Int32)">
+            <summary>
+            Sets the next statement to be executed when the debugger is resumed.
+            </summary>
+            <remarks>
+            This method can only be called when the debuggee is stopped by the debugger.
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.OnSetNextStatement(System.Int64,System.Int32)">
+            <summary>
+            Sets the next statement to be executed when the debugger is resumed.
+            </summary>
+            <remarks>
+            This method can only be called when the debuggee is stopped by the debugger.
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.OnGetProcessInfo">
+            <summary>
+            Called to get a debugee process info
+            </summary>
+            <remarks>
+            This method can only be called when the debuggee is stopped by the debugger
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.DebuggerSession`3.CheckExistingDebugInfoMatchesFile(Mono.Debugging.Client.CallStacks.IStackFrame)">
+            <summary>
+            Check that debug info checksums are equal to current file checksums
+            Return false only if debug info exists and values are not equal.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.ObjectValue.Flags">
+            <summary>
+            Gets the flags of the value
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.ObjectValue.Name">
+            <summary>
+            Name of the value (for example, the property name)
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.ObjectValue.Value">
+            <summary>
+            Gets or sets the value of the object
+            </summary>
+            <value>
+            The value.
+            </value>
+            <exception cref='T:System.InvalidOperationException'>
+            Is thrown when trying to set a value on a read-only ObjectValue
+            </exception>
+            <exception cref="T:Mono.Debugging.Evaluation.ValueModificationException">
+            When value settings was failed. This exception should be shown to user.
+            </exception>
+            <remarks>
+            This value is a string representation of the ObjectValue. The content depends on several evaluation
+            options. For example, if ToString calls are enabled, this value will be the result of calling
+            ToString.
+            If the object is a primitive type, in general the Value will be an expression that represents the
+            value in the target language. For example, when debugging C#, if the property is an string, the value
+            will include the quotation marks and chars like '\' will be properly escaped.
+            If you need to get the real CLR value of the object, use GetRawValue.
+            </remarks>
+            <seealso cref="M:Mono.Debugging.Backend.IObjectValueSource.SetValue(Mono.Debugging.Client.ObjectPath,System.String,Mono.Debugging.Client.DebuggerOptions.IEvaluationOptions)"/>
+        </member>
+        <member name="P:Mono.Debugging.Client.ObjectValue.DisplayValue">
+            <summary>
+            Gets or sets the display value of this object
+            </summary>
+            <remarks>
+            This method returns a string to be used when showing the value of this object.
+            In most cases, the Value and DisplayValue properties return the same text, but there are some cases
+            in which DisplayValue may return a more convenient textual representation of the value, which
+            may not be a valid target language expression.
+            For example in C#, an enum Value includes the full enum type name (e.g. "Gtk.ResponseType.OK"),
+            while DisplayValue only has the enum value name ("OK").
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.ObjectValue.SetValue(System.String)">
+            <summary>
+            Sets the value of this object, using the default evaluation options
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.ObjectValue.SetValue(System.String,Mono.Debugging.Client.DebuggerOptions.IEvaluationOptions)">
+            <summary>
+            Sets the value of this object, using the specified evaluation options
+            </summary>
+            <param name='value'>
+            The value
+            </param>
+            <param name='options'>
+            The options
+            </param>
+            <exception cref='T:System.InvalidOperationException'>
+            Is thrown if the value is read-only
+            </exception>
+            <exception cref="T:Mono.Debugging.Evaluation.ValueModificationException">
+            When value settings was failed. This exception should be shown to user.
+            </exception>
+            <seealso cref="M:Mono.Debugging.Backend.IObjectValueSource.SetValue(Mono.Debugging.Client.ObjectPath,System.String,Mono.Debugging.Client.DebuggerOptions.IEvaluationOptions)"/>
+        </member>
+        <member name="M:Mono.Debugging.Client.ObjectValue.GetRawValue">
+            <summary>
+            Gets the raw value of this object
+            </summary>
+            <returns>
+            The raw value.
+            </returns>
+            <remarks>
+            This method can be used to get the CLR value of the object. For example, if this ObjectValue is
+            a property of type String, this method will return the System.String value of the property.
+            If this ObjectValue refers to an object instead of a primitive value, then a RawValue object
+            will be returned. RawValue can be used to get and set members of an object, and to call methods.
+            If this ObjectValue refers to an array, then a RawValueArray object will be returned.
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.ObjectValue.GetRawValue(Mono.Debugging.Client.DebuggerOptions.IEvaluationOptions)">
+            <summary>
+            Gets the raw value of this object
+            </summary>
+            <param name='options'>
+            The evaluation options
+            </param>
+            <returns>
+            The raw value.
+            </returns>
+            <remarks>
+            This method can be used to get the CLR value of the object. For example, if this ObjectValue is
+            a property of type String, this method will return the System.String value of the property.
+            If this ObjectValue refers to an object instead of a primitive value, then a RawValue object
+            will be returned. RawValue can be used to get and set members of an object, and to call methods.
+            If this ObjectValue refers to an array, then a RawValueArray object will be returned.
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.ObjectValue.SetRawValue(Mono.Debugging.Backend.IRawValue)">
+            <summary>
+            Sets the raw value of this object
+            </summary>
+            <param name='value'>
+            The value
+            </param>
+            <remarks>
+            The provided value can be a primitive type, a RawValue object or a RawValueArray object.
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.ObjectValue.SetRawValue(Mono.Debugging.Backend.IRawValue,Mono.Debugging.Client.DebuggerOptions.IEvaluationOptions)">
+            <summary>
+            Sets the raw value of this object
+            </summary>
+            <param name='value'>
+            The value
+            </param>
+            <param name='options'>
+            The evaluation options
+            </param>
+            <remarks>
+            The provided value can be a primitive type, a RawValue object or a RawValueArray object.
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.ObjectValue.TypeDisplayName">
+            <summary>
+            Display name of the type of the object
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.ObjectValue.TypeFullName">
+            <summary>
+            Full name of the type of the object
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.ObjectValue.Source">
+            <summary>
+            Object source
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.ObjectValue.ChildSelector">
+            <summary>
+            Gets or sets the child selector.
+            </summary>
+            <remarks>
+            The child selector is an expression which can be concatenated to a parent expression to get this child.
+            For example, if this object is a reference to a field named 'foo' of an object, the child
+            selector is '.foo'.
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.ObjectValue.HasChildren">
+            <summary>
+            Gets a value indicating whether this object has children.
+            </summary>
+            <value>
+            <c>true</c> if this instance has children; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Mono.Debugging.Client.ObjectValue.GetChild(System.String)">
+            <summary>
+            Gets a child value
+            </summary>
+            <returns>
+            The child.
+            </returns>
+            <param name='name'>
+            Name of the member
+            </param>
+            <remarks>
+            This method can be used to get a member of an object (such as a field or property)
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.ObjectValue.GetChild(System.String,Mono.Debugging.Client.DebuggerOptions.IEvaluationOptions)">
+            <summary>
+            Gets a child value
+            </summary>
+            <returns>
+            The child.
+            </returns>
+            <param name='name'>
+            Name of the member
+            </param>
+            <param name='options'>
+            Options to be used to evaluate the child
+            </param>
+            <remarks>
+            This method can be used to get a member of an object (such as a field or property)
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.ObjectValue.GetAllChildren">
+            <summary>
+            Gets all children of the object
+            </summary>
+            <returns>
+            An array of all child values
+            </returns>
+        </member>
+        <member name="M:Mono.Debugging.Client.ObjectValue.GetAllChildren(Mono.Debugging.Client.DebuggerOptions.IEvaluationOptions)">
+            <summary>
+            Gets all children of the object
+            </summary>
+            <returns>
+            An array of all child values
+            </returns>
+            <param name='options'>
+            Options to be used to evaluate the children
+            </param>
+        </member>
+        <member name="M:Mono.Debugging.Client.ObjectValue.GetArrayItem(System.Int32)">
+            <summary>
+            Gets an item of an array
+            </summary>
+            <returns>
+            The array item.
+            </returns>
+            <param name='index'>
+            Item index
+            </param>
+            <exception cref='T:System.InvalidOperationException'>
+            Is thrown if this object is not an array (IsArray returns false)
+            </exception>
+        </member>
+        <member name="M:Mono.Debugging.Client.ObjectValue.GetArrayItem(System.Int32,Mono.Debugging.Client.DebuggerOptions.IEvaluationOptions)">
+            <summary>
+            Gets an item of an array
+            </summary>
+            <returns>
+            The array item.
+            </returns>
+            <param name='index'>
+            Item index
+            </param>
+            <param name='options'>
+            Options to be used to evaluate the item
+            </param>
+            <exception cref='T:System.InvalidOperationException'>
+            Is thrown if this object is not an array (IsArray returns false)
+            </exception>
+        </member>
+        <member name="P:Mono.Debugging.Client.ObjectValue.ArrayCount">
+            <summary>
+            Gets the number of items of an array
+            </summary>
+            <exception cref='T:System.InvalidOperationException'>
+            Is thrown if this object is not an array (IsArray returns false)
+            </exception>
+        </member>
+        <member name="M:Mono.Debugging.Client.ObjectValue.Refresh">
+            <summary>
+            Refreshes the value of this object
+            </summary>
+            <remarks>
+            This method can be called to get a more up-to-date value for this object.
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Client.ObjectValue.Refresh(Mono.Debugging.Client.DebuggerOptions.IEvaluationOptions)">
+            <summary>
+            Refreshes the value of this object
+            </summary>
+            <remarks>
+            This method can be called to get a more up-to-date value for this object.
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.ObjectValue.WaitHandle">
+            <summary>
+            Gets a wait handle which can be used to wait for the evaluation of this object to end
+            </summary>
+            <value>
+            The wait handle.
+            </value>
+        </member>
+        <member name="P:Mono.Debugging.Client.BreakEvent.Enabled">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Mono.Debugging.Client.BreakEvent"/> is enabled.
+            </summary>
+            <value>
+            <c>true</c> if enabled; otherwise, <c>false</c>.
+            </value>
+            <remarks>
+            Changes in this property are automatically applied. There is no need to call CommitChanges().
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.BreakEvent.TraceExpression">
+            <summary>
+            Gets or sets the expression to be traced when the breakpoint is hit
+            </summary>
+            <remarks>
+            If this break event is hit and the HitAction is TraceExpression, the debugger
+            will evaluate and print the value of this property.
+            The CommitChanges() method has to be called for changes in this
+            property to take effect.
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.BreakEvent.LastTraceValue">
+            <summary>
+            Gets the last value traced.
+            </summary>
+            <remarks>
+            This property returns the last evaluation of TraceExpression.
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.BreakEvent.HitAction">
+            <summary>
+            Gets or sets the action to be performed when the breakpoint is hit
+            </summary>
+            <remarks>
+            If the value is Break, the debugger will pause the execution.
+            If the value is PrintExpression, the debugger will evaluate and
+            print the value of the TraceExpression property.
+            If the value is CustomAction, the debugger will execute the
+            CustomBreakEventHitHandler callback specified in DebuggerSession,
+            and will provide the value of CustomActionId as argument.
+            The CommitChanges() method has to be called for changes in this
+            property to take effect.
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.BreakEvent.HitCountMode">
+            <summary>
+            Gets or sets the hit count mode.
+            </summary>
+            <remarks>
+            When the break event is hit, the HitCountMode is used to compare the CurrentHitCount
+            with the TargetHitCount to determine if the break event should trigger.
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.BreakEvent.HitCount">
+            <summary>
+            Gets or sets the target hit count.
+            </summary>
+            <remarks>
+            When the break event is hit, if the value of HitCountMode is not None, then
+            the value of CurrentHitCount will be incremented. Execution will immediately
+            resume if it is determined that the CurrentHitCount vs TargetHitCount
+            comparison does not meet the requirements of HitCountMode.
+            
+            The CommitChanges() method has to be called for changes in this property
+            to take effect.
+            </remarks>
+            
+            FIXME: rename this to TargetHitCount
+        </member>
+        <member name="P:Mono.Debugging.Client.BreakEvent.ThreadIdToStop">
+            <summary>
+            Gets or sets specific thread to stop on.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.BreakEvent.CurrentHitCount">
+            <summary>
+            Gets or sets the current hit count.
+            </summary>
+            <remarks>
+            When the break event is hit, the HitCountMode is used to compare the CurrentHitCount
+            with the TargetHitCount to determine if the break event should trigger.
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.BreakEvent.CustomActionId">
+            <summary>
+            Gets or sets the custom action identifier.
+            </summary>
+            <remarks>
+            If this break event is hit and the value of HitAction is CustomAction,
+            the debugger will execute the CustomBreakEventHitHandler callback
+            specified in DebuggerSession, and will provide the value of this property
+            as argument.
+            The CommitChanges() method has to be called for changes in this
+            property to take effect.
+            </remarks>
+        </member>
+        <member name="P:Mono.Debugging.Client.BreakEvent.NonUserBreakpoint">
+            <summary>
+            NonUserBreakpoint is special kind of breakpoint that is not placed by user but by IDE/Add-In.
+            This breakpoint is usually used by AddIn to execute code on debugee at certain point in application execution.
+            IDE must hide this breakpoint from user. In breakpoints list and it must not stop execution(show breakpoint hit location).
+            WARNING: Code that adds this breakpoint must also make sure to call session.Continue(); when breakpoint is hit.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.ExceptionInfo.#ctor(Mono.Debugging.Client.ObjectValue,Mono.Debugging.Client.DebuggerOptions.IEvaluationOptions)">
+            <summary>
+            The provided value can have the following members:
+            Type of the object: type of the exception
+            Message: Message of the exception
+            Instance: Raw instance of the exception
+            StackTrace: an array of frames. Each frame must have:
+                Value of the object: display text of the frame
+                File: name of the file
+                Line: line
+                Column: column
+            InnerException: inner exception, following the same format described above.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Client.ExceptionStackFrame.#ctor(Mono.Debugging.Client.ObjectValue,Mono.Debugging.Client.DebuggerOptions.IEvaluationOptions)">
+            <summary>
+            The provided value must have a specific structure.
+            The Value property is the display text.
+            A child "File" member must be the name of the file.
+            A child "Line" member must be the line.
+            A child "Column" member must be the column.
+            </summary>
+        </member>
+        <member name="F:Mono.Debugging.Client.BreakEventStatus.Disconnected">
+            <summary>
+            The breakpoint is not connected to any debug session
+            </summary>
+        </member>
+        <member name="F:Mono.Debugging.Client.BreakEventStatus.NotBound">
+            <summary>
+            The breakpoint is not yet bound to a valid location
+            </summary>
+        </member>
+        <member name="F:Mono.Debugging.Client.BreakEventStatus.Bound">
+            <summary>
+            The breakpoint is bound 
+            </summary>
+        </member>
+        <member name="F:Mono.Debugging.Client.BreakEventStatus.Invalid">
+            <summary>
+            The breakpoint could not be bound because the breakpoint location is invalid
+            </summary>
+        </member>
+        <member name="F:Mono.Debugging.Client.BreakEventStatus.BindError">
+            <summary>
+            There was a debugger error while binding the breakpoint
+            </summary>
+        </member>
+        <member name="F:Mono.Debugging.Client.BreakEventStatus.ExternalCodeDisabled">
+            <summary>
+            Breakpoint file path from decompiled cache and external source debug is disabled
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Client.BreakEventInfo`1">
+            <summary>
+            This class can be used to manage and get information about a breakpoint
+            at debug-time. It is intended to be used by DebuggerSession subclasses.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.BreakEventInfo`1.BreakEvent">
+            <summary>
+            Break event that this instance represents
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.BreakEventInfo`1.Status">
+            <summary>
+            Gets the status of the break event
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.BreakEventInfo`1.StatusMessage">
+            <summary>
+            Gets a description of the status
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Client.BreakEventInfo`1.HitCountReached">
+            <summary>
+            Increments the hit count.
+            </summary>
+            <returns><c>true</c> if the break event should trigger, or <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Mono.Debugging.Autofac.DebuggerSessionComponentAttribute.#ctor(System.Type)">
+            <param name="debuggerType">Debugger type for which the compoment should be activated. If <c>null</c> or omitted the component will be activated for any debugger (the same as <c>typeof(DebuggerType)</c>)</param>
+        </member>
+        <member name="T:Mono.Debugging.Autofac.IInitializable">
+            <summary>
+            Implement this interface to perform deferred initialization of a components after it completely created and prepared by container (components is created and all properties are injected)
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Autofac.IInitializable.Initialize">
+            <summary>
+            Called after all properties injected
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Backend.CallStacks.IStackFramePropertiesProviders`1">
+            <summary>
+            Aggregation component for all <see cref="T:Mono.Debugging.Backend.CallStacks.IStackFramePropertiesProvider`1"/>
+            </summary>
+            <typeparam name="TFrame"></typeparam>
+        </member>
+        <member name="M:Mono.Debugging.Backend.CallStacks.IStackFramePropertiesProviders`1.GetPropertiesProvider(Mono.Debugging.Backend.CallStacks.IStackFrame{`0})">
+            <summary>
+            Returns suitable provider for particular <paramref name="frame"/>
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Backend.CallStacks.IStackFrameValuesProviders`1">
+            <summary>
+            Component to manage all <see cref="T:Mono.Debugging.Backend.CallStacks.IStackFrameValuesProvider`1"/>
+            </summary>
+            <typeparam name="TFrame"></typeparam>
+        </member>
+        <member name="T:Mono.Debugging.Backend.CallStacks.IStackFramePropertiesProvider`1">
+            <summary>
+            Calculates properties of given frame if applicable
+            </summary>
+            <typeparam name="TFrame"></typeparam>
+        </member>
+        <member name="T:Mono.Debugging.Backend.CallStacks.IStackFrameValuesProvider`1">
+            <summary>
+            Provides local values of a frame or evaluates expression in the context of given frame
+            </summary>
+            <typeparam name="TFrame"></typeparam>
+        </member>
+        <member name="M:Mono.Debugging.Backend.IObjectValueSource.SetValue(Mono.Debugging.Client.ObjectPath,System.String,Mono.Debugging.Client.DebuggerOptions.IEvaluationOptions)">
+            <summary>
+            Updates the value with the result of evaluation of <paramref name="value"/> expression
+            </summary>
+            <exception cref="T:Mono.Debugging.Evaluation.ValueModificationException" /> call site should catch this exception and show it to user in pretty way (e.g. in message box)
+            All other exceptions indicate error and should be logged
+        </member>
+        <member name="M:Mono.Debugging.Backend.IRawValueEx.TryToString(Mono.Debugging.Backend.IRawValue)">
+            <summary>
+            Returns null if <paramref name="value"/> is not a string or string value otherwise
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Backend.IRawValueArray">
+            <summary>
+            Represents an array of objects in the process being debugged
+            Non-parametrized surface for <see cref="T:Mono.Debugging.Backend.IRawValueArray`1"/> to expose into public API
+            This interface should not be implemented directly. Implement <see cref="T:Mono.Debugging.Backend.IRawValueArray`1"/> instead
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Backend.IRawValueObject">
+            <summary>
+            Non-parametrized surface for <see cref="T:Mono.Debugging.Backend.IRawValueObject`1"/> to expose into public API
+            This interface should not be implemented directly. Implement <see cref="T:Mono.Debugging.Backend.IRawValueObject`1"/> instead
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Backend.IRawValueObject.CallMethod(System.String,Mono.Debugging.Backend.IRawValue[],Mono.Debugging.Client.DebuggerOptions.IEvaluationOptions)">
+            <summary>
+            Invokes a method on the object
+            </summary>
+            <returns>
+            The result of the invocation
+            </returns>
+            <param name='name'>
+            The name of the method
+            </param>
+            <param name='parameters'>
+            The parameters (primitive type values, RawValue instances or RawValueArray instances)
+            </param>
+        </member>
+        <member name="M:Mono.Debugging.Backend.IRawValueObject.CallMethod(System.String,Mono.Debugging.Backend.IRawValue[],Mono.Debugging.Backend.IRawValue[]@,Mono.Debugging.Client.DebuggerOptions.IEvaluationOptions)">
+            <summary>
+            Invokes a method on the object
+            </summary>
+            <returns>
+            The result of the invocation
+            </returns>
+            <param name='name'>
+            The name of the method
+            </param>
+            <param name='parameters'>
+            The parameters (primitive type values, RawValue instances or RawValueArray instances)
+            </param>
+        </member>
+        <member name="T:Mono.Debugging.Backend.IRawValuePrimitive">
+            <summary>
+            Represents primitive value that can be obtained as the value of this runtime
+            Non-parametrized surface for <see cref="T:Mono.Debugging.Backend.IRawValuePrimitive`1"/> to expose into public API
+            This interface should not be implemented directly. Implement <see cref="T:Mono.Debugging.Backend.IRawValuePrimitive`1"/> instead
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Backend.IRawValuePrimitive.Value">
+            <summary>
+            Returns primitive value of this runtime corresponding to
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Backend.IRawValueString">
+            <summary>
+            Represents a string object in the process being debugged
+            Non-parametrized surface for <see cref="T:Mono.Debugging.Backend.IRawValueString`1"/> to expose into public API
+            This interface should not be implemented directly. Implement <see cref="T:Mono.Debugging.Backend.IRawValueString`1"/> instead
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Backend.IRawValueString.Substring(System.Int32,System.Int32)">
+            <summary>
+            Gets a substring of the string
+            </summary>
+            <param name='index'>
+            The starting index of the requested substring.
+            </param>
+            <param name='length'>
+            The length of the requested substring.
+            </param>
+        </member>
+        <member name="P:Mono.Debugging.Backend.IRawValueString.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:Mono.Debugging.Backend.IRawValueString.Length">
+            <summary>
+            Gets the length of the string
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.TreeVisitor.NRefactoryExpressionEvaluatorVisitor`3.ChangeTypeTo(System.Object,System.Type)">
+            <summary>
+            This method may perform conversion between cast-incompatible types, e.g. converts "123" to 123
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.NewGen.Compilation.ICompilationInfoProvider`2.GetFrameInfo(`0)">
+            <summary>
+            Provides information for compilation in method context, i.e to compile ordinary expression inside frame
+            </summary>
+            <param name="ctx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.NewGen.Compilation.ICompilationInfoProvider`2.GetTypeInfo(`0,`1)">
+            <summary>
+            Provides information for compilation in type context without any locals, e.g. for display string evaluation
+            </summary>
+            <param name="ctx"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.NewGen.VirtualExecution.IClrArithmetic.Conv(JetBrains.Metadata.IL.Opcode,System.Object)">
+            <summary>
+            Converts <paramref name="value"/> using conversion defined by <paramref name="conv"/> 
+            </summary>
+            <param name="conv"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.NewGen.VirtualExecution.IClrArithmetic.Conv(System.Object,JetBrains.Metadata.Reader.API.ElementType)">
+            <summary>
+            Converts <paramref name="value"/> to type <paramref name="toType"/>
+            </summary>
+            <param name="value"></param>
+            <param name="toType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.NewGen.VirtualExecution.IClrArithmetic.Compare(JetBrains.Metadata.IL.Opcode,System.Object,System.Object)">
+            <summary>
+            Returns 1 or 0 according to <paramref name="opcode"/>
+            </summary>
+            <param name="opcode"></param>
+            <param name="primitive1"></param>
+            <param name="primitive2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.NewGen.VirtualExecution.IILCodeInterpreter`1.ExecuteMethod(JetBrains.Metadata.Reader.API.IMetadataMethod,JetBrains.Metadata.Reader.API.IMethodBody,JetBrains.Metadata.Reader.API.IMetadataMethod)">
+            <summary>
+            Executes IL method inside ordinary method context
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.NewGen.VirtualExecution.IILCodeInterpreter`1.ExecuteMethodInTypeContext(JetBrains.Metadata.Reader.API.IMetadataMethod,JetBrains.Metadata.Reader.API.IMethodBody,`0)">
+            <summary>
+            Executes IL method inside type context, e.g. to evaluate display string
+            </summary>
+            <param name="thisValue">object reference used as 'this'</param>
+            <returns></returns>
+        </member>
+        <member name="P:Mono.Debugging.Evaluation.NewGen.VirtualExecution.ILCodeInterpreter`1.IPossibleManagerPointer.IsByRef">
+            <summary>
+            true if the value is managed pointer, i.e. of type <![CDATA['MyType&']]>
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.NewGen.VirtualExecution.IInterpreterContext`1.SetByRefLocalPointerToValue(System.Int32,`0)">
+            <summary>
+            Sets local variable value of ByRef type so it starts to point to the object <paramref name="value"/>
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.NewGen.VirtualExecution.IInterpreterContext`1.CreateStringValue(System.String)">
+            <summary>
+            Creates debugger value from a string
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.NewGen.VirtualExecution.IInterpreterContext`1.CreatePrimitiveValue(System.Object)">
+            <summary>
+            Creates debugger value from a primitive
+            Only integer/float/bool/char values are allowed
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.NewGen.VirtualExecution.IInterpreterContext`1.AsPrimitive(`0,System.Boolean@)">
+            <summary>
+            Extracts primitive (integer/float/bool/char) value from a debugger value.
+            For enums returns it's underlying integer value
+            For pointers it's pointer address
+            </summary>
+            <param name="value"></param>
+            <param name="isPointerAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.NewGen.VirtualExecution.IInterpreterContext`1.CopyValueFromMemory(System.Int64,JetBrains.Metadata.Reader.API.ElementType)">
+            <summary>
+            For simple types (I*, R*) 
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.NewGen.VirtualExecution.IInterpreterContext`1.WriteReferenceAddressToMemory(System.Int64,`0)">
+            <summary>
+             Writes address of reference represented by <paramref name="value"/> into a memory located at <paramref name="address"/>
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.NewGen.VirtualExecution.IInterpreterContext`1.GetArrayLength(`0)">
+            <summary>
+            The length is returned as a natural unsigned int.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.NewGen.VirtualExecution.IInterpreterContext`1.TryPerformSimplifiedInstanceCall(JetBrains.Metadata.Reader.API.MethodInstantiation,`0,`0[],System.Boolean,`0@)">
+            <summary>
+            The implementor may do it's own instance method resolution and call using <paramref name="thisArg"/> object
+            because the runtime may provide incomplete information to make real method resolution on metadata
+            E.g. old versions of Soft debugger don't support generics, so resolution on generic types provides wrong results (open methods which can't be called) 
+            </summary>
+            <returns>true if method was successfully called in simple way, and otherwise false, so the general resolution engine should be done</returns>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.NewGen.VirtualExecution.IInterpreterContext`1.GetComInterfaces(`0)">
+            <summary>
+            If the value is not COM object returns empty set
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Evaluation.IExpressionEvaluator`3.Priority">
+            <summary>
+            Higher - more important
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Evaluation.Metadata.CachedAssembliesResolverByName">
+            <summary>
+            This resolver is used to resolve already loaded by debugger assemblies but which versions differ from specified in reference info. 
+            E.g. this happens in .NET core: user assembly may reference System.Runtime 4.1.0.0, but the runtime actually loads 4.1.1.0. 
+            So the <see cref="T:JetBrains.Metadata.Reader.API.MetadataLoader"/> will skip this assembly in its cache and will try to resolve it on disk which we don't want.
+            @baltic says that there are complex rules to resolve such situations but now it's enough to do like this
+            TODO: check if it's better to compare by public key as well. cc @slavatutshkin 
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Evaluation.AsyncOperationBase`1.Token">
+            <summary>
+            When evaluation is aborted and debugger callback is invoked the implementation has to check
+            for Token.IsCancellationRequested and call Task.SetCancelled() instead of setting the result
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.AsyncOperationBase`1.AbortImpl(System.Int32)">
+            <summary>
+            The implementation has to tell the debugger to abort the evaluation. This method must bot block.
+            </summary>
+            <param name="abortCallTimes">indicates how many times this method has been already called for this evaluation.
+            E.g. the implementation can perform some 'rude abort' after several previous ordinary 'aborts' were failed. For the first call this parameter == 0</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.IObjectValueAdaptor`3.CreateValue(`0,System.Object)">
+            <summary>
+            Creates debugger value from primitive value of this runtime
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.IObjectValueAdaptor`3.CreateValue(`0,`1,`2[])">
+            <summary>
+            Create debugger value by calling constructor of <paramref name="type"/> with arguments <paramref name="args"/>
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.IMetadataObjectAdapter`3.GetPhysicalThis(`0)">
+            <summary>
+            Returns physical 'this' object or null if the frame is not managed or function is static
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.IMetadataObjectAdapter`3.GetInstantiationNameForBaseType(`0,`1,System.String)">
+            <summary>
+            Looks for one of base class/interface with specified FQN and returns it's intantiated type name or null if the type was not found
+            </summary>
+            <example>
+            	<code>
+            		<![CDATA[
+            			class X : IEnumerable<int> {}
+            		]]>
+            	</code>
+            	When passing type X and System.Collections.Generic.IEnumerable`1 it returns System.Collections.Generic.IEnumerable`1[System.Int]
+            </example>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.MetadataObjectAdapter`8.GetPhysicalThis(`0)">
+            <summary>
+            Returns physical 'this' object or null if the frame is not managed or function is static
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.ObjectValueNameTracker`3.Disambiguate(Mono.Debugging.Evaluation.ValueReference{`0,`1,`2},Mono.Debugging.Client.ObjectValue)">
+            <summary>
+            Disambiguate the ObjectValue's name (in the case where the property name also exists in a base class).
+            </summary>
+            <param name='val'>
+            The ValueReference.
+            </param>
+            <param name='oval'>
+            The ObjectValue.
+            </param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.DebuggerEntityProperties`4.Equals(`0,`0)">
+            <summary>
+            Types with their actual type arguments are the same 
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.DebuggerEntityProperties`4.TypeDefinitionEquals(`0,`0)">
+            <summary>
+            Only type definitons are the same
+            </summary>
+            <param name="t1"></param>
+            <param name="t2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.DebuggerEntityProperties`4.GetMethodGenericParameters(`1)">
+            <summary>
+            Formal method type parameters
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.DebuggerEntityProperties`4.GetTypeGenericParameters(`0)">
+            <summary>
+            Formal method generic parameters
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.IDebuggerEntityProperties`4.Equals(`0,`0)">
+            <summary>
+            Types with their actual type arguments are the same 
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.IDebuggerEntityProperties`4.TypeDefinitionEquals(`0,`0)">
+            <summary>
+            Only type definitons are the same
+            </summary>
+            <param name="t1"></param>
+            <param name="t2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.IDebuggerEntityProperties`4.GetMethodGenericParameters(`1)">
+            <summary>
+            Formal method type parameters
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.IDebuggerEntityProperties`4.GetTypeGenericParameters(`0)">
+            <summary>
+            Formal method generic parameters
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.OverloadResolutionEngine`4.BetterCandidate(Mono.Debugging.Evaluation.OverloadResolution.OverloadResolutionEngine{`0,`1,`2,`3}.ResolutionMethodData,Mono.Debugging.Evaluation.OverloadResolution.OverloadResolutionEngine{`0,`1,`2,`3}.ResolutionMethodData,Mono.Debugging.Evaluation.OverloadResolution.ResolutionArgumentInfo{`0}[])">
+            <summary>
+            14.4.2.2 Better function member
+            </summary>
+            <param name="mP"></param>
+            <param name="mQ"></param>
+            <param name="actualArguments"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.OverloadResolutionEngine`4.MoreSpecificTypes(`0[],`0[])">
+            <summary>
+            The given parameter types {R1, R2, …, RK} are
+            defined to be more specific than the given parameter types {S1, S2, …, SL} if each given parameter RX is
+            not less specific than SX, and at least one given parameter, RX is more specific than SX. A type parameter
+            is less specific than a non-type parameter. Recursively, a constructed type is more specific than another
+            constructed type (with the same number of type arguments) if at least one type argument is more
+            specific and no type argument is less specific than the corresponding type argument in the other. An
+            array type is more specific than another array type (with the same number of dimensions) if the element
+            type of the first is more specific than the element type of the second. 
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.TypeInferenceEngine`4.TypeInferrer.UpperBoundConstructedInference(`0,`0)">
+            <param name="source">U</param>
+            <param name="target">V</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.TypeInferenceEngine`4.TypeInferrer.UpperBoundNullableInference(`0,`0)">
+            <param name="source">U</param>
+            <param name="target">V</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.TypeInferenceEngine`4.TypeInferrer.UpperBoundArrayInference(`0,`0)">
+            <param name="source">U</param>
+            <param name="target">V</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.TypeInferenceEngine`4.TypeInferrer.UpperBoundTypeParameterInference(`0,`0)">
+            <param name="source">U</param>
+            <param name="target">V</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.TypeInferenceEngine`4.TypeInferrer.ExactInference(`0,`0)">
+            <param name="source">U</param>
+            <param name="target">V</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.TypeInferenceEngine`4.TypeInferrer.ExactConstructedInference(`0,`0)">
+            <param name="source">U</param>
+            <param name="target">V</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.TypeInferenceEngine`4.TypeInferrer.ExactNullableInference(`0,`0)">
+            <param name="source">U</param>
+            <param name="target">V</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.TypeInferenceEngine`4.TypeInferrer.ExactArrayInference(`0,`0)">
+            <param name="source">U</param>
+            <param name="target">V</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.TypeInferenceEngine`4.TypeInferrer.ExactTypeParameterInference(`0,`0)">
+            <param name="source">U</param>
+            <param name="target">V</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.TypeInferenceEngine`4.TypeInferrer.LowerBoundInference(`0,`0)">
+            <param name="source">U</param>
+            <param name="target">V</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.TypeInferenceEngine`4.TypeInferrer.LowerBoundConstructedInference(`0,`0)">
+            <param name="source">U</param>
+            <param name="target">V</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.TypeInferenceEngine`4.TypeInferrer.LowerBoundArrayInference(`0,`0)">
+            <param name="source">U</param>
+            <param name="target">V</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.TypeInferenceEngine`4.TypeInferrer.LowerBoundTypeParameterInference(`0,`0)">
+            <param name="source">U</param>
+            <param name="target">V</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.OverloadResolution.TypeInferenceEngine`4.TypeInferrer.LowerBoundNullableInference(`0,`0)">
+            <param name="source">U</param>
+            <param name="target">V</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.RuntimeInvocation.IDebuggerMethodResolver`2.ResolveStaticMethod(`0,System.String,`1,`1[],`1[])">
+            <summary>
+            Looks for static method with any visibility starting on type <paramref name="ownerType"/> and then going to its bases
+            </summary>
+            <param name="ctx">context</param>
+            <param name="methodName">method name to look for</param>
+            <param name="ownerType">type in which search will be started</param>
+            <param name="invocationGenericTypeArgs">generic type arguments for method invocation. If empty - type inference will be performed</param>
+            <param name="argTypes">types of arguments</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.RuntimeInvocation.IDebuggerMethodResolver`2.ResolveInstanceMethod(`0,System.String,`1,`1[],`1[])">
+            <summary>
+            Looks for instance method with any visibility starting on type <paramref name="ownerType"/> and then going to its bases
+            </summary>
+            <param name="ctx">context</param>
+            <param name="methodName">method name to look for</param>
+            <param name="ownerType">type in which search will be started</param>
+            <param name="invocationGenericTypeArgs">generic type arguments for method invocation. If empty - type inference will be performed</param>
+            <param name="argTypes">types of arguments</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.RuntimeInvocation.IDebuggerMethodResolver`2.ResolveOwnMethod(`0,System.String,`1,`1[],`1[],System.Reflection.BindingFlags)">
+            <summary>
+            Looks for instance/static method with visibility passed with <paramref name="flags"/> starting on type <paramref name="ownerType"/> and then going to its bases
+            </summary>
+            <param name="ctx">context</param>
+            <param name="methodName">method name to look for</param>
+            <param name="ownerType">type in which search will be started</param>
+            <param name="invocationGenericTypeArgs">generic type arguments for method invocation. If empty - type inference will be performed</param>
+            <param name="argTypes">types of arguments</param>
+            <param name="flags">visibility, staticness and so on</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.RuntimeInvocation.IDebuggerMethodResolver`2.ResolveExtensionMethod(`0,System.String,`1,`1[],`1[])">
+            <summary>
+            Looks for extension method
+            </summary>
+            <param name="ctx"></param>
+            <param name="methodName"></param>
+            <param name="receiverType"></param>
+            <param name="invocationGenericTypeArgs"></param>
+            <param name="argTypes"></param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.RuntimeInvocation.IDebuggerMethodResolver`2.ResolveUserConversionOperator(`0,`1,`1)">
+            <summary>
+            Looks for user-defined conversion operator // TODO need to make different code for implicit and explicit operators
+            </summary>
+            <param name="ctx">context</param>
+            <param name="from">from type</param>
+            <param name="to">to type</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.RuntimeInvocation.IDebuggerMethodResolver`2.ResolveConstructor(`0,`1,`1[])">
+            <summary>
+            Looks for a constructor of type <paramref name="type"/>
+            </summary>
+            <param name="ctx">context</param>
+            <param name="type">type which to search</param>
+            <param name="argTypes">argument types</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.RuntimeInvocation.IDebuggerMethodResolver`2.ResolveStaticConstructor(`0,`1)">
+            <summary>
+            Looks for a static constructor of type <paramref name="type"/>
+            </summary>
+            <param name="ctx">context</param>
+            <param name="type">type which to search</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.RuntimeInvocation.IDebuggerMethodResolver`4.ResolveStaticMethod(`0,System.String,`1,`1[],`1[])">
+            <summary>
+            Looks for static method with any visibility starting on type <paramref name="ownerType"/> and then going to its bases
+            </summary>
+            <param name="ctx">context</param>
+            <param name="methodName">method name to look for</param>
+            <param name="ownerType">type in which search will be started</param>
+            <param name="invocationGenericTypeArgs">generic type arguments for method invocation. If empty - type inference will be performed</param>
+            <param name="argTypes">types of arguments</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.RuntimeInvocation.IDebuggerMethodResolver`4.ResolveInstanceMethod(`0,System.String,`1,`1[],`1[])">
+            <summary>
+            Looks for instance method with any visibility starting on type <paramref name="ownerType"/> and then going to its bases
+            </summary>
+            <param name="ctx">context</param>
+            <param name="methodName">method name to look for</param>
+            <param name="ownerType">type in which search will be started</param>
+            <param name="invocationGenericTypeArgs">generic type arguments for method invocation. If empty - type inference will be performed</param>
+            <param name="argTypes">types of arguments</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.RuntimeInvocation.IDebuggerMethodResolver`4.ResolveOwnMethod(`0,System.String,`1,`1[],`1[],System.Reflection.BindingFlags)">
+            <summary>
+            Looks for instance/static method with visibility passed with <paramref name="flags"/> starting on type <paramref name="ownerType"/> and then going to its bases
+            </summary>
+            <param name="ctx">context</param>
+            <param name="methodName">method name to look for</param>
+            <param name="ownerType">type in which search will be started</param>
+            <param name="invocationGenericTypeArgs">generic type arguments for method invocation. If empty - type inference will be performed</param>
+            <param name="argTypes">types of arguments</param>
+            <param name="flags">visibility, staticness and so on</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.RuntimeInvocation.IDebuggerMethodResolver`4.ResolveExtensionMethod(`0,System.String,`1,`1[],`1[])">
+            <summary>
+            Looks for extension method
+            </summary>
+            <param name="ctx"></param>
+            <param name="methodName"></param>
+            <param name="receiverType"></param>
+            <param name="invocationGenericTypeArgs"></param>
+            <param name="argTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.RuntimeInvocation.IDebuggerMethodResolver`4.ResolveUserConversionOperator(`0,`1,`1)">
+            <summary>
+            Looks for user-defined conversion operator // TODO need to make different code for implicit and explicit operators
+            </summary>
+            <param name="ctx">context</param>
+            <param name="from">from type</param>
+            <param name="to">to type</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.RuntimeInvocation.IDebuggerMethodResolver`4.ResolveConstructor(`0,`1,`1[])">
+            <summary>
+            Looks for a constructor of type <paramref name="type"/>
+            </summary>
+            <param name="ctx">context</param>
+            <param name="type">type which to search</param>
+            <param name="argTypes">argument types</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.RuntimeInvocation.IDebuggerMethodResolver`4.ResolveStaticConstructor(`0,`1)">
+            <summary>
+            Looks for a constructor of type <paramref name="type"/>
+            </summary>
+            <param name="ctx">context</param>
+            <param name="type">type which to search</param>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.IAsyncOperation.BeginInvoke">
+            <summary>
+            Called to invoke the operation. The execution must be asynchronous (it must return immediatelly).
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.IAsyncOperation.Abort">
+            <summary>
+            Called to abort the execution of the operation. It has to throw an exception
+            if the operation can't be aborted. This operation must not block. The engine
+            will wait for the operation to be aborted by calling WaitForCompleted.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.IAsyncOperation.WaitForCompleted(System.Int32)">
+            <summary>
+            Waits until the operation has been completed or aborted.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.ObjectValueAdaptor`3.CreateValue(`0,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.ObjectValueAdaptor`3.CreateValue(`0,`1,`2[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.ObjectValueAdaptor`3.GetMembers(`0,`1,`2,System.Reflection.BindingFlags)">
+            <summary>
+            Returns all members of a type. The following binding flags have to be honored:
+            BindingFlags.Static, BindingFlags.Instance, BindingFlags.Public, BindingFlags.NonPublic, BindingFlags.DeclareOnly
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.ObjectValueAdaptor`3.IsAtomicPrimitive(`0,`2)">
+            <summary>
+            Check if the value is simple primitive type: Boolean, Byte, SByte, Int16, UInt16, Int32, UInt32, Int64, UInt64, IntPtr, UIntPtr, Char, Double, or Single
+            </summary>
+            <param name="ctx"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.ObjectValueAdaptor`3.ToAtomicPrimitive(`0,`2)">
+            <summary>
+            Converts debugger value to an primitive object of this runtime
+            </summary>
+            <param name="ctx"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Evaluation.ObjectValueAdaptor`3.GetStringRepresentation(`0,`2)">
+            <summary>
+            Get some string representation of value (with DebuggerDisplay, ToString(),
+            type name or some custom presentations, e.g. for arrays, nullables e.t.c.) 
+            </summary>
+            <param name="ctx">evaluation context</param>
+            <param name="obj">target</param>
+            <returns>String representation of value</returns>
+        </member>
+        <member name="M:Mono.Debugging.Tools.IGlobalCancellable.Cancel">
+            <summary>
+            This method may (and likely) be called from some background thread while the main thread may perform operations.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Tools.IMetadataTypeTransformer`1.MethodGenericArguments">
+            <summary>
+            Must be cached
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Tools.IMetadataTypeTransformer`1.TypeGenericArguments">
+            <summary>
+            Must be cached
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Utils.NRefactoryAstNodeUtil.ToCSharpFormat(ICSharpCode.NRefactory.CSharp.AstNode)">
+            <summary>
+            ToCSharpFormat returns the node in CSharp format
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Utils.NRefactoryAstNodeUtil.ToCSharpFormat(ICSharpCode.NRefactory.CSharp.AstNode,ICSharpCode.NRefactory.CSharp.CSharpFormattingOptions)">
+            <summary>
+            ToCSharpFormat returns the node in CSharp format
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Utils.RoslynUtil.IsValidReference(Microsoft.CodeAnalysis.PortableExecutableReference)">
+            <summary>
+            Checks the metadata of the reference could be read correctly without exceptions
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Utils.TimestampedValue`2">
+            <summary>
+            This class can be used when some value has to be cached and invalidated when some global timestamp changes.
+            </summary>
+            <typeparam name="TValue">Type of value to cache</typeparam>
+            <typeparam name="TTimestamp">Type of timestamp</typeparam>
+            <seealso cref="T:Mono.Debugging.Utils.TimestampedValue`1"/>
+        </member>
+        <member name="M:Mono.Debugging.Utils.TimestampedValue`2.#ctor(System.Func{`1},System.Func{`1,`1,System.Boolean},System.Func{`0})">
+            <param name="targetTimestampProvider">the function which accesses a global reference timestamp, e.g. <code>session.DebuggeeTimestamp</code></param>
+            <param name="timestampComparer">comparing function for timestamps, just <code>i1 == i2</code> for int</param>
+            <param name="valueFactory">creator of your value</param>
+        </member>
+    </members>
+</doc>

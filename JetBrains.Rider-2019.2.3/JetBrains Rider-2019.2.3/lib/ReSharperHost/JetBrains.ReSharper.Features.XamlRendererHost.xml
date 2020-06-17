@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Features.XamlRendererHost</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ReSharper.Features.XamlRendererHost.Preview.PreviewRenderingManager">
+            <summary>
+            Aggregates preview descriptors from each preview rendering service (see <see cref="T:JetBrains.ReSharper.Features.XamlRendererHost.Preview.IPreviewRenderingService"/>.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.XamlRendererHost.Preview.PreviewRenderingManager.ActivePreviewId">
+            <summary>
+            Gets the reactive property that represents persistent id which identifies last <see cref="T:JetBrains.ProjectModel.IProjectFile"/> open in <see cref="P:JetBrains.TextControl.ITextControlManager.LastFocusedTextControl"/>.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.XamlRendererHost.Preview.Process.IPreviewRenderingServiceProcessController.RestartAsync(JetBrains.ReSharper.Features.XamlRendererHost.Preview.Process.PreviewEnvironmentInfo)">
+            <summary>
+            Restarts external preview rendering process with updated environment info.
+            </summary>
+            <param name="previewEnvironmentInfo">An updates environment info.</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.XamlRendererHost.Preview.Process.IPreviewRenderingServiceProcessController.CreatePreviewSessionAsync(JetBrains.Lifetimes.Lifetime,System.String,System.String,System.Action{JetBrains.ReSharper.Features.XamlRendererHost.Lifetimed{JetBrains.Rider.Model.Xaml.Renderer.XamlPreviewSession}})">
+            <summary>
+            Creates preview session for specific text control with markup to preview.
+            </summary>
+            <param name="textControlLifetime">A lifetime of the text control.</param>
+            <param name="previewId">A unique preview ID for preview session.</param>
+            <param name="presentableProjectPath">A presentable project path to project file to preview.</param>
+            <param name="onPreviewSessionCreated">A callback called asynchronously when <see cref="T:JetBrains.Rider.Model.Xaml.Renderer.XamlPreviewSession"/> is created.</param>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.XamlRendererHost.Preview.Process.XamlPreviewRenderingServiceProcessController">
+            <summary>
+            Manages external process for preview rendering.
+            Ensures that only one process works at a time. Allows to restart process if necessary (for instance to load updated assemblies).
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.XamlRendererHost.Preview.Process.ProcessControllersStore">
+            <summary>
+            Represents lifetime-based external process controllers storage. Gives access to a single external process controller by <see cref="T:JetBrains.ProjectModel.IProject"/>.
+            Ensures there is only one active external process controller for each project.
+            </summary>  
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.XamlRendererHost.Preview.Process.PreviewEnvironmentInfo">
+            <summary>
+            Represents a combination of <see cref="T:JetBrains.ProjectModel.IProject"/> output folder path, output file name and application definition file.  
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.XamlRendererHost.Preview.WPF.ProjectFilePsiTracker`1.UpdatePrimaryPsiFile">
+            <summary>
+            Finds primary PSI file for <see cref="F:JetBrains.ReSharper.Features.XamlRendererHost.Preview.WPF.ProjectFilePsiTracker`1.myProjectFile"/> and sets to <see cref="P:JetBrains.ReSharper.Features.XamlRendererHost.Preview.WPF.ProjectFilePsiTracker`1.PrimaryPsiFile"/> property.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.XamlRendererHost.Preview.WPF.WpfPreviewRenderingService2.myExternalProcessControllersStore">
+            <summary>
+            Maps <see cref="T:JetBrains.ProjectModel.IProject"/> to <see cref="T:JetBrains.ReSharper.Features.XamlRendererHost.Preview.Process.IPreviewRenderingServiceProcessController"/> with lifetime.
+            </summary>
+        </member>
+    </members>
+</doc>

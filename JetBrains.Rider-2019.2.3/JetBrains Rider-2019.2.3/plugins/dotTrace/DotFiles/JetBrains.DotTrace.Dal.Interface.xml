@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.DotTrace.Dal.Interface</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.DotTrace.DalInterface.Performance.CallTreeHeader.HeaderNodeRef.GetHashCode">
+            <summary>
+            NB: this hash code must be equal to that in the CallTreeSection.Node.GetHashCode()
+            to provide the same identity between Node and NodeRef instances
+            </summary>
+        </member>
+        <member name="P:JetBrains.DotTrace.DalInterface.Performance.CallTreeHeader.IHeaderDataNode.NodesCount">
+            <summary>
+            All nodes count
+            </summary>
+        </member>
+        <member name="M:JetBrains.DotTrace.DalInterface.Performance.CallTreeHeader.IHeaderDataNode.GetNodesCount(JetBrains.DotTrace.DalInterface.Performance.CallTree.CallTreeSectionOffset,JetBrains.DotTrace.DalInterface.Performance.CallTree.CallTreeSectionOffset)">
+            <summary>
+            Filtered nodes count
+            </summary>
+        </member>
+        <member name="M:JetBrains.DotTrace.DalInterface.Performance.CallTreeHeader.IHeaderDataNode.GetNodes(JetBrains.DotTrace.DalInterface.Performance.CallTree.CallTreeSectionOffset,JetBrains.DotTrace.DalInterface.Performance.CallTree.CallTreeSectionOffset)">
+            <summary>
+            Filtered nodes
+            </summary>
+        </member>
+        <member name="M:JetBrains.DotTrace.DalInterface.Timeline.ITimelineSnapshotStorageReader.Open(JetBrains.Lifetimes.Lifetime,JetBrains.Util.FileSystemPath)">
+            <summary>
+            Opens converted snapshot at convertedSnapshotPath
+            </summary>
+            <param name="lifetime"></param>
+            <param name="snapshotPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.DotTrace.DalInterface.Timeline.Sections.ICallTreeRecursionSection.GetNearestRecursiveParent(JetBrains.Common.Timeline.EventLog.Interface.CallStackPtr)">
+            <summary>
+            Finds nearest frame in call stack with the same fuid, without respect to shift
+            </summary>
+            <param name="ptr"></param>
+            <returns>Found CallStackPtr or <see cref="F:JetBrains.Common.Timeline.EventLog.Interface.CallStackPtr.Invalid"/> if call stack has no such frame</returns>
+        </member>
+        <member name="T:JetBrains.DotTrace.DalInterface.Zones.IChromeSnapshotZone">
+            <summary>
+            For snapshot components which must be loaded only if performance snapshot is loaded
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.DalInterface.Zones.IDTraceSnapshotZone">
+            <summary>
+            For snapshot components which must be loaded only if performance snapshot is loaded
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.DalInterface.Zones.IPerformanceSnapshotZone">
+            <summary>
+            For snapshot components which must be loaded only if performance snapshot is loaded
+            </summary>
+        </member>
+        <member name="T:JetBrains.DotTrace.DalInterface.Zones.ITimelineSnapshotZone">
+            <summary>
+            For snapshot components which must be loaded only if timeline snapshot is opened
+            There is no reason to mark shell components (such shell components won't be loaded)
+            </summary>
+        </member>
+    </members>
+</doc>

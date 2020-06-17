@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Features.WinForms.Designer.External</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.External.Serialization.JetProjectResourceComponentCodeDomSerializer.TryDeserializeProjectResourceAssigmentStatement(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.CodeDom.CodeAssignStatement)">
+            <summary>
+            Deserialize statements like this.button1.BackgroundImage = global::Resource
+            </summary>
+            <param name="manager"></param>
+            <param name="assignStatement"></param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.External.Surface.JetPropertyGrid.ShowDropdownIfNeeded(System.Windows.Forms.Control)">
+            <summary>
+            To show dropdown we should activate main designer window first and post key message with "F4" to show control
+            </summary>
+            <param name="target"></param>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.WinForms.Designer.External.Views.Controls.JetResourceEditorDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.External.Views.Controls.JetResourceEditorDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.External.Views.Controls.JetResourceEditorDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.WinForms.Designer.External.Views.Controls.WindowsFormsDesignerSurfaceControl.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.External.Views.Controls.WindowsFormsDesignerSurfaceControl.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.External.Views.Controls.WindowsFormsDesignerSurfaceControl.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

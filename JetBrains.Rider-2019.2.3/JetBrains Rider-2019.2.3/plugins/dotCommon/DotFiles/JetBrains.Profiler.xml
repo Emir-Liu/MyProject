@@ -1,0 +1,379 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Profiler</name>
+    </assembly>
+    <members>
+        <member name="F:JetBrains.Profiler.Configuration.CoreRegistration.RegistryFreeInstructionSet">
+            <summary>    
+              Supported by CLR v4.0+ / Silverlight / CoreCLR.
+              Use COR_PROFILER_PATH / CORECLR_PROFILER_PATH environment variables for both x86 and x64, so only one architecture will work.
+              See http://social.msdn.microsoft.com/Forums/en-US/netfxtoolsdev/thread/4ff8cb98-ceee-4dae-a543-75e53109b53d
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Configuration.CoreRegistration.RegistryFree">
+            <summary>    
+              Supported by CLR v4.6+ / CoreCLR. Use COR_PROFILER_PATH_32 / COR_PROFILER_PATH_64 / CORECLR_PROFILER_PATH_32 / CORECLR_PROFILER_PATH_64 environment variables.
+            </summary>    
+        </member>
+        <member name="F:JetBrains.Profiler.Configuration.DescriptionPropertyFlags.Minor">
+            <summary>
+            A property with this flag will be shown in a configuration only if its
+            value differs from values of this property in other configurations.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Configuration.DescriptionPropertyFlags.Significant">
+            <summary>
+            A property with this flag will be shown always in every configuration, no matter
+            whether its value differes from that in other configuration or no.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Configuration.DescriptionPropertyFlags.AnywayHide">
+            <summary>
+            A property marke with this flag participates in argument comparison, and hash code
+            computation but is never shown on a screen.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Configuration.DescriptionPropertyFlags.AnywayArray">
+            <summary>
+            A property is an array which is represented in a very special way in every configuration.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Configuration.Options.ControlKind.Manual">
+            <summary>
+              All processes use manual user control.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Configuration.Options.ControlKind.Api">
+            <summary>
+              All processes use API control.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Configuration.Options.ControlKind.ApiFirst">
+            <summary>
+              All first processes use API control. ALl child processes have no control, but profiling process start automatically.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Configuration.Options.ControlKind.RemoteApi">
+            <summary>
+              All processes use remote control.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Factories.CoreConfiguration.Test">
+            <summary>
+            Note: Only for test purposes !!! Do not use this flag in production !!!
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Factories.ProfileMode.StartProcess">
+            <summary>
+            Valid for intefaces derived from <see cref="T:JetBrains.Profiler.Features.IFeatures`1"/> and <see cref="T:JetBrains.Profiler.Features.IFactoryFeatures"/>
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Factories.ProfileMode.AttachToProcess">
+            <summary>
+            Valid for intefaces derived from <see cref="T:JetBrains.Profiler.Features.IInfoFeatures`2"/> and <see cref="T:JetBrains.Profiler.Features.IInfoFactoryFeatures"/>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Profiler.Host.HostFactoryAttribute">
+            <summary>
+            Base attr for all host factory attributes, for efficient filtering of any derived classes in the part catalog.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Host.WcfHostInfo.VsInstanceId">
+            <summary>
+              Since Vs15
+            </summary>
+        </member>
+        <member name="M:JetBrains.Profiler.Profile.Bridge.ICoreFilesManager.TakeStreaming(System.Guid)">
+            <summary>
+            Should be called once
+            If method wasn't called streaming file will be deleted
+            </summary>
+        </member>
+        <member name="T:JetBrains.Profiler.Profile.Bridge.Impl.HostBridgeDeclarations.Answer">
+            <summary>
+              Valuses must be 0xD0-0xFF !!!
+            </summary>
+        </member>
+        <member name="T:JetBrains.Profiler.Profile.Bridge.Impl.HostBridgeDeclarations.Command">
+            <summary>
+              Valuses must be 0xD0-0xFF !!!
+            </summary>
+        </member>
+        <member name="T:JetBrains.Profiler.Profile.Bridge.Impl.MemoryCommandProcessor.Answer">
+            <summary>
+              Do not use valuses 0xD0-0xFF !!!
+            </summary>
+        </member>
+        <member name="T:JetBrains.Profiler.Profile.Bridge.Impl.MemoryCommandProcessor.Command">
+            <summary>
+              Do not use valuses 0xD0-0xFF !!!
+            </summary>
+        </member>
+        <member name="T:JetBrains.Profiler.Profile.Bridge.Impl.MeasureCommandProcessor.Answer">
+            <summary>
+              Do not use valuses 0xD0-0xFF !!!
+            </summary>
+        </member>
+        <member name="T:JetBrains.Profiler.Profile.Bridge.Impl.MeasureCommandProcessor.Command">
+            <summary>
+              Do not use valuses 0xD0-0xFF !!!
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.Bridge.BaseBridge.ourVersion">
+            Note: GUID must be changed here and in the Profiler\Kernel\Windows\Native\Solution\common\host_bridge_declarations.hpp after any interface changing!
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.CoreCommand.StartStop">
+            <summary>
+              Valid only when <see cref="P:JetBrains.Profiler.Profile.IHostProfile.HostBridgeType" /> is
+              <see cref="F:JetBrains.Profiler.Profile.HostBridgeType.Measure" />
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.CoreCommand.Dump">
+            <summary>
+              Valid only when <see cref="P:JetBrains.Profiler.Profile.IHostProfile.HostBridgeType" /> is
+              <see cref="F:JetBrains.Profiler.Profile.HostBridgeType.Memory" />
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.CoreCommand.Allocations">
+            <summary>
+              Valid only when <see cref="P:JetBrains.Profiler.Profile.IHostProfile.HostBridgeType" /> is
+              <see cref="F:JetBrains.Profiler.Profile.HostBridgeType.Memory" />
+            </summary>
+        </member>
+        <member name="T:JetBrains.Profiler.Profile.IHostProfileSubscription">
+            <summary>
+              Please don't use the interface and derived interfaces after <see cref="M:JetBrains.Profiler.Profile.IHostProfileSubscription.Start(JetBrains.Application.Progress.IProgressIndicator,JetBrains.Profiler.Profile.IHostUI)" /> call!!!
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Initializing">
+            <summary>
+              Initialization in progress, no user commands possible yet. Allowed transitions to <see cref="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Error" />,
+              <see cref="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Unsupported" />, <see cref="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Started" /> or <see cref="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Stopped" />.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Terminating">
+            <summary>
+              Terminating in progress, no more user commands possible. Allowed transition to <see cref="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Error" />.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Unsupported">
+            <summary>
+              No user commands possible. Allowed transition to <see cref="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Error" />.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Error">
+            <summary>
+              Error was detected, no more user commands possible. No allowed transitions.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Pending">
+            <summary>
+              User command is in progress. Allowed transitions to: <see cref="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Error" />, <see cref="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Started" /> or
+              <see cref="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Stopped" />.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Started">
+            <summary>
+              User command <see cref="M:JetBrains.Profiler.Profile.IMeasureCoreHostProfile.Start" />, <see cref="M:JetBrains.Profiler.Profile.IMeasureCoreHostProfile.StopDropStart" /> or
+              <see cref="M:JetBrains.Profiler.Profile.IMeasureCoreHostProfile.StopSaveStart" /> was completed. Allowed transitions to <see cref="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Error" />,
+              <see cref="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Terminating" /> or <see cref="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Pending" />. Allowed commands are
+              <see cref="M:JetBrains.Profiler.Profile.IMeasureCoreHostProfile.StopDrop" />, <see cref="M:JetBrains.Profiler.Profile.IMeasureCoreHostProfile.StopSave" />,
+              <see cref="M:JetBrains.Profiler.Profile.IMeasureCoreHostProfile.StopDropStart" /> or <see cref="M:JetBrains.Profiler.Profile.IMeasureCoreHostProfile.StopSaveStart" />
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Stopped">
+            <summary>
+              User command <see cref="M:JetBrains.Profiler.Profile.IMeasureCoreHostProfile.StopDrop" /> or <see cref="M:JetBrains.Profiler.Profile.IMeasureCoreHostProfile.StopSave" /> was
+              completed. Allowed transitions to <see cref="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Error" />, <see cref="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Terminating" />, <see cref="F:JetBrains.Profiler.Profile.MeasureCoreHostProfileStates.Pending" />.  Allowed
+              command is <see cref="M:JetBrains.Profiler.Profile.IMeasureCoreHostProfile.Start" />.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Initializing">
+            <summary>
+              Initialization in progress, no user commands possible yet. Allowed transitions to <see cref="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Error" />,
+              <see cref="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Unsupported" />, <see cref="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Enabled" /> or <see cref="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Disabled" />.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Terminating">
+            <summary>
+              Terminating in progress, no more user commands possible. Allowed transition to <see cref="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Error" />.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Unsupported">
+            <summary>
+              No user commands possible. Allowed transition to <see cref="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Error" />.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Error">
+            <summary>
+              Error was detected, no more user commands possible. No allowed transitions.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Pending">
+            <summary>
+              User command is in progress. Allowed transitions to: <see cref="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Error" />, <see cref="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Enabled" /> or
+              <see cref="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Disabled" />.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Enabled">
+            <summary>
+              User command <see cref="M:JetBrains.Profiler.Profile.IMemoryCoreHostProfile.EnableAllocations" /> was completed. Allowed transitions to
+              <see cref="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Error" />, <see cref="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Terminating" /> or <see cref="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Pending" />. Allowed commands are
+              <see cref="M:JetBrains.Profiler.Profile.IMemoryCoreHostProfile.DisableAllocations" />.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Disabled">
+            <summary>
+              User command <see cref="M:JetBrains.Profiler.Profile.IMemoryCoreHostProfile.DisableAllocations" /> was completed. Allowed transitions to
+              <see cref="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Error" />, <see cref="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Terminating" /> or <see cref="F:JetBrains.Profiler.Profile.SwitchCoreHostProfileStates.Pending" />. Allowed commands are
+              <see cref="M:JetBrains.Profiler.Profile.IMemoryCoreHostProfile.EnableAllocations" />.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.CoreHostProfileStates.Initializing">
+            <summary>
+              Initialization in progress, no user commands possible yet. Allowed transitions to <see cref="F:JetBrains.Profiler.Profile.CoreHostProfileStates.Error" />,
+              <see cref="F:JetBrains.Profiler.Profile.CoreHostProfileStates.Unsupported" /> or <see cref="F:JetBrains.Profiler.Profile.CoreHostProfileStates.Done" />.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.CoreHostProfileStates.Terminating">
+            <summary>
+              Terminating in progress, no more user commands possible. Allowed transition to <see cref="F:JetBrains.Profiler.Profile.CoreHostProfileStates.Error" />.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.CoreHostProfileStates.Unsupported">
+            <summary>
+              No user commands possible. Allowed transition to <see cref="F:JetBrains.Profiler.Profile.CoreHostProfileStates.Error" />.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.CoreHostProfileStates.Error">
+            <summary>
+              Error was detected, no more user commands possible. No allowed transitions.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.CoreHostProfileStates.Pending">
+            <summary>
+              User command is in progress. Allowed transitions to: <see cref="F:JetBrains.Profiler.Profile.CoreHostProfileStates.Error" /> or <see cref="F:JetBrains.Profiler.Profile.CoreHostProfileStates.Done" />.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.CoreHostProfileStates.Done">
+            <summary>
+              User command <see cref="M:JetBrains.Profiler.Profile.IMemoryCoreHostProfile.Dump" /> or <see cref="M:JetBrains.Profiler.Profile.IMemoryCoreHostProfile.ForceGc" /> was
+              completed. Allowed transitions to <see cref="F:JetBrains.Profiler.Profile.CoreHostProfileStates.Error" />, <see cref="F:JetBrains.Profiler.Profile.CoreHostProfileStates.Terminating" /> or <see cref="F:JetBrains.Profiler.Profile.CoreHostProfileStates.Pending" />. Allowed
+              commands are <see cref="M:JetBrains.Profiler.Profile.IMemoryCoreHostProfile.Dump" /> or <see cref="M:JetBrains.Profiler.Profile.IMemoryCoreHostProfile.ForceGc" />.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Profiler.Profile.ResponsibilityEventArgs`1.Take">
+            <summary>Please, call it only from the original event thread!</summary>
+            <returns>Can return value only once! Your code is fully responsible for the object future in this case!</returns>
+        </member>
+        <member name="M:JetBrains.Profiler.Profile.ResponsibilityEventArgs`1.TakeWithoutResponsibility">
+            <summary>
+            Return a copy of its argument so that a client code can use it non-destructively, that is in RO mode.
+            Using this method does not takes a responsibility for its content so that the hosting code can perform ANY action afer 
+            all clients of the corresponding event have exited.
+            </summary>
+            <returns>Returns non-null value of the argument.</returns>
+        </member>
+        <member name="M:JetBrains.Profiler.Profile.ResponsibilityEventArgs`1.TryTake">
+            <summary>Please, call it only from the original event thread!</summary>
+            <returns>Can return non null value only once! Your code is fully responsible for the object future in this case!</returns>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.CoreOperationEventArgs.Progress">
+            <summary>
+              <see cref="F:System.Double.NaN" /> when <see cref="F:JetBrains.Profiler.Profile.CoreOperationEventArgs.Action" /> isn't <see cref="F:JetBrains.Profiler.Profile.StartProgressFinish.Progress" />.
+              [0..1] when <see cref="F:JetBrains.Profiler.Profile.CoreOperationEventArgs.Action" /> is <see cref="F:JetBrains.Profiler.Profile.StartProgressFinish.Progress" />.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Profile.HostOperationEventArgs.Progress">
+            <summary>
+              <see cref="F:System.Double.NaN" /> when <see cref="F:JetBrains.Profiler.Profile.HostOperationEventArgs.Action" /> isn't <see cref="F:JetBrains.Profiler.Profile.StartProgressFinish.Progress" />.
+              [0..1] when <see cref="F:JetBrains.Profiler.Profile.HostOperationEventArgs.Action" /> is <see cref="F:JetBrains.Profiler.Profile.StartProgressFinish.Progress" />.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Profiler.Profile.ICoreHostProfile.TakeStreaming">
+            <summary>
+            Should be called once
+            If method wasn't called streaming file will be deleted
+            </summary>
+        </member>
+        <member name="P:JetBrains.Profiler.Profile.IHostProfile.SupportedMainCloseWays">
+            <summary>
+              Returns the list of supported main application close commands.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Profiler.Profile.IHostProfile.SupportedCoreCloseWays">
+            <summary>
+              Returns the list of potentially supported core close commands.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Profiler.Profile.IHostProfile.SupportedCoreCommands">
+            <summary>
+              Returns the list of potentially supported core commands.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Profiler.Profile.IHostProfile.Finished">
+            <summary>
+              Indicate that the closing procedure is finished.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Profiler.Profile.IHostProfile.CloseAll(JetBrains.Profiler.Profile.CoreCloseWay[])">
+            <summary>
+              Start the finishing procedure. Please monitor the <see cref="P:JetBrains.Profiler.Profile.IHostProfile.Finished" /> flag to detect that closing procedure is
+              finished.
+            </summary>
+            <param name="sequenceCoreCloseWays">
+              The sequence of <see cref="T:JetBrains.Profiler.Profile.CoreCloseWay" /> for
+              <see cref="M:JetBrains.Profiler.Profile.ICoreHostProfile.Close(JetBrains.Profiler.Profile.CoreCloseWay)" /> call.
+            </param>
+            <returns>
+              <see cref="!:System.Boolean.True" /> - <see cref="M:JetBrains.Profiler.Profile.ICoreHostProfile.Close(JetBrains.Profiler.Profile.CoreCloseWay)" /> was called for all connected cores.
+              <see cref="!:System.Boolean.False" /> - <see cref="M:JetBrains.Profiler.Profile.ICoreHostProfile.Close(JetBrains.Profiler.Profile.CoreCloseWay)" /> wasn't called for at least one connected
+              core.
+            </returns>
+        </member>
+        <member name="M:JetBrains.Profiler.Profile.IHostProfile.TryUserActionWait">
+            <summary>
+              Freese finishing procedure to show some UI.
+            </summary>
+            <returns>
+              null - no user action is possible.
+            </returns>
+        </member>
+        <member name="M:JetBrains.Profiler.Identities.IdentityUtil.ToLog(JetBrains.Profiler.Identities.IIdentity)">
+            <returns>Always has leading space when not null</returns>
+        </member>
+        <member name="F:JetBrains.Profiler.Identities.CoreIdentity.CoreGuid">
+            <summary>
+              Core unique identifier.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Identities.CoreIdentity.ProcessGuid">
+            <summary>
+              Process unique identifier. Two or more cores can have the same process identifier!
+            </summary>
+        </member>
+        <member name="M:JetBrains.Profiler.Identities.CoreIdentity.ToLog">
+            <returns>Always has leading space</returns>
+        </member>
+        <member name="F:JetBrains.Profiler.Identities.SnapshotIdentity.SequenceGuid">
+            <summary>
+              Sequence unique identifier. Used when two sequential snapshots share data to each other (for example: snapshots in
+              dotMemory).
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Identities.SnapshotIdentity.SequenceIndex">
+            <summary>
+              Index in sequence. Allow order snapshots and dectect lost snapshots in sequence.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Identities.SnapshotIdentity.SnapshotGuid">
+            <summary>
+              Snapshot unique identifier.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Profiler.Identities.SnapshotIdentity.ToLog">
+            <returns>Always has leading space</returns>
+        </member>
+    </members>
+</doc>

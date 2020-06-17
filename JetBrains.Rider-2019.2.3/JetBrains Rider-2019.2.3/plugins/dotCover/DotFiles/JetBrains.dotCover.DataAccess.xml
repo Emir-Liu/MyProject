@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.dotCover.DataAccess</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.dotCover.DataAccess.SnapshotCore.Dal.ConvolutionUtil.Convolve``1(System.Collections.Generic.IEnumerable{``0},System.Int32,JetBrains.Application.Progress.IProgressIndicator,JetBrains.dotCover.DataAccess.SnapshotCore.Dal.ConvolutionUtil.Func{System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32,System.Boolean,JetBrains.Application.Progress.IProgressIndicator,``0})">
+            <summary>
+            Performs convolution
+            </summary>
+            <typeparam name="T">item type</typeparam>
+            <param name="source">source collection</param>
+            <param name="maxItemsNumber">max number of items to be processed simultaneously</param>
+            <param name="progress">progress indicator</param>
+            <param name="func">convolution function: (itemsToConvolve, firstItemIndex, lastItemIndex, isLastStep, progress) => convolvedItem</param>
+            <returns>resulting item</returns>
+        </member>
+    </members>
+</doc>

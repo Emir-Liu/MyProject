@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Etw</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.Etw.Param.TopRootFactorParam.#ctor(System.UInt32)">
+            <param name="factor">first_root_count >= 4 * second_root_count</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Profiler.Windows.RemoteApi</name>
+    </assembly>
+    <members>
+        <member name="F:JetBrains.Profiler.Windows.RemoteApi.CoreRemoteProfileState.Initializing">
+            <summary>
+            Connection was accepted but CoreRemoteProfile is not operational yet.
+            Possible transitions to <see cref="F:JetBrains.Profiler.Windows.RemoteApi.CoreRemoteProfileState.Ready" />, <see cref="F:JetBrains.Profiler.Windows.RemoteApi.CoreRemoteProfileState.Unsupported" /> and <see cref="F:JetBrains.Profiler.Windows.RemoteApi.CoreRemoteProfileState.Terminating" />
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Windows.RemoteApi.CoreRemoteProfileState.Ready">
+            <summary>
+            Corresponding CoreRemoteProfile is fully operational and ready for commands.
+            Possible transition to <see cref="F:JetBrains.Profiler.Windows.RemoteApi.CoreRemoteProfileState.Terminating" />
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Windows.RemoteApi.CoreRemoteProfileState.Unsupported">
+            <summary>
+            CoreRemoteProfile is not supported. Terminal state
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Windows.RemoteApi.CoreRemoteProfileState.Terminating">
+            <summary>
+            Connection has been ended. Terminal state
+            </summary>
+        </member>
+        <member name="T:JetBrains.Profiler.Windows.RemoteApi.IRemoteProfileCallbacks">
+            <summary>
+            Interface for callbacks from RemoteProfile 
+            All exception thrown from callbacks are ignored
+            </summary>
+        </member>
+        <member name="M:JetBrains.Profiler.Windows.RemoteApi.IRemoteProfileCallbacks.Accept(JetBrains.Profiler.Windows.RemoteApi.IAcceptParameters)">
+            <summary>
+            Allows filtering incoming connections
+            </summary>
+            <param name="parameters">Contains parameters of incoming connection. Can be casted to interface specific for a given connection
+            </param>
+            <returns>True to accept connection. False to ignore</returns>
+        </member>
+        <member name="M:JetBrains.Profiler.Windows.RemoteApi.IRemoteProfileCallbacks.StateChanged(JetBrains.Profiler.Windows.RemoteApi.CoreRemoteProfileState,JetBrains.Profiler.Windows.RemoteApi.ICoreRemoteProfile)">
+            <summary>
+            After connection has been accepted, notifies about connection state changes
+            </summary>
+            <param name="state">New connection state</param>
+            <param name="profile">CoreRemoteProfile whose state was changed. Can be casted to interface specific for a given connection</param>
+        </member>
+        <member name="M:JetBrains.Profiler.Windows.RemoteApi.IRemoteProfileCallbacks.Alert(JetBrains.Profiler.Windows.RemoteApi.AlertArgs,JetBrains.Profiler.Windows.RemoteApi.ICoreRemoteProfile)">
+            <summary>
+            Called when Error or Warning encountered
+            </summary>
+            <param name="args">Issue arguments, such as severity and message</param>
+            <param name="profile">Affected CoreRemoteProfile. Can be null if error is not related to specific profile</param>
+        </member>
+    </members>
+</doc>

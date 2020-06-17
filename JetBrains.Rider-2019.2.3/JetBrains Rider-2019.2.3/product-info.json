@@ -1,0 +1,16 @@
+{
+  "name": "JetBrains Rider",
+  "version": "2019.2.3",
+  "buildNumber": "192.7317.11",
+  "productCode": "RD",
+  "svgIconPath": "bin/rider.svg",
+  "launch": [
+    {
+      "os": "Linux",
+      "launcherPath": "bin/rider.sh",
+      "javaExecutablePath": "jbr/bin/java",
+      "vmOptionsFilePath": "bin/rider64.vmoptions",
+      "startupWmClass": "jetbrains-rider"
+    }
+  ]
+}

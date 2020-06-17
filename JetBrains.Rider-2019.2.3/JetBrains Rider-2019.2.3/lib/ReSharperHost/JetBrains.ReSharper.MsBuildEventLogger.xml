@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.MsBuildEventLogger</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ReSharper.MsBuildEventLogger.MsBuildUtil.MsBuildPath">
+            <inheritdoc />
+            <summary>
+            Light version of FileSystemPath for MsBuild task
+            </summary>
+        </member>
+    </members>
+</doc>

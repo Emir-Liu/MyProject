@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Features.WinForms.Designer.Host</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.Component">
+             <summary>
+            	<para>
+            		<para>Component Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.Component"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.Component.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                               tttttttttttt  
+                               22--------22  
+                 333333333333  VV::::::::VV  
+                 22        22  66^^^^^^^^66  
+                 yy        yy  HH;;;;;;;;HH  
+                 VV````````VV  ############  
+                 ZZ````````ZZ                
+                 XXXXXXXXXXXXXXXXXXXXXX      
+                 44````````44        44      
+                 bb........bb````````bb      
+                 dd--------dd````````dd      
+                 RR::::::::RR--------RR      
+                 DDDDDDDDDDDDDDDDDDDDDD      
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:WorugezThemedIconsThemedIcons+Component}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(WorugezThemedIconsThemedIcons.Component))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = WorugezThemedIconsThemedIcons.Component.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;WorugezThemedIconsThemedIcons.Component&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.Component.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.Component">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.Component.Load_Color">
+            <summary>Loads the image for Themed Icon Component theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.Component.Load_Gray">
+            <summary>Loads the image for Themed Icon Component theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.Component.Load_GrayDark">
+            <summary>Loads the image for Themed Icon Component theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.Component.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon Component.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.UserControl">
+             <summary>
+            	<para>
+            		<para>UserControl Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.UserControl"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.UserControl.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                 555555555555555555555555    
+                 aa      ````````...'--aa    
+                 EE  jjjjjjjjjjjjjjjj--EE    
+                 UU  kkkkkkkkE6wbbbbw*:UU    
+                 44  XXXXXXXbOX)r/;!)kOp4    
+                 bb  bbbbbbA#3;;!/cJ)/7#O    
+                 dd  OOOOOODDmZCT\"..``DD    
+                 mm  DDDDDDD8):---'..`;8D    
+                 DD  888888888j*"-'-~z88D    
+                 88      ``LkVw888#88bk9q`   
+                 888888888Rd*,,_LaVT",,!bK`  
+                         =De;;;;;;;;;;;;tDL  
+                         6W}LLLLLLLLLLLL7W#  
+                         $$$$$$$$$$$$$$$$$$  
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:WorugezThemedIconsThemedIcons+UserControl}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(WorugezThemedIconsThemedIcons.UserControl))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = WorugezThemedIconsThemedIcons.UserControl.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;WorugezThemedIconsThemedIcons.UserControl&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.UserControl.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.UserControl">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.UserControl.Load_Color">
+            <summary>Loads the image for Themed Icon UserControl theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.UserControl.Load_Gray">
+            <summary>Loads the image for Themed Icon UserControl theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.UserControl.Load_GrayDark">
+            <summary>Loads the image for Themed Icon UserControl theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.UserControl.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon UserControl.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.WinForm">
+             <summary>
+            	<para>
+            		<para>WinForm Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.WinForm"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.WinForm.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+               mmmmmmmmmmmmmmmmmmmmmmmmmmmm  
+               ##::::,__""^^~~;;;;;!!==/*##  
+               ##::::,__""^^~~;;;;;!!==/*##  
+               DD||TTT77vvJJsszz}}{[[]tCfDD  
+               DD  --'...````````      --DD  
+               DD  --'...````````      --DD  
+               DD  --'...````````      --DD  
+               DD  --'...````````      --DD  
+               88  --'...````````      --88  
+               88  --'...````````      --88  
+               88  --'...``DDDD``DDDD  --88  
+               88  --'...````````      --88  
+               88       ``````````....---88  
+               WWWWWWWWWWWWWWWWWWWWWWWWWWWW  
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:WorugezThemedIconsThemedIcons+WinForm}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(WorugezThemedIconsThemedIcons.WinForm))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = WorugezThemedIconsThemedIcons.WinForm.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;WorugezThemedIconsThemedIcons.WinForm&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.WinForm.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.WinForm">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.WinForm.Load_Color">
+            <summary>Loads the image for Themed Icon WinForm theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.WinForm.Load_Gray">
+            <summary>Loads the image for Themed Icon WinForm theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.WinForm.Load_GrayDark">
+            <summary>Loads the image for Themed Icon WinForm theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.Host.Resources.WinFormsThemedIcons.WinFormsThemedIcons.WinForm.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon WinForm.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.WinForms.Designer.Host.WinFormsDesignerSessionController">
+            <summary>
+              Maintains active designer sessions, ensures each session has relevant data when reloading occurs.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.WinForms.Designer.Host.Trackers.ISurroundingEnvironmentChangeTracker">
+            <summary>
+            Base designer tracker interface
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.Host.Trackers.ISurroundingEnvironmentChangeTracker.Init">
+            <summary>
+            Manually initialize tracker
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.Host.WinFormsDesignerController.FindDesignerDescriptorsForActiveDesigner(JetBrains.ProjectModel.IProjectFile)">
+            <summary>
+              Retrieves designer descriptor.
+            </summary>
+            <param name="projectFile"></param>
+            <returns>A designer descriptor for provided file.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.WinForms.Designer.Host.WinFormsHelper.TryGetFormsFile(JetBrains.ProjectModel.ISolution,System.String)">
+            <summary>
+              <see cref="M:JetBrains.ReSharper.Features.WinForms.Designer.Host.WinFormsDesignerEditorController.TryFindWinFormsProjectFile(System.String)" />
+            </summary>
+        </member>
+    </members>
+</doc>

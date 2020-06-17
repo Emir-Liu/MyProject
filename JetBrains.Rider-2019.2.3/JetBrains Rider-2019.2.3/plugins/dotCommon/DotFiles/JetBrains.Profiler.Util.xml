@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Profiler.Util</name>
+    </assembly>
+    <members>
+        <member name="F:JetBrains.Profiler.Util.ProfilerEnvironmentConstants.PrefixProfiler">
+            <summary>
+              DO NOT CHANGE, THIS IS PUBLIC FOR 3-RD CUSTOMERS !!!
+            </summary>
+        </member>
+        <member name="F:JetBrains.Profiler.Util.IO.IOSecurityUtil.FileSystemRights_Modify">
+            <summary>
+              No <see cref="F:System.Security.AccessControl.FileSystemRights.ExecuteFile" /> or <see cref="F:System.Security.AccessControl.FileSystemRights.Traverse" /> are prohibited here!!!
+            </summary>
+        </member>
+        <member name="M:JetBrains.Profiler.Util.IO.StreamUtil.Copy(System.IO.Stream,System.IO.Stream,System.Int64,JetBrains.Application.Progress.IProgressIndicator)">
+            <summary>
+            Special instance of Copy method which cab break [potentially] long
+            operation when external indicator gives a clue for that.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Profiler.Util.IO.TempUtil.GlobalTempPath">
+            Note: Path with full access for all users on the computer!
+        </member>
+    </members>
+</doc>

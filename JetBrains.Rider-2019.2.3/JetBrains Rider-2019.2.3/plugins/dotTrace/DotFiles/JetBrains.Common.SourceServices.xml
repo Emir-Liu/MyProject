@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Common.SourceServices</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.SourceView.SourceServices.Impl.PsiSourceLayout.FindPsiRangeByPsiName(System.String,System.Collections.Generic.IEnumerable{JetBrains.SourceView.SourceServices.Interface.TextEditor.ILayoutMethodRange},System.Collections.Generic.IList{JetBrains.SourceView.SourceServices.Interface.TextEditor.ILayoutMethodRange})">
+            <summary>
+            
+            </summary>
+            <param name="propertyName">PSI name</param>
+            <param name="allRanges">List of PSI ranges for search propertyName</param>
+            <param name="foundedRangeStorage">List for store PSI suitable ranges</param>
+        </member>
+    </members>
+</doc>

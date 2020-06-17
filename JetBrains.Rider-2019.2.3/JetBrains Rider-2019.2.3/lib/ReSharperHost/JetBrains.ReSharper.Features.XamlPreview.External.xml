@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Features.XamlPreview.External</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ReSharper.Features.XamlRendererExternal.WPF.PreviewXamlWriter`1">
+            <summary>
+            Represents a XAML writer that wraps other <see cref="T:System.Xaml.XamlWriter"/> and manages whether to skip specific <see cref="T:System.Xaml.XamlMember"/> or <see cref="T:System.Xaml.XamlType"/> elements that prevent successful WPF preview building.
+            </summary>
+            <typeparam name="TWriter">The type of underlying <see cref="T:System.Xaml.XamlWriter"/>.</typeparam>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.XamlRendererExternal.WPF.PreviewXamlWriter`1.myRootProcessed">
+            <summary>
+            Indicates whether <see cref="F:System.Xaml.XamlNodeType.StartObject"/> node processed for known root XAML element.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.XamlRendererExternal.WPF.WpfPreview.Create(System.String,JetBrains.Util.FileSystemPath,JetBrains.Util.FileSystemPath,System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.List{System.String}})">
+            <summary>
+            Crates preview visual tree for provided WPF xaml file.
+            </summary>
+            <param name="xaml">The provided xaml file.</param>
+            <param name="assembliesRoot">A root directory of assemblies required to build preview.</param>
+            <param name="primaryAssemblyPath">A path to a related project output assembly path.</param>
+            <param name="aliasToAssembliesMap">A XAML namespace to assembly map that describes which assembly is relevant for particular XAML/XML namespace alias.</param>
+            <returns>A <see cref="T:JetBrains.ReSharper.Features.XamlRendererExternal.WPF.WpfPreview"/> structure with instantiated <see cref="T:JetBrains.ReSharper.Features.XamlRendererExternal.WPF.PreviewRootControl"/> as root element of preview visual tree and additional metadata.</returns>
+            <exception cref="T:JetBrains.ReSharper.Features.XamlRendererExternal.WPF.WpfPreview.WpfPreviewCreationException">If preview creating is failed for any reason. See <see cref="P:System.Exception.InnerException"/>.</exception>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Rider.Test.Framework</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.Rider.Test.Framework.Core.Settings.RiderTestSettingsManager.ResetSettings">
+            <summary>
+            Re-mount Rider test settings layer with current layer priority
+            </summary>
+        </member>
+        <member name="M:JetBrains.Rider.Test.Framework.Core.Settings.RiderTestSettingsManager.ResetSettingsLayer(System.Boolean)">
+            <summary>
+            Set Rider settings layer with a defined priority and reset settings accoriding to this priority.
+            </summary>
+            <param name="storeSolutionPersonalSettings">Flag define the priority for a new settings layer.
+            If false - override all settings layers and ignore them in test,
+            if true - store user solution and below settings layers.</param>
+        </member>
+        <member name="T:JetBrains.Rider.Test.Framework.UnitTests.RiderTestMessageBox">
+            <summary>
+            Prevents marshalling msgboxes into IDEA in tests, replies with default choice.
+            </summary>
+        </member>
+    </members>
+</doc>
